@@ -30,6 +30,8 @@
 \newcommand\RP{\mathbb{RP}}
 \newcommand\rstr[2]{{\left.#1\right|_{#2}}}
 \newcommand\R{\mathbb{R}}
+\newcommand\V{\mathcal{V}}
+\newcommand\H{\mathcal{H}}
 \newcommand\set[1]{\{#1\}}
 \newcommand\toi{\xrightarrow{\sim}} % category
 \newcommand\Z{\mathbb{Z}}
@@ -103,7 +105,6 @@
 \newcommand{\RR}{\mathbb R}
 \newcommand{\scalp}[1]{\langle #1 \rangle}
 \newcommand{\wt}{\omega}
-\newcommand{\D}{\mathcal D}
 \newcommand{\cT}{\mathcal T}
 \renewcommand{\O}{\mathcal O}
 \newcommand{\adm}{\mathcal A(\D, M)}
@@ -142,9 +143,9 @@
 \newcommand{\Discriminant}{\mathcal{D}}
 
 \theoremstyle{definition}
-\newtheorem*{remark}{Remark}
-\newtheorem*{lemma}{Lemma}
-\newtheorem*{prop}{Proposition}
+\newtheorem{remark}{Remark}
+
+\newtheorem{prop}{Proposition}
 \newtheorem{defn}{Definition}
 
 \author{Antony Della Vecchia}
@@ -267,33 +268,16 @@ Technische Universit\"at Berlin
     Every polytope is the convex hull of it's vertices
   \end{theorem}
   \begin{remark}
-    Finding an algorithm for going between these descriptions is what will be
-    interested in, and is what is meant by a convex hull computation.
+    We call $P =  \text{conv}(v_1, \dots, v_m)$ a $\mathcal{V}$-description, and
+    we call $P =  \cap_{i=1}^kH_i^+$ an $\mathcal{H}$-description. An algorithm
+    that finds a $\V$-description from an $\mathcal{H}$-description is referred to as a convex
+    hull computation. We call the pair ${\V, \mathcal{H} }$ a double description of $P$.
   \end{remark}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Noteable Example}
-  \begin{defn}
-    The \emph{moment curve} $\mu_n \to \mathbb{R}^n$ is defined as
-    $\tau \to (\tau, \dots, \tau^n)$. A polytope is called \emph{cyclic}
-    if it is the convex hull of points on the moment curve.
-  \end{defn}
-  \begin{remark}
-    Notice that since any $n + 1$ vertices lie in a distinct supporting
-    hyperplane, that the number of facets is maximal given a fixed point
-    of number vertices.
-  \end{remark}
-
-  \begin{center}
-    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/cyclic}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Polarity and Duality}
   \begin{defn}
@@ -325,7 +309,11 @@ Technische Universit\"at Berlin
     \end{itemize}
   \end{theorem}
   \begin{remark}
-    
+    If $0 \in \text{int} P$, where $P = \bigcap_{i=1}^m H_i^+$, then we can write
+    $H_i^+ = [1:-h_1^{(i)}: \dots: -h_n^{(i)}]$, then $P^o = \text{conv}(h_1, \dots, h_n)$.
+    So, finding a half-space description of $P^o$ will give us the vertices of $P$.
+    So we can reduce the problem of finding a $\V$-description from an $\mathcal{H}$-description
+    to a convex hull computation. 
   \end{remark}
   
 \end{frame}
@@ -344,12 +332,12 @@ Technische Universit\"at Berlin
     Output: Finite set of half-spaces $H_i^+$ such that $\text{conv}(V) =
     \cap_{i=1}^m H_i^+$
     \begin{algorithmic}[1]
-      \STATE $\mathcal{H}$ \leftarrow $\emptyset$
-      \FOR{each $n$ element subset $W \subset V$ with dimension aff$W$}
+      \STATE $\mathcal{H} \leftarrow \emptyset$
+      \FOR{each $n$ element subset $W \subset V$ with dimension aff$W = n-1$ }
       \STATE $H \leftarrow \text{aff} W$
       \IF{$V \subset H^+$}
-      \STATE $\mathcal{H}$ \leftarrow $\mathcal{H} \cup H^+$
-      \ELSE $\mathcal{H}$ \leftarrow $\mathcal{H} \cup H^-$
+      \STATE $\mathcal{H} \leftarrow \mathcal{H} \cup H^+$
+      \ELSE $\mathcal{H} \leftarrow \mathcal{H} \cup H^-$
       \ENDIF
       \ENDFOR
       \RETURN $\mathcal{H}$
@@ -360,12 +348,34 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{A Worst Case Example}
+  \begin{defn}
+    The \emph{moment curve} $\mu_n \to \mathbb{R}^n$ is defined as
+    $\tau \to (\tau, \dots, \tau^n)$. A polytope is called \emph{cyclic}
+    if it is the convex hull of points on the moment curve.
+  \end{defn}
+  \begin{remark}
+    Notice that since any $n + 1$ vertices lie in a distinct supporting
+    hyperplane, that the number of facets is maximal given a fixed point
+    of number vertices. So the worst case for any convex hull computation
+    is $\Theta(m^{\lfloor n / 2 \rfloor }})$.
+  
+  \end{remark}
+
+  \begin{center}
+    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/cyclic}
+  \end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{A Partitioning Lemma}
   \begin{lemma}
     Let $V_0, V_+, V_-$ be the partition of a point set $V$,defined by
     $V_0 = V \cap H, V_+ = V \cap H^+ \setminus H, V_- = V \cap H^- \setminus H$
     where $H$ is a hyperplane. Then we have $P \cap H =
-    \text{conv}(V_0 \cup V_+ \cup \set{[v, w] \cap H \mid v \in V_+ , w \in V_-})
+    \text{conv}(V_0 \cup V_+ \cup \set{[v, w] \cap H \mid v \in V_+ , w \in V_-})$
   \end{lemma}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -419,7 +429,13 @@ Technische Universit\"at Berlin
       \newblock Polyhedral and algebraic methods in computational geometry
       \newblock London: Springer
 
-    \end{thebibliography}
+    \bibitem[chulls 2017]{p1} Assarf, Benjamin and Gawrilow, Ewgenij and Herr, Katrin and Joswig, Michael and Lorenz, Benjamin and Paffenholz, Andreas and Rehn, Thomas, (2017)
+      \newblock Computing convex hulls and counting integer points with \texttt{polymake}
+      \newblock Mathematical Programming Computation 9(1), 1--38 
+
+
+
+  \end{thebibliography}
   }
 \end{frame}
 
