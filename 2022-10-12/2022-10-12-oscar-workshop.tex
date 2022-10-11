@@ -204,6 +204,25 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{}
+  \begin{defn}
+    \begin{itemize}
+    \item Let $(x_0, \dots x_n) \in \mathbb{K}^{n+1} \setminus 0$, and let $x := \text{lin}{(x_0, \dots, x_n)}$,
+      for any element of $x \setminus 0$ we call $(x_0: \dots :x_n)$ \emph{homegeneous coordinates} for $x$,
+      with $(y_0: \dots y_n) \sim (x_0: \dots x_n)$ if $\lambda (x_0, \dots, x_n) = (y_0, \dots, y_n)$ with $\lambda \neq 0$, we call equivalence classes with a the first coefficient $0$ \emph{ideal points}.
+    \item Given a linear transformation $A \in \text{GL}(\mathbb{K}, n+1)$ we call the induced transformation on homogeneous coordinates a \emph{projective transformation}.
+    \item We call a transformation \emph{affine} if it sends ideal points to ideal points.
+    \end{itemize}
+  \end{defn}
+  \begin{center}
+    \includegraphics[width=.70\textwidth, height=0.3\textheight]{images/projectivize}
+  \end{center}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{Polytopes}
   \begin{defn}
     A set $P \subset \mathbb{R}^n$ is a \emph{polytope} if it can be described
@@ -246,8 +265,8 @@ Technische Universit\"at Berlin
 
 \begin{frame}[fragile]{Half-spaces}
   \begin{defn}
-    Given an affine hyperplane $H \subset \mathbb{R}^n$ given in homegeneous
-    coordinates as $[a_0, \dots, a_n]$, define the \emph{positive halfspace}
+    Given an affine hyperplane $H \subset \mathbb{R}^n$ given in homogeneous
+    coordinates as $[a_0 : \dots : a_n]$, define the \emph{positive halfspace}
     $H^+$ as $\{x \in \mathbb{R}^n \mid a_0 + a_1x_1 + \dots + a_nx_n \geq 0 \}$.
   \end{defn}
 
@@ -349,6 +368,10 @@ Technische Universit\"at Berlin
     \vdots & \vdots & \vdots & \ddots & \vdots\\
     0 & 0 & 0 & \dots & 1
   \end{pmatrix}
+
+  \begin{center}
+    $B: E_1^+ \cap \dots \cap E_n^+  \to E_1^+ \cap \dots \cap E_n^+ \cap [1 : -1 : \dots : -1]^+$
+    \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -368,14 +391,6 @@ Technische Universit\"at Berlin
     \end{center}
     where $V$, $R$ are finite.
   \end{theorem}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{}
-  blah
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -552,7 +567,7 @@ Technische Universit\"at Berlin
       I_{ij}=
       \begin{cases}
         1 & \text{if } w^{(j)} \in H_i = \partial H_i^+, i.e., h^{(j)} (w^{(i)}) = 0\\
-        0 & \text{if } \text{otherwise}
+        0 &  \text{otherwise}
       \end{cases}
     \end{equation}
   \end{defn}
