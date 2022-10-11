@@ -188,12 +188,17 @@ Technische Universit\"at Berlin
     \emph{affine hull} is the set of all such combinations.
   \end{defn}
 
-    \begin{defn}
+  \begin{defn}
     Let $A \subset \mathbb{R}^n$, a \emph{convex combination} of points in $A$
     is an affine combination $\sum_{i=1}^m \lambda_m a_m$ where $\lambda_m \geq
     0$. The  \emph{convex hull} is the set of all such combinations.
   \end{defn}
 
+  \begin{defn}
+    Let $A \subset \mathbb{R}^n$, a \emph{postive combination} of points in $A$
+    is a linear combination $\sum_{i=1}^m \lambda_m a_m$ where $\lambda_m \geq
+    0$. The  \emph{positive hull} is the set of all such combinations.
+  \end{defn}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -270,8 +275,8 @@ Technische Universit\"at Berlin
   \begin{remark}
     We call $P =  \text{conv}(v_1, \dots, v_m)$ a $\mathcal{V}$-description, and
     we call $P =  \cap_{i=1}^kH_i^+$ an $\mathcal{H}$-description. An algorithm
-    that finds a $\V$-description from an $\mathcal{H}$-description is referred to as a convex
-    hull computation. We call the pair ${\V, \mathcal{H} }$ a double description of $P$.
+    that finds a $V$-description from an $\mathcal{H}$-description is referred to as a convex
+    hull computation. We call the pair ${V, \mathcal{H} }$ a double description of $P$.
   \end{remark}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -312,7 +317,7 @@ Technische Universit\"at Berlin
     If $0 \in \text{int} P$, where $P = \bigcap_{i=1}^m H_i^+$, then we can write
     $H_i^+ = [1:-h_1^{(i)}: \dots: -h_n^{(i)}]$, then $P^o = \text{conv}(h_1, \dots, h_n)$.
     So, finding a half-space description of $P^o$ will give us the vertices of $P$.
-    So we can reduce the problem of finding a $\V$-description from an $\mathcal{H}$-description
+    So we can reduce the problem of finding a $V$-description from an $\mathcal{H}$-description
     to a convex hull computation. 
   \end{remark}
   
@@ -321,15 +326,61 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Polyhedra}
+  \begin{defn}
+    $P \subset \R^n$ is called a \emph{polyhedron} if it can be described by a finite
+    intersection of closed affine half-spaces. A polyhedron that doesn't contain an affine
+    line is called \emph{pointed}.
+  \end{defn}
+
+  \begin{theorem}
+    Every pointed polyhedron is projectively equivalent to a polytope. 
+  \end{theorem}
+
+  add matrices for the transformations
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Description of Polyhedra}
+  \begin{defn}
+    Given two sets $X, Y \subset \R^n$, the \emph{Minkowski Sum}  is defined as
+    $X + Y = \set{x + y \mid x \in X, y \in Y}
+  \end{defn}
+
+  \begin{theorem}
+    Every polyhedron $P$ can be expressed as the Minkowski sum
+    \begin{center}
+      $P$ = conv$V$ + pos$R$
+    \end{center}
+    where $V$, $R$ are finite.
+  \end{theorem}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{}
+  blah
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Algorithms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{A basic Algorithm}
+\begin{frame}[fragile]{A Trivial Algorithm}
   
   \begin{algorithm}[H]
-    Input: Finite point set $V \subset \R^n$ with dimension of $\text{aff}V = n$\\
-    Output: Finite set of half-spaces $H_i^+$ such that $\text{conv}(V) =
+    \textbf{Input:} Finite point set $V \subset \R^n$ with dimension of $\text{aff}V = n$\\
+    \textbf{Output:} Finite set of half-spaces $H_i^+$ such that $\text{conv}(V) =
     \cap_{i=1}^m H_i^+$
     \begin{algorithmic}[1]
       \STATE $\mathcal{H} \leftarrow \emptyset$
@@ -354,11 +405,10 @@ Technische Universit\"at Berlin
     $\tau \to (\tau, \dots, \tau^n)$. A polytope is called \emph{cyclic}
     if it is the convex hull of points on the moment curve.
   \end{defn}
+    
   \begin{remark}
     Notice that since any $n + 1$ vertices lie in a distinct supporting
-    hyperplane, that the number of facets is maximal given a fixed point
-    of number vertices. So the worst case for any convex hull computation
-    is $\Theta(m^{\lfloor n / 2 \rfloor }})$.
+    hyperplane, each facet is an $n$-simplex. Hence we have many facets $\Theta(m^{\lfloor n / 2 \rfloor })$, and cannot expect an algorithm that is polynomial in $n$ and $m$.
   
   \end{remark}
 
@@ -372,26 +422,35 @@ Technische Universit\"at Berlin
 
 \begin{frame}[fragile]{A Partitioning Lemma}
   \begin{lemma}
-    Let $V_0, V_+, V_-$ be the partition of a point set $V$,defined by
-    $V_0 = V \cap H, V_+ = V \cap H^+ \setminus H, V_- = V \cap H^- \setminus H$
-    where $H$ is a hyperplane. Then we have $P \cap H =
-    \text{conv}(V_0 \cup V_+ \cup \set{[v, w] \cap H \mid v \in V_+ , w \in V_-})$
+    Let $P = \text{conv}V$, and let $P' = P \cap H^+$, where $H$ is a hyperplane. \\
+    Let $V_0, V_+, V_-$ be the partition of a point set $V$, defined by
+    \begin{center}
+      $V_0 = V \cap H, V_+ = V \cap H^+ \setminus H, V_- = V \cap H^- \setminus H$
+    \end{center}
+    where $H$ is a hyperplane. Then we have
+    \begin{center}
+      $P' \cap H^+ =
+      \text{conv}(V_0 \cup V_+ \cup \set{[v, w] \cap H \mid v \in V_+ , w \in V_-})$
+      \end{center}
   \end{lemma}
+    \begin{center}
+    \includegraphics[width=.50\textwidth, height=0.4\textheight]{images/lemma}
+  \end{center}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{A Basic Algorithm }
   \begin{algorithm}[H]
-    Input: \\
-    Output:
+    \textbf{Input:} A set of affine half-spaces $\mathcal{H} = \set{H_1^+, \dots, H_m^+}$
+    in $\R^n$ such that $P = \cap_{i=1}^m H_i^+$ is bounded and full dimensional
+    and $P_{n+1} = \cap_{i=1}^{n+1}H_i^+$ is an $n$-simplex\\
+    \textbf{Output:} Point set $V$ such that $\text{conv}V = P$
     \begin{algorithmic}[1]
-      \FOR{$i=1$ to $N$}
-      \FOR{$j=1$ to $JJJJ$}
-      \STATE $energy[i*JJJ+j] =$ 
-      $ interpolate(AAA[i*JJJ+j], ZZZ)$
-      \ENDFOR
+      \STATE $V_{n+1} \leftarrow$ set of vertices of $P_{n+1}$
+      \FOR{$k=n+2$ to $m$}
+      \STATE Construct $V_k = P_k = P_{k-1} \cap H_k^+$ as in the lemma
       \ENDFOR
     \end{algorithmic}
   \end{algorithm}
@@ -401,7 +460,84 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{}
+  \begin{itemize}
+  \item The basic algorithm is an improvement on the trivial one.
+  \item The basic algorithm uses points that aren't vertices.
+  \item At each iteration we may have that the points increase quadratically.
+  \item Improvements can be made by noticing that vertices of $P_k$ which are not vertices of $P_{k-1}$ are generated by edges of $P_{k-1}$ that intersect the hyperplane $H_k$
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Edge Detecting Lemma }
+  \begin{defn}
+    Let $W \subset V$ be a point set and define $\mathcal{H}(W) = \set{H \mid H = \partial H^+ \text{ for } H \in \mathcal{H^+} \text{ and } W \subset H}$. For simplicity we denote $H(\set{v, w})$ as $H(v, w)$
+  \end{defn}
+  \begin{lemma}
+    Let $(V, \mathcal{H})$ be a double description of an $n$-polytope $P$. Given two distinct points $v, w \in V$ the set aff$\set{v, w} \cap P$ is an edge of $P$ if and only if
+    \begin{center}
+      $\cap \mathcal{H}(v, w) = \text{aff}\set{v, w}$.
+    \end{center}
+
+    
+    When $v, w$ are vertices then
+    \begin{center}
+      conv$\set{v, w} = P \cap (\cap \mathcal{H}(v, w))$
+    \end{center}
+  \end{lemma}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{}
   blah
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{An Improved Algorithm}
+  \textbf{Input:} A matrix $\mathcal{H} \in \R^{k\times(n+1)}$ with row vectors $h^{(1)}, \dots , h^{(k)}$ such that $Q = \set{x \in \R^{n+1} \mid \mathcal{H}x \geq 0}$ and $Q_{n+1} = \set{x \in \R^{n+1} \mid h^{(1)}x \geq 0, \dots, h^{(n)}x \geq 0 }$ is a simplicial cone\\
+    \textbf{Output:} A set $W$ of vectors such that pos$W = Q$
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Algorithm Continued}
+    \begin{algorithmic}[1]
+      \STATE Find $W_{n+1} \in \R^{n+1 \times n+1}$ such that it's columns generate $Q$
+      \FOR{$i=n+2$ to $k$}
+      \STATE Create $W_{i-1}^+$ from the columns of $W_{i-1}$ that lie on the positive side of $h^{(i)}$ and create $W_{i-1}^_$ from the columns that lie on negative side.
+
+      \IF{$W_{i-1}^- = \emptyset$}
+      \STATE $W_i \leftarrow W_{i-1}$
+
+      \ELSE
+      \STATE $X \leftarrow \emptyset$
+
+      \FOR{Each pair (w, w') of columns of $W_{i-1}^+$ and $W_{i-1}^-$}
+      \IF{rank \mathcal{H}_{i-1}(w, w') = n-1}
+      \STATE choose $x$ as a generator of the kernel of the matrix $\mathcal{H'}_{i-1}(w, w')$ that consists of the rows of $\mathcal{H}_{i-1}(w, w')$ and $h^{(i)}$.
+
+      \STATE $X \leftarrow X \cup \set{x}$
+      \ENDIF
+      \STATE Let $W_i$ be the matrix consisting of the columns of $W_{i-1}$ without the columns of $W_{i-1}^-$ and augmented by the column vectors from $X$.
+      
+      \ENDIF
+      
+      \ENDFOR
+      \RETURN W_k
+    \end{algorithmic}
+  \end{algorithm}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
