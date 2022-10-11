@@ -229,7 +229,7 @@ Technische Universit\"at Berlin
     Given an n-polytope $P \subset \mathbb{R}^n$, the intersection $P \cap H$
     with a supporting hyperplane $H$ is called a \emph{proper face}. A face of
     dimension $k$ is called a $k$ face, a 0-face is a vertex, 1-face an edge,
-    n-2 face a ridge and an n-1 face a facet.
+    $n-2$-face a ridge and an $n-1$-face a facet.
   \end{defn}
   \begin{remark}
     Proper faces are also polytopes with respect to their affine hull.
@@ -337,7 +337,18 @@ Technische Universit\"at Berlin
     Every pointed polyhedron is projectively equivalent to a polytope. 
   \end{theorem}
 
-  add matrices for the transformations
+  $T =$ \begin{pmatrix}
+    1 & 0 & \dots & 0\\
+    h_0^{(1)} & h_1^{(1)}  & \dots  & h_n^{(1)} \\
+    & \dots & \dots & \\
+    h_0^{(1)} & h_1^{(n)} & \dots & h_n^{(n)} 
+  \end{pmatrix}  $B = $ \begin{pmatrix}
+    1 & 1 & 1 & \dots & 1\\
+    0 & 1  & 0 & \dots  & 0 \\
+    0 & 0 & 1 & \dots & 0\\
+    \vdots & \vdots & \vdots & \ddots & \vdots\\
+    0 & 0 & 0 & \dots & 1
+  \end{pmatrix}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -494,8 +505,14 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
-  blah
+\begin{frame}[fragile]{Finding a Data Structure}
+  \begin{itemize}
+  \item We would like to find the right data structure that allows us to take
+    advantage of lemma
+  \item We would like to change finding dimension to finding the rank of a matrix
+  \item Using homogeneous coordinates allows us to change from affine space to a linear space
+  \item We will need to extend convex hull problem to pointed polyhedron
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -503,59 +520,109 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{An Improved Algorithm}
-  \textbf{Input:} A matrix $\mathcal{H} \in \R^{k\times(n+1)}$ with row vectors $h^{(1)}, \dots , h^{(k)}$ such that $Q = \set{x \in \R^{n+1} \mid \mathcal{H}x \geq 0}$ and $Q_{n+1} = \set{x \in \R^{n+1} \mid h^{(1)}x \geq 0, \dots, h^{(n)}x \geq 0 }$ is a simplicial cone\\
-    \textbf{Output:} A set $W$ of vectors such that pos$W = Q$
+\begin{frame}[fragile]{Homogenizing}
+  We now let $P$ be an $n$-dimensional point polyhedron and homogenize by considering
+  \begin{center}
+    $Q  = \set{(\lambda, \lambda x) \mid x \in P}$
+  \end{center}
+  We know $P = \text{conv}V + \text{pos}R$, and so $Q$ can be described as
+  \begin{center}
+    $Q = \text{pos}(\set{(1, v) \mid v \in V} \cup \set{(0, r) \mid r \in R})$
+  \end{center}
+  \begin{defn}
+    \begin{itemize}
+      \item We define $W$ to be the set of vectors that generate $Q$, and we store $W$
+    as an $(n+1) \times m$ matrix, where the columns are the vectors $w^{(i)}$.\\
+    \item We define the $k \times(n+1)$ matrix $\mathcal{H}$ to be the matrix whose
+      rows are the linear half-spaces $h^{(i)}$.
+    \end{itemize}
+  \end{defn}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Algorithm Continued}
-    \begin{algorithmic}[1]
-      \STATE Find $W_{n+1} \in \R^{n+1 \times n+1}$ such that it's columns generate $Q$
-      \FOR{$i=n+2$ to $k$}
-      \STATE Create $W_{i-1}^+$ from the columns of $W_{i-1}$ that lie on the positive side of $h^{(i)}$ and create $W_{i-1}^_$ from the columns that lie on negative side.
+\begin{frame}[fragile]{Incidence Matrix}
+  \begin{defn}
+    Let $(W, \mathcal{H})$ be a double description of a pointed cone $Q \subset \R^{n+1}$
+    with $W \in \R^{(n+1) \times m}$ and $\mathcal{H} \in \R^{k \times (n+1)}$. The \emph{incidence matrix} $I(W, \mathcal{H})$ is defined as
+    
+    \begin{equation}
+      I_{ij}=
+      \begin{cases}
+        1 & \text{if } w^{(j)} \in H_i = \partial H_i^+, i.e., h^{(j)} (w^{(i)}) = 0\\
+        0 & \text{if } \text{otherwise}
+      \end{cases}
+    \end{equation}
+  \end{defn}
+  \begin{remark}
+    We use $I(W, \mathcal{H})$ to quickly determine the set $\mathcal{H}(w^{(s)}, w^{(t)})$. Then we can calculate the dimension of the intersection of the half-spaces as $n+1$ minus the rank of the submatrix $\mathcal{H}(w^{(s)}, w^{(t)})$
+  \end{remark}
+\end{frame}
 
-      \IF{$W_{i-1}^- = \emptyset$}
-      \STATE $W_i \leftarrow W_{i-1}$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-      \ELSE
-      \STATE $X \leftarrow \emptyset$
 
-      \FOR{Each pair (w, w') of columns of $W_{i-1}^+$ and $W_{i-1}^-$}
-      \IF{rank \mathcal{H}_{i-1}(w, w') = n-1}
-      \STATE choose $x$ as a generator of the kernel of the matrix $\mathcal{H'}_{i-1}(w, w')$ that consists of the rows of $\mathcal{H}_{i-1}(w, w')$ and $h^{(i)}$.
 
-      \STATE $X \leftarrow X \cup \set{x}$
-      \ENDIF
-      \STATE Let $W_i$ be the matrix consisting of the columns of $W_{i-1}$ without the columns of $W_{i-1}^-$ and augmented by the column vectors from $X$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Current State of Convex Hull Computations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Bad News}
+  \begin{itemize}
+  \item It's hard.
+  \item No globally optimal algorithm is known.
+  \item Difficult to say which algorithm works best on what input.
+  \item It is not known if there exists a polynomial total time algorithm (polynomial in input and output)
+  \item No incremental algorithm can run in polynomial total time
+  \end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Good News}
+  State of the art algorithms are available in \texttt{polymake}, hence OSCAR.
+  Here is a short list on noteable algorithms 
+  \begin{itemize}
+  \item Beneath and beyond, ``beneath\_beyond'' (incremental).
+  \item Double description, ``cdd'', ``ppl''(incremental).
+  \item Pyramid Decomposition, ``libnormaliz'' (incremental).
+  \item Reverse Search ``lrs''.
       
-      \ENDIF
-      
-      \ENDFOR
-      \RETURN W_k
-    \end{algorithmic}
-  \end{algorithm}
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Rules of Thumb}
+  \begin{itemize}
+  \item If you don't know anything try double description.
+  \item If you expect the output to be extremely large and if partial information is
+    useful.
+  \item Use double description when looking for facets of $0 / 1$ polytopes.
+  \item Beneath and beyond often behaves well on random input.
+  \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Remarks on Implementations}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{}
-  blah
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+  \begin{center}
+    Thank you!
+  \end{center}
+\end{frame}
 
 \begin{frame}
   \frametitle{References}
