@@ -292,7 +292,7 @@ Technische Universit\"at Berlin
     Every polytope is the convex hull of it's vertices
   \end{theorem}
   \begin{remark}
-    We call $P =  \text{conv}(v_1, \dots, v_m)$ a $\mathcal{V}$-description, and
+    We call $P =  \text{conv}(v_1, \dots, v_m)$ a $V$-description, and
     we call $P =  \cap_{i=1}^kH_i^+$ an $\mathcal{H}$-description. An algorithm
     that finds a $V$-description from an $\mathcal{H}$-description is referred to as a convex
     hull computation. We call the pair ${V, \mathcal{H} }$ a double description of $P$.
@@ -414,7 +414,10 @@ Technische Universit\"at Berlin
       \STATE $H \leftarrow \text{aff} W$
       \IF{$V \subset H^+$}
       \STATE $\mathcal{H} \leftarrow \mathcal{H} \cup H^+$
-      \ELSE $\mathcal{H} \leftarrow \mathcal{H} \cup H^-$
+      \ELSE
+      \IF{$V \subset H^-$}
+      \STATE$\mathcal{H} \leftarrow \mathcal{H} \cup H^-$
+      \ENDIF
       \ENDIF
       \ENDFOR
       \RETURN $\mathcal{H}$
@@ -476,7 +479,7 @@ Technische Universit\"at Berlin
     \begin{algorithmic}[1]
       \STATE $V_{n+1} \leftarrow$ set of vertices of $P_{n+1}$
       \FOR{$k=n+2$ to $m$}
-      \STATE Construct $V_k = P_k = P_{k-1} \cap H_k^+$ as in the lemma
+      \STATE Construct $V_k$ such that $\text{conv}V_k = P_k = P_{k-1} \cap H_k^+$ as in the lemma
       \ENDFOR
     \end{algorithmic}
   \end{algorithm}
