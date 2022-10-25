@@ -183,21 +183,23 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Definition}
+\begin{frame}[fragile]{Convex Hull Definition}
   \begin{defn}
     A set is $S$ is \emph{convex} if for any two points $p_1, p_2 \in S$ the line
     between them lies entirely in $S$. The \emph{convex hull} of a finite point set
     $V$ is the smallest convex set which contains $V$.
   \end{defn}
 
-  example images
+  \begin{figure}
+    \includegraphics[width=.4\textwidth, height=0.25\textheight]{images/convex-concave}
+  \end{figure}
   
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Convex Hull descriptions}
+\begin{frame}[fragile]{Convex Hull Descriptions}
   Convex hulls can be described uniquely in multiple ways
 
   \begin{itemize}
@@ -208,12 +210,16 @@ Technische Universit\"at Berlin
   These properties make convex hulls computationally ``nice''. That is, they are
   easy for a computer to describe them and there exists algorithms to go between
   these descriptions. This cannot be said about most other geometric structures.
+  \begin{figure}
+    \includegraphics[width=.4\textwidth, height=0.4\textheight]{images/square}
+  \end{figure}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Where to find convex hulls}
+\begin{frame}[fragile]{Where to Find Convex Hulls}
   Convex hulls play a very important role in computational geometry hence scientific
   computations. 
 
@@ -221,161 +227,39 @@ Technische Universit\"at Berlin
   \item Optimization over a set of linear constraints.
   \item Intersections of bezier curves.
   \item The state space of any quantum system.
-  \item Graphics.
+  \item Approximations of spheres.
   \end{itemize}
 
-  image of bezier with control points, and maybe a sphere?
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}[fragile]{}
+  \begin{figure}
+    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/bezier}
+    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/sphere}
+  \end{figure}
 
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Polarity and Duality}
-  \begin{theorem}
-    Let $P \subset \R^n$ be an $n$ polytope with $0 \in \text{int}P$ then
-    \begin{itemize}
-    \item $(P^o)^o = P$
-    \item For any point $p$ on the boundary of $P$, $H = \set{x \in \R^n
-      \mid \langle p, x \rangle = 1}$ is a supporting hyperplane of $P^o$
-    \end{itemize}
-  \end{theorem}
-  \begin{remark}
-    If $0 \in \text{int} P$, where $P = \bigcap_{i=1}^m H_i^+$, then we can write
-    $H_i^+ = [1:-h_1^{(i)}: \dots: -h_n^{(i)}]$, then $P^o = \text{conv}(h_1, \dots, h_n)$.
-    So, finding a half-space description of $P^o$ will give us the vertices of $P$.
-    So we can reduce the problem of finding a $\V$-description from an $\mathcal{H}$-description
-    to a convex hull computation. 
-  \end{remark}
-  
-\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{What Can Go Wrong?}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Algorithms}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{A basic Algorithm}
-  
-  \begin{algorithm}[H]
-    Input: Finite point set $V \subset \R^n$ with dimension of $\text{aff}V = n$\\
-    Output: Finite set of half-spaces $H_i^+$ such that $\text{conv}(V) =
-    \cap_{i=1}^m H_i^+$
-    \begin{algorithmic}[1]
-      \STATE $\mathcal{H} \leftarrow \emptyset$
-      \FOR{each $n$ element subset $W \subset V$ with dimension aff$W = n-1$ }
-      \STATE $H \leftarrow \text{aff} W$
-      \IF{$V \subset H^+$}
-      \STATE $\mathcal{H} \leftarrow \mathcal{H} \cup H^+$
-      \ELSE $\mathcal{H} \leftarrow \mathcal{H} \cup H^-$
-      \ENDIF
-      \ENDFOR
-      \RETURN $\mathcal{H}$
-    \end{algorithmic}
-  \end{algorithm}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{A Worst Case Example}
-  \begin{defn}
-    The \emph{moment curve} $\mu_n \to \mathbb{R}^n$ is defined as
-    $\tau \to (\tau, \dots, \tau^n)$. A polytope is called \emph{cyclic}
-    if it is the convex hull of points on the moment curve.
-  \end{defn}
-  \begin{remark}
-    Notice that since any $n + 1$ vertices lie in a distinct supporting
-    hyperplane, that the number of facets is maximal given a fixed point
-    of number vertices. So the worst case for any convex hull computation
-    is $\Theta(m^{\lfloor n / 2 \rfloor }})$.
-  
-  \end{remark}
-
-  \begin{center}
-    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/cyclic}
-  \end{center}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{A Partitioning Lemma}
-  \begin{lemma}
-    Let $V_0, V_+, V_-$ be the partition of a point set $V$,defined by
-    $V_0 = V \cap H, V_+ = V \cap H^+ \setminus H, V_- = V \cap H^- \setminus H$
-    where $H$ is a hyperplane. Then we have $P \cap H =
-    \text{conv}(V_0 \cup V_+ \cup \set{[v, w] \cap H \mid v \in V_+ , w \in V_-})$
-  \end{lemma}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{}
-  \begin{algorithm}[H]
-    Input: \\
-    Output:
-    \begin{algorithmic}[1]
-      \FOR{$i=1$ to $N$}
-      \FOR{$j=1$ to $JJJJ$}
-      \STATE $energy[i*JJJ+j] =$ 
-      $ interpolate(AAA[i*JJJ+j], ZZZ)$
-      \ENDFOR
-      \ENDFOR
-    \end{algorithmic}
-  \end{algorithm}
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{Data Types}
   blah
 \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Remarks on Implementations}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{A Constructed to Fail Example}
   blah
 \end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-  \frametitle{References}
-  \footnotesize{
-    \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-    \bibitem[Joswig, Thorsten, 2013]{p1} Michael Joswig, Thorsten Theobald, (2013)
-      \newblock Polyhedral and algebraic methods in computational geometry
-      \newblock London: Springer
-
-    \bibitem[chulls 2017]{p1} Assarf, Benjamin and Gawrilow, Ewgenij and Herr, Katrin and Joswig, Michael and Lorenz, Benjamin and Paffenholz, Andreas and Rehn, Thomas, (2017)
-      \newblock Computing convex hulls and counting integer points with \texttt{polymake}
-      \newblock Mathematical Programming Computation 9(1), 1--38 
-
-
-
-  \end{thebibliography}
-  }
+\begin{frame}[fragile]{A Real World Example}
+  blah
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
