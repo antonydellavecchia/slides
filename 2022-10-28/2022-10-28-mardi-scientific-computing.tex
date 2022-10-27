@@ -152,10 +152,14 @@
 \title{The Importance of Symbolic Data Types}
 %\newtheorem*{example}{Example}
 \institute[]{
-Technische Universit\"at Berlin
+Technische Universit\"at Berlin (MaRDI TA1 Computer Algebra)
 }
 \date{
 2022-10-28
+}
+
+\logo{
+  \includegraphics[width=2cm]{images/mardi-logo.png}
 }
 
 
@@ -167,6 +171,17 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Expect the Unexpected}
+  ``This was unexpected because while I expected numerical error could be possible in the constraints'' . . . `` I did not expect a completely incorrect result''
+  \begin{flushright}- Github User
+    \end{flushright}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{Overview}
   \begin{tcolorbox}
     \tableofcontents
@@ -187,11 +202,13 @@ Technische Universit\"at Berlin
   \begin{defn}
     A set is $S$ is \emph{convex} if for any two points $p_1, p_2 \in S$ the line
     between them lies entirely in $S$. The \emph{convex hull} of a finite point set
-    $V$ is the smallest convex set which contains $V$.
+    $V$ is the intersection of all convex sets which contains $V$.
   \end{defn}
 
   \begin{figure}
     \includegraphics[width=.4\textwidth, height=0.25\textheight]{images/convex-concave}
+    \caption{Weisstein, Eric W. "Concave." From MathWorld--A Wolfram Web Resource. \url{mathworld.wolfram.com/Concave.html}}
+
   \end{figure}
   
 \end{frame}
@@ -209,7 +226,7 @@ Technische Universit\"at Berlin
 
   These properties make convex hulls computationally ``nice''. That is, they are
   easy for a computer to describe them and there exists algorithms to go between
-  these descriptions. This cannot be said about most other geometric structures.
+  these descriptions.
   \begin{figure}
     \includegraphics[width=.4\textwidth, height=0.4\textheight]{images/square}
   \end{figure}
@@ -220,19 +237,17 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Where to Find Convex Hulls}
-  Convex hulls play a very important role in computational geometry hence scientific
-  computations. 
+  Convex hulls play a very important role in computational geometry and arise naturally in scientific computations. 
 
   \begin{itemize}
-  \item Optimization over a set of linear constraints.
+  \item Optimization over a set of linear constraints (simplex algorithm).
   \item Intersections of bezier curves.
   \item The state space of any quantum system.
-  \item Approximations of spheres.
+  \item Approximations of convex bodies.
   \end{itemize}
 
   \begin{figure}
     \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/bezier}
-    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/sphere}
   \end{figure}
 
 \end{frame}
@@ -241,25 +256,126 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{What Can Go Wrong?}
+\section{Convex Hulls Gone Wrong}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Data Types}
-  blah
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{A Constructed to Fail Example}
-  blah
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{frame}[fragile]{A Real World Example}
-  blah
+  The following example was taken from an open github issue from CDDLib and can be found here.
+  \url{https://github.com/cddlib/cddlib/issues/67}
+
+  \begin{figure}
+    \includegraphics[width=.40\textwidth, height=0.4\textheight]{images/real-example}
+  \end{figure}
+
+  \begin{itemize}
+  \item The red points were returned from the convex hull computation.
+  \item The blue points were missing.
+  \item Although finding the right precision may help, it is not apriori clear what that precision is.
+  \end{itemize}
+  
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Constructed Example Part 1}
+  \begin{defn}
+    The \emph{moment curve} $\mu_n \to \mathbb{R}^n$ is defined as
+    $\tau \to (\tau, \dots, \tau^n)$. A \emph{cyclic polytope}
+    is the convex hull of points on the moment curve.
+  \end{defn}
+    
+  \begin{remark}
+    Notice that since any $n + 1$ vertices lie in a distinct supporting
+    hyperplane, each facet is an $n$-simplex. 
+  
+  \end{remark}
+
+  \begin{center}
+    \includegraphics[width=.30\textwidth, height=0.4\textheight]{images/cyclic}
+  \end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Constructed Example Part 2}
+  \includegraphics[width=.90\textwidth, height=0.4\textheight]{images/constructed-1}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Constructed Example Part 3}
+  \includegraphics[width=.90\textwidth, height=0.9\textheight]{images/constructed-2}
+
+  This code was run in \texttt{polymake}.
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Oscar and Data Types}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Exact Computations}
+  Possible alternatives to working with floating points would be to consider these
+  data types.
+  
+  \begin{itemize}
+  \item rationals
+  \item multi precision float (integers, rationals, complex numbers)
+  \item arb, acb (arbitrary real ball, arbitrary complex ball)
+  \item nmod, nf\_elem, ...
+  \item fmpz\_poly, fmpq\_mpoly
+  \item ...
+  \end{itemize}
+
+  Working with these types is possible within OSCAR, and we are close to releasing
+  a version where computing convex hulls over ordered fields (i.e. finite extensions of $\mathbb{Q}$). 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Shift of Perspective on Mathematical Computations}
+  \begin{itemize}
+    \item The previous slide gives a glimpse into what MaRDI TA1 (Computer Algebra) is concerned with.
+    \item The biggest tradeoff is speed ( a lot time goes into multiplication).
+    \item The focus turns to finding the combinatorics and storing the data.
+    \item Finding a data format has been a first step. (IR)
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{End}
+  \begin{center}
+    Thank You!
+  \end{center}
+  \footnotesize{
+    \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+    \bibitem[polymake]{p1} Ewgenij Gawrilow and Michael Joswig
+      \newblock polymake: a framework for analyzing convex polytopes. Polytopes—combinatorics and computation
+      \newblock (Oberwolfach, 1997), 43–73, DMV Sem., 29, Birkhäuser, Basel, 2000. MR1785292 (2001f:52033)
+      
+  \end{thebibliography}
+  }
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
