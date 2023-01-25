@@ -1,0 +1,243 @@
+\documentclass[9pt]{beamer}
+\beamertemplatenavigationsymbolsempty
+\usetheme{Berlin}
+
+\usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
+\usepackage{ulem}
+
+\input binhex
+
+% For code inclusion
+\usepackage{listings}
+\lstset{ breaklines=true}
+\lstset{escapeinside={<@}{@>}}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+
+% Commands
+\newcommand\A{\mathcal{A}}
+\newcommand\cc{\mathcal{C}}
+\newcommand\codim{\mathrm{codim}}
+\newcommand\CP{\mathbb{CP}}
+\newcommand\C{\mathbb{C}}
+\newcommand\D{\mathrm{D}}
+\newcommand\hto{\hookrightarrow}
+\newcommand\I{^{-1}}
+\newcommand\oo{\mathcal{O}}
+\renewcommand\phi{\varphi}
+\newcommand\Pj{\mathbb{P}}
+\newcommand\pow{\mathcal{P}}
+\newcommand\RP{\mathbb{RP}}
+\newcommand\rstr[2]{{\left.#1\right|_{#2}}}
+\newcommand\R{\mathbb{R}}
+\newcommand\V{\mathcal{V}}
+\newcommand\H{\mathcal{H}}
+\newcommand\set[1]{\{#1\}}
+\newcommand\toi{\xrightarrow{\sim}} % category
+\newcommand\Z{\mathbb{Z}}
+
+
+% For drawing
+%% Tikz drawing
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+\usepackage{pgfplots}
+\usepackage{tikz-3dplot}
+\usepackage{tcolorbox}
+\usetikzlibrary{matrix,fit,positioning,shapes.geometric,patterns,backgrounds}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows,calc}
+\tikzstyle{bigbox} = [draw=blue!50, thick, rounded corners, rectangle]
+\tikzset{
+>=stealth'
+}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+%% Software names
+\newcommand\topcom{\texttt{TOPCOM}\xspace}
+\newcommand\mptopcom{\texttt{MPTOPCOM}\xspace}
+\newcommand\mptopcomone{\texttt{MPTOPCOM-1}\xspace}
+\newcommand\mts{\texttt{mts}\xspace}
+\newcommand\mplrs{\texttt{mplrs}\xspace}
+\newcommand\soplex{\texttt{soplex}\xspace}
+\newcommand\openmpi{\texttt{OpenMPI}\xspace}
+\newcommand\mpi{\texttt{MPI}\xspace}
+\newcommand\gfan{\texttt{Gfan}\xspace}
+\newcommand\cddlib{\texttt{cddlib}\xspace}
+\newcommand\polydb{\texttt{PolyDB}\xspace}
+\newcommand\oscar{\texttt{OSCAR}\xspace}
+
+\usepackage{xcolor}
+\definecolor{green}{rgb}{0.1,0.59,0.1}
+\definecolor{yellow}{rgb}{0.8,0.67,0}
+\definecolor{red}{rgb}{0.89,0.1,0.1}
+\definecolor{blue}{rgb}{0.1,0.1,0.89}
+
+\usenavigationsymbolstemplate{}
+
+\usepackage{booktabs}
+% For software citations
+\newcommand{\polymake}{\texttt{po\-ly\-ma\-ke}\xspace}
+\newcommand{\polymakejl}{\texttt{Po\-ly\-ma\-ke.jl}\xspace}
+\newcommand{\singular}{\texttt{Sin\-gu\-lar}\xspace}
+\newcommand\CPP{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\xspace}
+
+\usepackage{amsmath}
+% Newcommands specifically for this article
+\newcommand{\eval}{v}               % evaluation function giving switch table
+\newcommand{\graph}{\Gamma}         % reverse search graph
+\newcommand{\group}{G}              % group acting on point config
+\newcommand{\groupElem}{g}          % element of group
+\newcommand{\jbound}{\psi}          % bound on the number of elements of set J
+\newcommand{\switchTableSize}{\mu}  % index of last non-trivial row in switch table
+
+\newcommand{\pc}{\mathcal P\mathcal C}
+\newcommand{\ZZ}{\mathbb Z}
+\renewcommand{\AA}{\mathcal A}
+\newcommand{\QQ}{\mathbb Q}
+\newcommand{\OO}{\mathcal O}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\PP}{\mathbb P}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\scalp}[1]{\langle #1 \rangle}
+\newcommand{\wt}{\omega}
+\newcommand{\cT}{\mathcal T}
+\renewcommand{\O}{\mathcal O}
+\newcommand{\adm}{\mathcal A(\D, M)}
+\newcommand{\blue}[1]{{\usebeamercolor[fg]{palette primary}#1}}
+
+\DeclareMathOperator{\CaDiv}{CaDiv}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\below}{defect}
+\DeclareMathOperator{\vertex}{vertex}
+\DeclareMathOperator{\Cox}{Cox}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Sets}{Sets}
+\DeclareMathOperator{\relint}{relint}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\smallestFace}{smallestFace}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\TV}{TV}
+\DeclareMathOperator{\tail}{tail}
+\DeclareMathOperator{\rep}{rep}
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\canonical}{can}
+\DeclareMathOperator{\gkz}{gkz}
+
+\newcommand{\pmsmall}{\includegraphics[scale=0.03]{pmlogo.png}}
+\newcommand{\pmlogo}{\includegraphics[scale=0.09]{pmlogo.png}}
+\newcommand{\pmbluesmall}{\includegraphics[scale=0.03]{pmbluelogo.png}}
+\newcommand{\Disjoint}{\mathop{\coprod}}
+\newcommand{\Discriminant}{\mathcal{D}}
+
+\theoremstyle{definition}
+\newtheorem{remark}{Remark}
+
+\newtheorem{prop}{Proposition}
+\newtheorem{defn}{Definition}
+
+\author{Antony Della Vecchia}
+\title{Markov Bases in Polymake}
+%\newtheorem*{example}{Example}
+\institute[]{
+Technische Universit\"at Berlin
+}
+\date{
+2023-02-03
+}
+
+
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\oursetting}[1]{\textcolor{blue}{#1}}
+\usepackage{listings}
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Overview}
+  \begin{tcolorbox}
+    \tableofcontents
+  \end{tcolorbox}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Preliminaries}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Hulls}
+  blah
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{}
+  blah
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Current State of Convex Hull Computations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{}
+  blah
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]
+  \begin{center}
+    Thank you!
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{References}
+  \footnotesize{
+    \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
+    \bibitem[Joswig, Thorsten, 2013]{p1} Michael Joswig, Thorsten Theobald, (2013)
+      \newblock Polyhedral and algebraic methods in computational geometry
+      \newblock London: Springer
+
+    \bibitem[chulls 2017]{p1} Assarf, Benjamin and Gawrilow, Ewgenij and Herr, Katrin and Joswig, Michael and Lorenz, Benjamin and Paffenholz, Andreas and Rehn, Thomas, (2017)
+      \newblock Computing convex hulls and counting integer points with \texttt{polymake}
+      \newblock Mathematical Programming Computation 9(1), 1--38 
+
+
+
+  \end{thebibliography}
+  }
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
