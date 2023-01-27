@@ -188,13 +188,24 @@ Technische Universit\"at Berlin
       I_{ \mathcal{L}} := \langle x^a - x^b : a - b \in \mathcal{L} \rangle
       = \langle x^{u_+} - x^{u_-} : u \in \mathcal{L} \rangle
     \end{align*}
+    A \emph{markov basis} $\set{u_1, \dots, u_k } \subset \mathcal{L}$ is a spanning
+    set for $\mathcal{L}$ such that
+    \begin{align*}
+      \set{x^{u_1^+} - x^{u_1^-}, \dots, x^{u_k^+} - x^{u_k^-}}
+    \end{align*}
+    is a Gr\"obner basis for $I_{ \mathcal{L}}$
+    \begin{example}
+      Let $\mathcal{L}$ be the lattice spanned by $(3, -2)$ then $(3, -2)$ is a markov basis,
+      since $\langle x^3 - y^2 \rangle$ is prime 
+    \end{example}
+      
   \end{defn}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Hulls}
+\begin{frame}[fragile]{}
   blah
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
