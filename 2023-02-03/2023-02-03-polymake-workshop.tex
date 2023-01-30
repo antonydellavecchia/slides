@@ -31,7 +31,6 @@
 \newcommand\rstr[2]{{\left.#1\right|_{#2}}}
 \newcommand\R{\mathbb{R}}
 \newcommand\V{\mathcal{V}}
-\newcommand\H{\mathcal{H}}
 \newcommand\set[1]{\{#1\}}
 \newcommand\toi{\xrightarrow{\sim}} % category
 \newcommand\Z{\mathbb{Z}}
@@ -203,7 +202,7 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Example}
+\begin{frame}[fragile]{example}
   blah
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -211,10 +210,47 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{Lattice Ideals}
+  \begin{defn}
+    Given a set $S \subset \Z^n$ define the $I(S)$ as
+    \begin{align*}
+      I(S) := \langle x^a - x^b : a - b \in \mathcal{L} \rangle
+      = \langle x^{u_+} - x^{u_-} : u \in S \rangle
+    \end{align*}
+    When $\mathcal{L} \subset \Z^n$ is a lattice, we call $I(\mathcal{L})$ a
+    \emph{lattice ideal}
+  \end{defn}
   \begin{Lemma}
     A set $M$ is a Markov basis if and only if $I(M) = I(\mathcal{L})$
   \end{Lemma}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Term Order and Gr\"obner basis}
+  \begin{defn}
+    \begin{itemize}
+    \item We call $\succ$ a \emph{term order} for $\mathcal{L}$ if $\succ$ is a total
+      well ordeing on $\mathcal{F}_{\mathcal{L}, b}$ for all $b \in \Z^n$ and an
+      additive order.
+    \item We define $\mathcal{L}_{\succ} := \set{u \in \mathcal{L} : u^+ \succ u^-}$.
+    \item We call $G \subset \mathcal{L}_{\succ}$ a \emph{Gr\"obner basis} of $\mathcal{L}$
+      with respect to $\succ$ if for every $b \in\Z^n_+$ there exists a decreasing path
+      in $\mathcal{G}(\mathcal{F}_{\mathcal{L}, b})$ from $b$ to the unique $\succ$-minimal
+      element in $\mathcal{F}_{\mathcal{L}, b}$.
+    \end{itemize}
+  \end{defn}
+  \begin{Lemma}
+    Given a term order $\succ$ a set $G \subset \mathcal{L}_{\succ}$ is a $\succ$-Gr\"obner basis of $\mathcal{L}$ if and only if for all $v \in \mathcal{L}_{\succ}$ there exists $u \in \mathcal{L}_{\succ}$ such that $u^+ \leq v^+$, that is, $v^+ - u \in \mathcal{F}_{\mathcal{L}, v^+}$ and $v^+ \succ v^+ - u$.
+  \end{Lemma}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{}
+  blah
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
