@@ -180,33 +180,41 @@ Technische Universit\"at Berlin
 \section{Definition and Examples}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Lattice Ideals}
+\begin{frame}[fragile]{Markov Basis}
   \begin{defn}
-    Let $\mathcal{L} \subset \Z^n$ be a lattice. The \empf{lattice ideal}
-    $I_{ \mathcal{L}}$ is defined as
-    \begin{align*}
-      I_{ \mathcal{L}} := \langle x^a - x^b : a - b \in \mathcal{L} \rangle
-      = \langle x^{u_+} - x^{u_-} : u \in \mathcal{L} \rangle
-    \end{align*}
-    A \emph{markov basis} $\set{u_1, \dots, u_k } \subset \mathcal{L}$ is a spanning
-    set for $\mathcal{L}$ such that
-    \begin{align*}
-      \set{x^{u_1^+} - x^{u_1^-}, \dots, x^{u_k^+} - x^{u_k^-}}
-    \end{align*}
-    is a Gr\"obner basis for $I_{ \mathcal{L}}$
-    \begin{example}
-      Let $\mathcal{L}$ be the lattice spanned by $(3, -2)$ then $(3, -2)$ is a markov basis,
-      since $\langle x^3 - y^2 \rangle$ is prime 
-    \end{example}
-      
+    \begin{itemize}
+      \item Given a lattice $\mathcal{L}  \subset \Z^n$ we define
+        \begin{align*}
+          \mathcal{F}_{\mathcal{L}, b} := \set{z : z = b \text{ mod } \mathcal{L} , z \in \Z^n_+}.
+        \end{align*}
+      \item For $S \subset \mathcal{L}$ we define
+        $\mathcal{G}(\mathcal{F}_{\mathcal{L}, b}, S)$ to be the undirected graph with vertices
+        $\mathcal{F}_{\mathcal{L}, b}$ and edges $(u,v)$ for $u - v \in S$ or $v - u \in S$.
+      \item We say $S$ is a \emph{generating set} of $\mathcal{F}_{\mathcal{L}, b}$ if
+        $\mathcal{G}(\mathcal{F}_{\mathcal{L}, b}, S)$ is connected.
+      \item We say $S$ is a \emph{Markov basis} if $S$ is a generating set for $\mathcal{F}_{\mathcal{L}, b}$ for any $b \in \Z^n$.
+    \end{itemize}
   \end{defn}
+  \begin{remark}
+    Note when $\mathcal{L} \cap \Z^n_+ = \set{0}$, $\mathcal{F}_{\mathcal{L}, b}$ is finite for any $b \in \Z^n$.
+  \end{remark}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
+\begin{frame}[fragile]{Example}
   blah
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{}
+  \begin{Lemma}
+    A set $M$ is a Markov basis if and only if $I(M) = I(\mathcal{L})$
+  \end{Lemma}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
