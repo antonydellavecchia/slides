@@ -31,6 +31,9 @@
 \newcommand\rstr[2]{{\left.#1\right|_{#2}}}
 \newcommand\R{\mathbb{R}}
 \newcommand\V{\mathcal{V}}
+\newcommand\F{\mathcal{F}}
+\newcommand\G{\mathcal{G}}
+\newcommand\Graph{\G(\F_{\mathcal{L}, b}, G)}
 \newcommand\set[1]{\{#1\}}
 \newcommand\toi{\xrightarrow{\sim}} % category
 \newcommand\Z{\mathbb{Z}}
@@ -144,7 +147,7 @@
 \theoremstyle{definition}
 \newtheorem{remark}{Remark}
 
-\newtheorem{prop}{Proposition}
+\newtheorem{lem}{Lemma}
 \newtheorem{defn}{Definition}
 
 \author{Antony Della Vecchia}
@@ -220,9 +223,9 @@ Technische Universit\"at Berlin
     When $\mathcal{L} \subset \Z^n$ is a lattice, we call $I(\mathcal{L})$ a
     \emph{lattice ideal}
   \end{defn}
-  \begin{Lemma}
+  \begin{lem}
     A set $M$ is a Markov basis if and only if $I(M) = I(\mathcal{L})$
-  \end{Lemma}
+  \end{lem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -241,16 +244,65 @@ Technische Universit\"at Berlin
       element in $\mathcal{F}_{\mathcal{L}, b}$.
     \end{itemize}
   \end{defn}
-  \begin{Lemma}
-    Given a term order $\succ$ a set $G \subset \mathcal{L}_{\succ}$ is a $\succ$-Gr\"obner basis of $\mathcal{L}$ if and only if for all $v \in \mathcal{L}_{\succ}$ there exists $u \in \mathcal{L}_{\succ}$ such that $u^+ \leq v^+$, that is, $v^+ - u \in \mathcal{F}_{\mathcal{L}, v^+}$ and $v^+ \succ v^+ - u$.
-  \end{Lemma}
+  \begin{lem}
+    Given a term order $\succ$ a set $G \subset \mathcal{L}_{\succ}$ is a
+    $\succ$-Gr\"obner basis of $\mathcal{L}$ if and only if for all
+    $v \in \mathcal{L}_{\succ}$ there exists $u \in \mathcal{L}_{\succ}$ such
+    that $u^+ \leq v^+$, that is, $v^+ - u \in \mathcal{F}_{\mathcal{L}, v^+}$ and
+    $v^+ \succ v^+ - u$.
+  \end{lem}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
-  blah
+\begin{frame}[fragile]{Reduction Paths}
+  \begin{defn}
+    A path $(z_0, z_1, \dots, z_i)$ in $\mathcal{G}(\mathcal{F}_{\mathcal{L}, b}, G$ is
+    a \emph{reduction path} with respect to $\succ$ if for no $i \in \set{1, \dots, k-1}$
+    both $z_i \succ z_0$ and $ z_i \succ z_k$.
+  \end{defn}
+
+  \begin{lem}
+    Let $\succ$ be a term order of $\Z^n_+$. A set $G \subset \mathcal{L}_{\succ}$
+    is a $\succ$-Gr\"obner basis if and only if for any $b \in \Z^n$ and for
+    each pair $u, v \in \mathcal{F}_{\mathcal{L}, b}$ there exists a reduction in
+    $\mathcal{G}(\mathcal{F}_{\mathcal{L}, b})$ between $u$ and $v$.
+  \end{lem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Critical Paths}
+  \begin{defn}
+    Given $G \subset \mathcal{L}_{\succ}$ and $b \in  \Z^n$, a path  $(\alpha, z, \beta)$
+    is a \emph{critical path} if $z \succ \alpha$ and $z \succ\beta$.
+  \end{defn}
+  \begin{lem}
+    A set $G \subset \mathcal{L}_{\succ}$ is a Gr\"obner basis of $\mathcal{L}$ if and only if $G$
+    is a generating set of $\mathcal{L}$ and if for all $b  \in \Z^n$ and for every critical
+    path $(\alpha, z, \beta)$ in $\Graph$ there exists a reduction path in $\Graph$.
+  \end{lem}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Minimal Critical Paths}
+  \begin{defn}
+    \begin{itemize}
+    \item A critical path $(\alpha, z, \beta)$ is \emph{minimal} if there does not
+      exist another critical path $(\alpha', z', \beta') = (\alpha + \gamma, z + \gamma, \beta + \gamma)$
+      for some $\gamma \in \Z^n_+$.
+    \item The unique minimal critical path for a pair $(u, v) \in \mathcal{L}$ is denoted by
+      $(\alpha^{(u, v)}, z^{(u,v)}, \beta^{(u,v)})$ , where $z^{(u, v)} := max\{u^+, v^+\}$,
+      $\alpha^{(u, v)} := z - u$,       $\beta^{(u, v)} := z - v$.
+    \end{itemize}
+  \end{defn}
+  \begin{remark}
+    Using minimal critical paths we reduce the amount of reduction paths to be checked to a finite number.
+  \end{remark}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -260,13 +312,56 @@ Technische Universit\"at Berlin
 \section{Algorithm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
-  blah
+\begin{frame}[fragile]{Geometric Buchberger}
+  
+  \begin{algorithm}[H]
+    \textbf{Input:} a term ordering $\succ$ and a set $S \subset \mathcal{L}$\\
+    \textbf{Output:} a set $G \subset \mathcal{L}$ such that if $\alpha, \beta$
+    are connected in $\G(\F_{\mathcal{L}, \alpha}, G)$ then there exists a reduction
+    path between $\alpha$ and $\beta$ in $\G(\F_{\mathcal{L}, \alpha}, G)$.
+    \begin{algorithmic}[1]
+      \STATE $G \leftarrow \set{u : u^+ \succ u^-, u \in S} \cup \set{u : u^- \succ u^+, u \in S}$ 
+      \STATE $C \leftarrow \set{(u,v) : u, v \in G}$
+      \WHILE{ $C \neq \emptyset$ }
+      \STATE select $(u, v) \in C$
+      \STATE $C \leftarrow C \setminus (u,v)$
+      \STATE $r \leftarrow MDPA(\alpha^{(u,v)}, G) - MDPA(\beta^{(u,v)}, G)$
+      \IF{$r \neq 0$}
+      \IF{$r^- \succ r^+$}
+      \STATE $r \leftarrow -r$
+      \ENDIF
+      \STATE $C \leftarrow C \cup \set{(r, s) : s \in G}$
+      \STATE $G \leftarrow G \cup r$
+      \ENDIF
+      \ENDWHILE
+      \RETURN $G$
+    \end{algorithmic}
+  \end{algorithm}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Maximal Decreasing Path Algorithm}
+  
+  \begin{algorithm}[H]
+    \textbf{Input:} a vector $\alpha \in \Z^n_+$ and a set $G \subset \mathcal{L}_{\succ}$. \\
+    \textbf{Output:} a vector $\alpha'$ where there is a  maximal decreasing path in
+    $\G(\F_{\mathcal{L}, \alpha}, G)$ from $\alpha$ to $\alpha'$.
+    \begin{algorithmic}[1]
+      \STATE $\alpha' \leftarrow \alpha$
+      \WHILE{ there is some $u \in G$ such that $u^+ \leq \alpha^+$}
+      \STATE $\alpha' \leftarrow \alpha' - u$
+      \ENDWHILE
+      \RETURN $\alpha'$
+    \end{algorithmic}
+  \end{algorithm}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Applications}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -274,7 +369,6 @@ Technische Universit\"at Berlin
 \begin{frame}[fragile]{}
   blah
 \end{frame}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -301,7 +395,7 @@ Technische Universit\"at Berlin
 
 
 
-  \end{thebibliography}
+    \end{thebibliography}
   }
 \end{frame}
 
