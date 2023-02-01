@@ -205,8 +205,22 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{example}
-  blah
+\begin{frame}[fragile]{Example}
+  Let $S = \set{(1, -1, -1, -3, -1, 2), (1, 0, 2, -2, -2, 1)}$, and let $\mathcal{L}$
+  be the lattice spanned by $S$, then we have that $\mathcal{L}$ is the integer kernel of
+  \begin{align*}
+    A =   \begin{bmatrix}
+      -2 & -3 & 1 & 0 & 0 & 0\\
+      2 & -1 & 0 & 1 & 0 & 0\\
+      2 &  1& 0 & 0 & 1 & 0 \\
+      -1 & 1 & 0 & 0 & 0 & 1 \\
+    \end{bmatrix}
+  \end{align*}
+  Let $b = (2, 2, 4, 2, 4, 1)$, and consider $\F_{\mathcal{L}, b}$ projected onto the $(x_1, x_2)$-plane.
+  \begin{figure}
+    \includegraphics[width=0.6\textwidth, height=0.3\textheight]{images/example}
+  \end{figure}
+
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -269,6 +283,9 @@ Technische Universit\"at Berlin
     each pair $u, v \in \mathcal{F}_{\mathcal{L}, b}$ there exists a reduction in
     $\mathcal{G}(\mathcal{F}_{\mathcal{L}, b})$ between $u$ and $v$.
   \end{lem}
+    \begin{figure}
+    \includegraphics[width=0.6\textwidth, height=0.2\textheight]{images/reduction}
+  \end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -284,6 +301,10 @@ Technische Universit\"at Berlin
     is a generating set of $\mathcal{L}$ and if for all $b  \in \Z^n$ and for every critical
     path $(\alpha, z, \beta)$ in $\Graph$ there exists a reduction path in $\Graph$.
   \end{lem}
+  \begin{figure}
+    \includegraphics[width=0.2\textwidth, height=0.2\textheight]{images/critical}
+    \includegraphics[width=0.4\textwidth, height=0.2\textheight]{images/critical-reduction}
+  \end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -414,15 +435,14 @@ Technische Universit\"at Berlin
   \frametitle{References}
   \footnotesize{
     \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-    \bibitem[Joswig, Thorsten, 2013]{p1} Michael Joswig, Thorsten Theobald, (2013)
-      \newblock Polyhedral and algebraic methods in computational geometry
-      \newblock London: Springer
+    \bibitem[De Loera, Hemmecke, K\"oppe, 2012]{p1} Jesus DeLoera, Raymond Hemmecke, Mathias K\"oppe, (2013)
+    \newblock Algebraic and Geometric Ideas in the Theory of Discrete Optimization
+    \newbloack MOS-SIAM Series on Optimization
+    \newblock Society for Industrial and Applied Mathematics, Philadelphia, PA
 
-    \bibitem[chulls 2017]{p1} Assarf, Benjamin and Gawrilow, Ewgenij and Herr, Katrin and Joswig, Michael and Lorenz, Benjamin and Paffenholz, Andreas and Rehn, Thomas, (2017)
-      \newblock Computing convex hulls and counting integer points with \texttt{polymake}
-      \newblock Mathematical Programming Computation 9(1), 1--38 
-
-
+    \bibitem[generating lattice ideal]{p1} Hemmecke, Raymond and Malkin, Peter, (2005)
+      \newblock Computing generating sets of lattice ideals
+      \newblock arxiv \url{https://arxiv.org/abs/math/0508359}
 
     \end{thebibliography}
   }
