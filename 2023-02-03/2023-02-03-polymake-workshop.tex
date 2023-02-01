@@ -179,7 +179,7 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Definition and Examples}
+\section{Background and Theory}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Markov Basis}
@@ -308,8 +308,24 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Projecting and Lifting}
+  \begin{lemma}
+    \begin{itemize}
+    \item If $\mathcal{L} \cap \Z^n_+ \neq 0$, then let $a \in \mathcal{L} \cap \Z^n_+$,
+      and we know there is an $i$ such that $a_i > 0$.
+      Let $M \subset \mathcal{L}$ be such that $M^i$ is a Markov basis of
+      $\mathcal{L}^i$, then $M \cup \{a\}$ is a Markov basis for $\mathcal{L}$
+    \item If $\mathcal{L} \cap \Z^n_+ = 0$, then we can find a term order $\succ_c$ on $\mathcal{L}$.
+    \item A set $G \subset \mathcal{L}_{\succ_c}$ is a $\succ_c$ Gr\"obner basis for $\mathcal_{\succ_c}$ if and only if $G^i$ is a $\succ_c^i$-Gr\"obner basis for $\mathcal{L}^i$.
+    \end{itemize}
+  \end{lemma}
+\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Algorithm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Geometric Buchberger}
@@ -363,23 +379,36 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Applications}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
-  blah
+\begin{frame}[fragile]{Project and Lift}
+  
+  \begin{algorithm}[H]
+    \textbf{Input:} A lattice $\mathcal{L}$. \\
+    \textbf{Output:} A Markov basis $M$ of $\mathcal{L}$.
+    \begin{algorithmic}[1]
+      \STATE Find a set $\sigma \subset \set{1, 2, \dots, n}$ such that $\text{ker}^{\sigma}(\mathcal{L}) = 0$
+      \STATE Find a set $M \subset \mathcal{L}$ such that $M^{\sigma}$ is a Markov basis $\mathcal{L}^i$
+      \WHILE{ $\sigma \neq \emptyset$}
+      \STATE Select $i \in \sigma$
+      \IF{ There exists $a \in \mathcal{L}$ such that $a^{\sigma} \geq 0$ and $a_i > 0$ }
+      \STATE $M \leftarrow M \cup \set{ a }$
+      \ELSE
+      \STATE Find $c \in \R^n_+$ such that $c_{\sigma} = 0$ and $c^{T} u = -u_i$ for all $u \in \mathcal{L}$
+      \STATE Using $M$, compute $G \subset \mathcal{L}$ such that $G^{\sigma}$ is a $\succ_c^{\sigma}$ - Gr\"obner basis of $\mathcal{L}^{\sigma}$
+      \STATE $M \leftarrow G$
+      \ENDIF
+      \STATE $\sigma \leftarrow \sigma \setminus \set{i}$
+      \ENDWHILE
+      \RETURN $M$
+    \end{algorithmic}
+  \end{algorithm}
+
 \end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]
-  \begin{center}
-    Thank you!
-  \end{center}
-\end{frame}
 
 \begin{frame}
   \frametitle{References}
