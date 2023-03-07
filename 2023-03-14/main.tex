@@ -159,6 +159,9 @@ Technische Universit\"at Berlin
 \date{
 2023-03-14
 }
+\logo{
+  \includegraphics[width=2cm]{images/mardi-logo.png}
+}
 
 
 \newcommand{\surj}{\twoheadrightarrow}
@@ -169,41 +172,53 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Overview}
-  \begin{tcolorbox}
-    \tableofcontents
+
+\begin{frame}[fragile]{The MaRDI Computer Algebra Team}
+  \begin{tcolorbox}[title={TU Berlin}]
+    \begin{itemize}
+    \item Antony Della Vecchia -- data formats
+    \item Michael Joswig
+    \item Lars Kastner -- guidelines for reproducibility
+    \end{itemize}
+  \end{tcolorbox}
+
+  \begin{tcolorbox}[title={TU Kaiserslautern}]
+    \begin{itemize}
+    \item Wolfram Decker
+    \item Claus Fieker
+    \item Jeroen Hanselman -- technical peer review
+    \item Max Horn
+    \end{itemize}
   \end{tcolorbox}
 \end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}[fragile]{MaRDI}
-  blah
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{frame}[fragile]{Building an Infrastructure}
-  blah
+  \begin{itemize}
+  \item Develop a mathematical research data infrastructure.
+  \item Set standards for confirmable workflows and certified mathematical research data.
+  \item Provide services to both the mathematical and wider scientific community.
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth, height=0.5\textheight]{images/graph}
+  \end{center}
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{frame}[fragile]{Why Files?}
   \begin{itemize}
-  \item People are reluctant to change software systems. \pause
+  \item People often have a preferred software system. \pause
   \item Computations can be expensive. \pause
-  \item Verification of results is often computationally less expensive.\pause
+  \item Verification of results is at most as computationally expensive.\pause
   \item Software changes often. \pause
   \end{itemize}
 \end{frame}
@@ -220,35 +235,146 @@ Technische Universit\"at Berlin
 
   Say we want to store:
   \begin{align*}
-    p(x, y) = xy
-  \end{align*}
+    p(x, y, z) = xy - z^2
+  \end{align*} \pause
+
+  \begin{itemize}
+  \item Some technicalities with the coefficients.
+  \item Is x considered as a coefficient of y?
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{blah}
-  blah
+\begin{frame}[fragile]{ Storing LPs}
+  \begin{itemize}
+  \item LPs heavily used in industry. \pause
+  \item Industry naturally defines standards. \pause
+  \item The MPS file format. \pause
+  \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{The Polymake File Format}
+  \begin{itemize}
+  \item First version (XML) published in 2016. \pause
+  \item Currently using JSON.\pause
+  \item Builds on already existing infrastructure. \pause
+  \item Extensible, tree structure. \pause
+  \item Has a Schema. \pause
+  \item Older formats will be upgraded on load. \pause
+  \item Can be loaded into OSCAR. \pause
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Example File}
+  \begin{lstlisting}[language=bash, basicstyle=\tiny]
+    {
+      "_attrs": {
+        "FACETS": {
+          "_type": "SparseMatrix<Rational, NonSymmetric>"
+        }
+      },
+      "VERTICES": [["1", "0", "0"], ... ],
+      "CONE_AMBIENT_DIM": 3,
+      "N_VERTICES": 4,
+      "_ns": {
+        "polymake": [ "https://polymake.org", "4.9" ]
+      },
+      "_info": {
+        "description": "cube of dimension 2"
+      },
+      "TRIANGULATION": [{
+        "FACETS": [[ 0, 1, 2], ...],
+        "_id": "unnamed#0",
+        "F_VECTOR": [4, 5, 2]
+      }],
+      "N_FACETS": 4,
+      "_id": "square",
+      "BOUNDED": true,
+      "FACETS": [{ "1": "1" }, ...,  {     "cols": 3    }],
+      "_type": "polytope::Polytope<Rational>",
+      "VOLUME": "1/9"
+    }
+  \end{lstlisting}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Tree Structure}
+  \begin{figure}
+    \includegraphics[width=.9\textwidth, height=0.86\textheight]{images/tree-diagram}
+  \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{Schemata}
+  \begin{itemize}
+  \item A schema defines a general structure for data so that it can be interpreted by software. \pause
+  \item Schema languages. \pause
+  \item Is possible to define recursive structure. \pause
+  \item Can be generated from software. \pause
+  \item Schemata allow data to be validated without being read into software. \pause
+  \item Adds structure to document based databases.
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{On Going Work}
+  \begin{itemize}
+  \item Prototyping in OSCAR. \pause
+  \item Aim to be software independant. \pause
+  \item Functionality for storing most types in OSCAR. \pause
+  \item Julia package for small databases. 
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{}
+  \begin{center}
+    Thank You!
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{frame}
   \frametitle{References}
   \footnotesize{
     \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
-    \bibitem[De Loera, Hemmecke, K\"oppe, 2012]{p1} Jesus DeLoera, Raymond Hemmecke, Mathias K\"oppe, (2013)
-    \newblock Algebraic and Geometric Ideas in the Theory of Discrete Optimization
-    \newbloack MOS-SIAM Series on Optimization
-    \newblock Society for Industrial and Applied Mathematics, Philadelphia, PA
+    \bibitem[Gawrilow, Ewgenij and Hampe, Simon and Joswig, Michael, 2016]{p1} Gawrilow, Ewgenij and Hampe, Simon and Joswig, Michael, (2016)
+    \newblock The Polymake XML file format
+    \newblock CoRR 
 
-    \bibitem[generating lattice ideal]{p1} Hemmecke, Raymond and Malkin, Peter, (2005)
-      \newblock Computing generating sets of lattice ideals
-      \newblock arxiv \url{https://arxiv.org/abs/math/0508359}
-
+  \bibitem[RELAX NG]{p1} (2002)
+    \newblock RELAX NG Compact syntax specification,
+    \newblock Tech. report, The Organization for the Advancement of Structured Information Standards (OASIS), November 2002,
+    \newblock available at \url{http://relaxng.org/compact-20021121.html}
+    
     \end{thebibliography}
   }
 \end{frame}
