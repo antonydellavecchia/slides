@@ -219,7 +219,7 @@ Technische Universit\"at Berlin
   \item People often have a preferred software system. \pause
   \item Computations can be expensive. \pause
   \item Verification of results is at most as computationally expensive.\pause
-  \item Software changes often. \pause
+  \item Software changes often. 
   \end{itemize}
 \end{frame}
 
@@ -249,11 +249,23 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{ Storing LPs}
-  \begin{itemize}
-  \item LPs heavily used in industry. \pause
-  \item Industry naturally defines standards. \pause
-  \item The MPS file format. \pause
-  \end{itemize}
+
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=4cm, width=2.5cm]{images/lp_file}
+      \includegraphics[height=4cm, width=2.5cm]{images/mps_file}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+
+          \begin{itemize}
+          \item LPs heavily used in industry.
+          \item Industry natural define standards.
+          \item The LP file format, the MPS file format. 
+          \end{itemize}
+        }
+      \end{tabular}  \\
+  \end{tabular}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -261,52 +273,42 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{The Polymake File Format}
-  \begin{itemize}
-  \item First version (XML) published in 2016. \pause
-  \item Currently using JSON.\pause
-  \item Builds on already existing infrastructure. \pause
-  \item Extensible, tree structure. \pause
-  \item Has a Schema. \pause
-  \item Older formats will be upgraded on load. \pause
-  \item Can be loaded into OSCAR. \pause
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{Example File}
-  \begin{lstlisting}[language=bash, basicstyle=\tiny]
-    {
-      "_attrs": {
-        "FACETS": {
-          "_type": "SparseMatrix<Rational, NonSymmetric>"
+  
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=6cm, width=4cm]{images/xml_file}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+        \begin{itemize}
+        \item First version (XML) published in 2016.
+        \end{itemize}
         }
-      },
-      "VERTICES": [["1", "0", "0"], ... ],
-      "CONE_AMBIENT_DIM": 3,
-      "N_VERTICES": 4,
-      "_ns": {
-        "polymake": [ "https://polymake.org", "4.9" ]
-      },
-      "_info": {
-        "description": "cube of dimension 2"
-      },
-      "TRIANGULATION": [{
-        "FACETS": [[ 0, 1, 2], ...],
-        "_id": "unnamed#0",
-        "F_VECTOR": [4, 5, 2]
-      }],
-      "N_FACETS": 4,
-      "_id": "square",
-      "BOUNDED": true,
-      "FACETS": [{ "1": "1" }, ...,  {     "cols": 3    }],
-      "_type": "polytope::Polytope<Rational>",
-      "VOLUME": "1/9"
-    }
-  \end{lstlisting}
+      \end{tabular}  \\
+  \end{tabular}
 \end{frame}
+
+\begin{frame}[fragile]{The Polymake File Format}
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=6cm, width=4cm]{images/json_file}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+        \begin{itemize}
+        \item First version (XML) published in 2016. 
+        \item Currently using JSON.\pause
+        \item Builds on already existing infrastructure. \pause
+        \item Extensible, tree structure. \pause
+        \item Has a Schema. \pause
+        \item Older formats will be upgraded on load. \pause
+        \item Can be loaded into OSCAR and SAGE. 
+        \end{itemize}
+        }
+      \end{tabular}  \\
+  \end{tabular}
+\end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -339,12 +341,21 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{On Going Work}
-  \begin{itemize}
-  \item Prototyping in OSCAR. \pause
-  \item Aim to be software independant. \pause
-  \item Functionality for storing most types in OSCAR. \pause
-  \item Julia package for small databases. 
-  \end{itemize}
+    \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=6cm, width=4cm]{images/oscar_file}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+        \begin{itemize}
+        \item Prototyping in OSCAR. \pause
+        \item Aim to be software independant. \pause
+        \item Functionality for storing most types in OSCAR. \pause
+        \item Julia package for small databases. 
+        \end{itemize}
+        }
+      \end{tabular}  \\
+  \end{tabular}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -352,18 +363,11 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{}
+  \frametitle{References}
   \begin{center}
     Thank You!
   \end{center}
-\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}
-  \frametitle{References}
   \footnotesize{
     \begin{thebibliography}{99} % Beamer does not support BibTeX so references must be inserted manually as below
     \bibitem[Gawrilow, Ewgenij and Hampe, Simon and Joswig, Michael, 2016]{p1} Gawrilow, Ewgenij and Hampe, Simon and Joswig, Michael, (2016)
