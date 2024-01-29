@@ -1,0 +1,16 @@
+\documentclass[english]{article}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=2cm,bmargin=2cm,lmargin=2cm,rmargin=2cm}
+\usepackage{fontspec}
+
+\usepackage{amsfonts,amsbsy,amsmath,amssymb}
+\usepackage{babel}
+
+\begin{document}
+Due to the complexity of mathematical objects, storing data so it is FAIR has its challenges.
+We describe a generic \texttt{JSON} based file format which is suitable for computations in computer algebra,
+highlighting some design decisions and demonstrating some of the benefits with an emphasis on interoperability.
+This is implemented in the computer algebra system \texttt{OSCAR}, but we also show how it can be used in a different context.
+
+  
+\end{document}
