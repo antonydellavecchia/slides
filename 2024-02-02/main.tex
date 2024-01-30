@@ -138,8 +138,8 @@
 \DeclareMathOperator{\canonical}{can}
 \DeclareMathOperator{\gkz}{gkz}
 
-\newcommand{\pmsmall}{\includegraphics[scale=0.03]{pmlogo.png}}
-\newcommand{\pmlogo}{\includegraphics[scale=0.09]{pmlogo.png}}
+\newcommand{\pmsmall}{\includegraphics[scale=0.03]{images/pmlogo.png}}
+\newcommand{\pmlogo}{\includegraphics[scale=0.09]{images/pmlogo.png}}
 \newcommand{\pmbluesmall}{\includegraphics[scale=0.03]{pmbluelogo.png}}
 \newcommand{\Disjoint}{\mathop{\coprod}}
 \newcommand{\Discriminant}{\mathcal{D}}
@@ -150,19 +150,19 @@
 \newtheorem{lem}{Lemma}
 \newtheorem{defn}{Definition}
 
-\author[Antony Della Vecchia]{Antony Della Vecchia \\ \vspace{4mm} \small{Joint work with M. Joswig and B. Lorenz} }
-\title{A FAIR File Format for Mathematical Software}
+\author[Antony Della Vecchia]{Antony Della Vecchia }
+\title{Tutorial: Serialization}
 
 %\newtheorem*{example}{Example}
 \institute[]{
 Technische Universit\"at Berlin
 }
 \date{
-  Towards a digital infrastructure for mathematical research \\
-  2023-09-25
+  \texttt{polymake} Workshop  \\
+  2024-02-02
 }
 \logo{
-  \includegraphics[width=2cm]{images/mardi-logo.png}
+  \pmlogo
 }
 
 
@@ -176,12 +176,10 @@ Technische Universit\"at Berlin
 
 \begin{frame}[fragile]{Overview}
   \begin{itemize}
-  \item MaRDI and the FAIR principles
-  \item History of Files in Mathematical Software
-  \item Technicalities with Algebraic Data
-  \item Current Status of Prototype
-  \item The File Format Specification
-  \item Future Work
+  \item What is Serialization?
+  \item \texttt{polymake} Serialization
+  \item \oscar Serialization
+  \item Differences and Similarities
   \end{itemize}
 \end{frame}
 
@@ -190,17 +188,10 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{MaRDI and the FAIR Principles}
-  \begin{itemize}
-  \item \textbf{Ma}thematics \textbf{R}esearch \textbf{D}ata \text{I}nitiative.
-  \item Develop a mathematical research data infrastructure.
-  \item Set standards for confirmable workflows and certified mathematical research data.
-  \item Provide services to both the mathematical and wider scientific community.
-  \item \textbf{F}indable \textbf{A}ccessible \textbf{I}nteroperable \textbf{R}eusable [M. D. Wilkinson et al. 2016]
-
-  \end{itemize}
+\begin{frame}[fragile]{Serialization}
   \begin{center}
-    \includegraphics[width=0.5\textwidth, height=0.5\textheight]{images/graph}
+    \includegraphics[height=0.7\textheight]{images/chatgpt}
+    \caption{generated using ChatGPT}
   \end{center}
 \end{frame}
 
@@ -208,24 +199,36 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{The Importance of Files for Computer Algebra}
-    \begin{tabular}{cl}  
+\begin{frame}[fragile]{Serialization: High Level Overview}
+  \begin{center}
+    \includegraphics[height=0.7\textheight]{images/serialization}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Serialization: Formats}
+  \begin{tabular}{cl}  
     \begin{tabular}{c}
-      \includegraphics[height=2cm, width=2cm]{images/sage-squared}
-      \includegraphics[height=2cm, width=2cm]{images/python} \\
-      \includegraphics[height=2cm, width=2cm]{images/cpp}
-      \includegraphics[height=2cm, width=2cm]{images/mathematica} \\
-      \includegraphics[height=1.5cm, width=3cm]{images/magma}
+      \includegraphics[width=.5\linewidth]{images/pm-xml} 
     \end{tabular}
     & \begin{tabular}{l}
-        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
-          \begin{itemize}
-          \item People often have a preferred software system. \pause
-          \item Computations can be expensive. \pause
-          \item Software changes often and requires maintenance. \pause
-          \item Data is often more valuable than the software. \pause
-          \item Verification of results is at most as computationally expensive. \pause
-          \end{itemize}
+        \parbox{0.4\linewidth}{%  change the parbox width as appropiate
+        
+        \begin{itemize}
+        \item Text (MPS, LP)
+        \item CSV
+        \item XML (\texttt{polymake})
+        \item JSON (\texttt{polymake}, \oscar)
+        \item YAML
+        \item ...
+        \end{itemize}
         }
       \end{tabular}  \\
   \end{tabular}
@@ -235,12 +238,29 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Storing Computer Algebra Data}
-  \begin{itemize}
-    \item It's common to have multiple perspectives on an object in mathematics. 
-    \item While storing mathematical data a choice of perspective must me made.
-    \item Such a choice might not be describeable in an email.
-    \end{itemize}
+\begin{frame}[fragile]{ Polymake Demo}
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[width=.4\linewidth]{images/pm-demo}\\
+      \includegraphics[height=.5\textheight]{images/lp-file} 
+    \end{tabular}
+    & \begin{tabular}{l}
+        \includegraphics[height=.5\textheight]{images/mps-file} 
+      \end{tabular}  \\
+  \end{tabular}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{\texttt{polymake} JSON File}
+  \begin{center}
+    \includegraphics[height=0.8\textheight]{images/pm-json}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]{ \oscar: Polynomial }
 
   Say we want to store:
   \begin{align*}
@@ -253,32 +273,6 @@ Technische Universit\"at Berlin
   \item What is $\bold{a}$?
   \item How can we guarantee the objects behave as expected on load?
   \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{ History of File Formats}
-
-  \begin{tabular}{cl}  
-    \begin{tabular}{c}
-      \includegraphics[height=5cm, width=3cm]{images/mps_file}
-      \includegraphics[height=5cm, width=3cm]{images/json_file}
-    \end{tabular}
-    & \begin{tabular}{l}
-        \parbox{0.4\linewidth}{%  change the parbox width as appropiate
-
-          \begin{itemize}
-          \item The LP file format, the MPS file format. IBM [1970s]
-          \item \texttt{Mathematica} Notebooks. Wolfram Mathematica [1988]
-          \item \texttt{OpenMath} (tree structure). Mike Dewar [2000]
-          \item \texttt{IPython 0.12} Interactive Browser Notebooks (Jupyter) [2011]
-          \item \texttt{polymake} File Format. E. Gawrilow, S. Hampe, and M. Joswig [2016]
-          \end{itemize}
-        }
-      \end{tabular}  \\
-  \end{tabular}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -356,7 +350,7 @@ Technische Universit\"at Berlin
           \end{itemize}
         }
       \end{tabular}  \\
-  \end{tabular}
+  \end{tabular}y
 
 \end{frame}
 
@@ -370,14 +364,14 @@ Technische Universit\"at Berlin
       \begin{tabular}{c}
         \begin{figure}
         \begin{minipage}{0.4\textwidth}
-            \includegraphics[height=4cm, width=5cm]{images/blocks}
-            \caption{\url{https://www.pexels.com/photo/plastic-shape-shorter-toy-11030155/}}
+          \includegraphics[height=4cm, width=5cm]{images/blocks}
+          \caption{\url{https://www.pexels.com/photo/plastic-shape-shorter-toy-11030155/}}
         \end{minipage}
-        \end{figure}
+      \end{figure}
     \end{tabular}
     & \begin{tabular}{l}
         \parbox{0.5\linewidth}{%  change the parbox width as appropiate
-          \begin{itemize}
+        \begin{itemize}
         \item A schema defines a structure for data. \pause
         \item Schema languages. (RELAX NG [2002], JSON Schema [2022])\pause
         \item Is possible to define recursive structure. \pause
@@ -406,32 +400,28 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{On Going Work}
+
+\begin{frame}[fragile]{MaRDI and the FAIR Principles}
   \begin{itemize}
-  \item Add Functionality for most \oscar types.
-  \item Minimal example loaders in other software systems.
-  \item Aim to be software independant.
-  \item Setup small databases with collaborators using the File Format.
+  \item \textbf{Ma}thematics \textbf{R}esearch \textbf{D}ata \text{I}nitiative.
+  \item Develop a mathematical research data infrastructure.
+  \item Set standards for confirmable workflows and certified mathematical research data.
+  \item Provide services to both the mathematical and wider scientific community.
+  \item \textbf{F}indable \textbf{A}ccessible \textbf{I}nteroperable \textbf{R}eusable [M. D. Wilkinson et al. 2016]
+
   \end{itemize}
+  \begin{center}
+    \includegraphics[width=0.5\textwidth, height=0.5\textheight]{images/graph}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{}
-  \frametitle{References}
+\begin{frame}[fragile]{End}
   \begin{center}
     Thank You!\\
-
-  \end{center}
-  \begin{center}
-    \\
-    You can find more information here \\
-
-    \includegraphics[height=3cm, width=3cm]{images/paper-qr}\\
-    \url{https://arxiv.org/abs/2309.00465}
-
   \end{center}
 \end{frame}
 

@@ -1,28 +1,32 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.7)  26 JAN 2024 12:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  30 JAN 2024 16:22
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
-**\nonstopmode\input main.tex
-(./main.tex (/usr/share/texmf-dist/tex/latex/beamer/beamer.cls
-Document Class: beamer 2023/02/20 v3.69 A class for typesetting presentations
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
-(/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+**main.tex
+(./main.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamer.cls
+Document Class: beamer 2024/01/06 v3.71 A class for typesetting presentations
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count185
+\etb@tempcnta=\count187
 )
 \beamer@tempbox=\box51
-\beamer@tempcount=\count186
-\c@beamerpauses=\count187
+\beamer@tempcount=\count188
+\c@beamerpauses=\count189
 
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
-\beamer@slideinframe=\count188
-\beamer@minimum=\count189
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasedecode.sty
+\beamer@slideinframe=\count190
+\beamer@minimum=\count191
 \beamer@decode@box=\box52
 )
 \beamer@commentbox=\box53
-\beamer@modecount=\count190
+\beamer@modecount=\count192
 )
-(/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
 )
 \headdp=\dimen140
@@ -48,44 +52,44 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \beamer@sectionbox=\box57
 \beamer@logobox=\box58
 \beamer@linebox=\box59
-\beamer@sectioncount=\count191
-\beamer@subsubsectionmax=\count192
-\beamer@subsectionmax=\count193
-\beamer@sectionmax=\count194
-\beamer@totalheads=\count195
-\beamer@headcounter=\count196
-\beamer@partstartpage=\count197
-\beamer@sectionstartpage=\count198
-\beamer@subsectionstartpage=\count199
-\beamer@animationtempa=\count266
-\beamer@animationtempb=\count267
-\beamer@xpos=\count268
-\beamer@ypos=\count269
-\beamer@ypos@offset=\count270
-\beamer@showpartnumber=\count271
-\beamer@currentsubsection=\count272
-\beamer@coveringdepth=\count273
-\beamer@sectionadjust=\count274
-\beamer@toclastsection=\count275
-\beamer@tocsectionnumber=\count276
+\beamer@sectioncount=\count193
+\beamer@subsubsectionmax=\count194
+\beamer@subsectionmax=\count195
+\beamer@sectionmax=\count196
+\beamer@totalheads=\count197
+\beamer@headcounter=\count198
+\beamer@partstartpage=\count199
+\beamer@sectionstartpage=\count266
+\beamer@subsectionstartpage=\count267
+\beamer@animationtempa=\count268
+\beamer@animationtempb=\count269
+\beamer@xpos=\count270
+\beamer@ypos=\count271
+\beamer@ypos@offset=\count272
+\beamer@showpartnumber=\count273
+\beamer@currentsubsection=\count274
+\beamer@coveringdepth=\count275
+\beamer@sectionadjust=\count276
+\beamer@toclastsection=\count277
+\beamer@tocsectionnumber=\count278
 
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
-(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseoptions.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
+\KV@toks@=\toks17
 ))
 \beamer@paperwidth=\skip49
 \beamer@paperheight=\skip50
 
-(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\Gm@cnth=\count277
-\Gm@cntv=\count278
-\c@Gm@tempcnt=\count279
+\Gm@cnth=\count279
+\Gm@cntv=\count280
+\c@Gm@tempcnt=\count281
 \Gm@bindingoffset=\dimen156
 \Gm@wd@mp=\dimen157
 \Gm@odd@mp=\dimen158
@@ -94,32 +98,32 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutheight=\dimen161
 \Gm@layouthoffset=\dimen162
 \Gm@layoutvoffset=\dimen163
-\Gm@dimlist=\toks17
+\Gm@dimlist=\toks18
 )
-(/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks18
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks19
 \pgfutil@tempdima=\dimen164
 \pgfutil@tempdimb=\dimen165
 )
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box60
 )
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2023-01-15 v3.1.10 (3.1.10)
 ))
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks19
-\pgfkeys@temptoks=\toks20
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks20
+\pgfkeys@temptoks=\toks21
 
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.te
-x
-\pgfkeys@tmptoks=\toks21
-))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.
+code.tex
+\pgfkeys@tmptoks=\toks22
+))) (/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/net/T
+eXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex
 \pgf@x=\dimen166
 \pgf@xa=\dimen167
 \pgf@xb=\dimen168
@@ -128,59 +132,66 @@ x
 \pgf@ya=\dimen171
 \pgf@yb=\dimen172
 \pgf@yc=\dimen173
-\c@pgf@counta=\count280
-\c@pgf@countb=\count281
-\c@pgf@countc=\count282
-\c@pgf@countd=\count283
+\c@pgf@counta=\count282
+\c@pgf@countb=\count283
+\c@pgf@countc=\count284
+\c@pgf@countd=\count285
 )
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen174
-\pgfmath@count=\count284
+\pgfmath@count=\count286
 \pgfmath@box=\box61
-\pgfmath@toks=\toks22
-\pgfmath@stack@operand=\toks23
-\pgfmath@stack@operation=\toks24
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
 )
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.
+tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometr
+ic.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code
 .tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
-x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
-.code.tex) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count285
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.
+code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.t
+ex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.
+tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.t
+ex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarit
+hmetics.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count287
 )))
-(/usr/share/texmf-dist/tex/latex/extsizes/size9.clo
+(/net/TeXLive/2023/texmf-dist/tex/latex/extsizes/size9.clo
 File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
 )
-(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
 )
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen175
 \Gin@req@width=\dimen176
 )
-(/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@x=\dimen177
 \pgf@y=\dimen178
@@ -194,58 +205,59 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen186
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count286
-\c@pgf@countb=\count287
-\c@pgf@countc=\count288
-\c@pgf@countd=\count289
-\t@pgf@toka=\toks25
-\t@pgf@tokb=\toks26
-\t@pgf@tokc=\toks27
-\pgf@sys@id@count=\count290
+\c@pgf@counta=\count288
+\c@pgf@countb=\count289
+\c@pgf@countc=\count290
+\c@pgf@countd=\count291
+\t@pgf@toka=\toks26
+\t@pgf@tokb=\toks27
+\t@pgf@tokc=\toks28
+\pgf@sys@id@count=\count292
 
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
 Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
 File: pgfsys-pdftex.def 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
 File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 )))
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.t
+ex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count291
-\pgfsyssoftpath@bigbuffer@items=\count292
+\pgfsyssoftpath@smallbuffer@items=\count293
+\pgfsyssoftpath@bigbuffer@items=\count294
 )
-(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.t
+ex
 File: pgfsysprotocol.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2022/06/12 v2.14 LaTeX color extensions (UK)
+)) (/net/TeXLive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
 
-(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 227.
+Package xcolor Info: Driver file: pdftex.def on input line 274.
 
-(/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1353.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1357.
-Package xcolor Info: Model `RGB' extended on input line 1369.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1371.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1372.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1373.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1374.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1375.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
+(/net/TeXLive/2023/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
+Package xcolor Info: Model `RGB' extended on input line 1366.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1368.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@picminx=\dimen187
 \pgf@picmaxx=\dimen188
@@ -262,298 +274,302 @@ File: pgfcorepoints.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@zx=\dimen199
 \pgf@zy=\dimen256
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.c
+ode.tex
 File: pgfcorepathconstruct.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@path@lastx=\dimen257
 \pgf@path@lasty=\dimen258
-) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.
+tex
 File: pgfcorepathusage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@shorten@end@additional=\dimen259
 \pgf@shorten@start@additional=\dimen260
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box62
 \pgf@hbox=\box63
 \pgf@layerbox@main=\box64
-\pgf@picture@serial@count=\count293
+\pgf@picture@serial@count=\count295
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.co
+de.tex
 File: pgfcoregraphicstate.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgflinewidth=\dimen261
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
-ex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations
+.code.tex
 File: pgfcoretransformations.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@pt@x=\dimen262
 \pgf@pt@y=\dimen263
 \pgf@pt@temp=\dimen264
-) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.te
+x
 File: pgfcoreobjects.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
-x
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.
+code.tex
 File: pgfcorepathprocessing.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowsep=\dimen265
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen266
-\pgf@sys@shading@range@num=\count294
-\pgf@shadingcount=\count295
-)
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+\pgf@sys@shading@range@num=\count296
+\pgf@shadingcount=\count297
+) (/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.te
+x
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.t
+ex
 File: pgfcoreexternal.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfexternal@startupbox=\box65
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.co
+de.tex
 File: pgfcoretransparency.code.tex 2023-01-15 v3.1.10 (3.1.10)
-) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.t
+ex
 File: pgfcorepatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
 File: pgfcorerdf.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
+))) (/net/TeXLive/2023/texmf-dist/tex/latex/pgf/utilities/xxcolor.sty
 Package: xxcolor 2003/10/24 ver 0.1
-\XC@nummixins=\count296
-\XC@countmixins=\count297
+\XC@nummixins=\count298
+\XC@countmixins=\count299
 )
-(/usr/share/texmf-dist/tex/latex/base/atbegshi-ltx.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
-(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
+(/net/TeXLive/2023/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2024-01-20 v7.01h Hypertext links for LaTeX
 
-(/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+(/net/TeXLive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
-(/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(/net/TeXLive/2023/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)
-(/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
-(/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
-Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
-Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-)
-(/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+))
+(/net/TeXLive/2023/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/usr/share/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
-Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-)
-(/usr/share/texmf-dist/tex/latex/auxhook/auxhook.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+(/net/TeXLive/2023/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
 
-(/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 
-(/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
-\c@section@level=\count298
+\c@section@level=\count300
 )
 \@linkdim=\dimen267
-\Hy@linkcounter=\count299
-\Hy@pagecounter=\count300
+\Hy@linkcounter=\count301
+\Hy@pagecounter=\count302
 
-(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
+(/net/TeXLive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2024-01-20 v7.01h Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/usr/share/texmf-dist/tex/generic/etexcmds/etexcmds.sty
-Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
-)
-\Hy@SavedSpaceFactor=\count301
+\Hy@SavedSpaceFactor=\count303
 
-(/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
+(/net/TeXLive/2023/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2024-01-20 v7.01h Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `bookmarks' set `true' on input line 4060.
-Package hyperref Info: Option `bookmarksopen' set `true' on input line 4060.
-Package hyperref Info: Option `implicit' set `false' on input line 4060.
-Package hyperref Info: Hyper figures OFF on input line 4177.
-Package hyperref Info: Link nesting OFF on input line 4182.
-Package hyperref Info: Hyper index ON on input line 4185.
-Package hyperref Info: Plain pages OFF on input line 4192.
-Package hyperref Info: Backreferencing OFF on input line 4197.
+Package hyperref Info: Option `bookmarks' set `true' on input line 4062.
+Package hyperref Info: Option `bookmarksopen' set `true' on input line 4062.
+Package hyperref Info: Option `implicit' set `false' on input line 4062.
+Package hyperref Info: Hyper figures OFF on input line 4179.
+Package hyperref Info: Link nesting OFF on input line 4184.
+Package hyperref Info: Hyper index ON on input line 4187.
+Package hyperref Info: Plain pages OFF on input line 4194.
+Package hyperref Info: Backreferencing OFF on input line 4199.
 Package hyperref Info: Implicit mode OFF; no redefinition of LaTeX internals.
-Package hyperref Info: Bookmarks ON on input line 4425.
-\c@Hy@tempcnt=\count302
+Package hyperref Info: Bookmarks ON on input line 4446.
+\c@Hy@tempcnt=\count304
 
-(/usr/share/texmf-dist/tex/latex/url/url.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4763.
+LaTeX Info: Redefining \url on input line 4784.
 \XeTeXLinkMargin=\dimen268
 
-(/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count303
+\Fld@menulength=\count305
 \Field@Width=\dimen269
 \Fld@charsize=\dimen270
-Package hyperref Info: Hyper figures OFF on input line 6042.
-Package hyperref Info: Link nesting OFF on input line 6047.
-Package hyperref Info: Hyper index ON on input line 6050.
-Package hyperref Info: backreferencing OFF on input line 6057.
-Package hyperref Info: Link coloring OFF on input line 6062.
-Package hyperref Info: Link coloring with OCG OFF on input line 6067.
-Package hyperref Info: PDF/A mode OFF on input line 6072.
-\Hy@abspage=\count304
+Package hyperref Info: Hyper figures OFF on input line 6063.
+Package hyperref Info: Link nesting OFF on input line 6068.
+Package hyperref Info: Hyper index ON on input line 6071.
+Package hyperref Info: backreferencing OFF on input line 6078.
+Package hyperref Info: Link coloring OFF on input line 6083.
+Package hyperref Info: Link coloring with OCG OFF on input line 6088.
+Package hyperref Info: PDF/A mode OFF on input line 6093.
+\Hy@abspage=\count306
 
 
 Package hyperref Message: Stopped early.
 
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
+ (/net/TeXLive/2023/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2024-01-20 v7.01h Hyperref driver for pdfTeX
 
-(/usr/share/texmf-dist/tex/latex/base/atveryend-ltx.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
 kage
 with kernel methods
 )
-\Fld@listcount=\count305
-\c@bookmark@seq@number=\count306
+\Fld@listcount=\count307
+\c@bookmark@seq@number=\count308
 
-(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 
-(/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 ))
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasefont.sty
-(/usr/share/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaserequires.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasecompatibility.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasefont.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\@emptytoks=\toks28
+\@emptytoks=\toks29
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/sansmathaccent/sansmathaccent.sty
 Package: sansmathaccent 2020/01/31
 
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2022/10/12 v3.38 KOMA-Script package (file load hooks)
+(/net/TeXLive/2023/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2023/07/07 v3.41 KOMA-Script package (file load hooks)
 
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2022/10/12 v3.38 KOMA-Script package (using LaTeX hooks)
+(/net/TeXLive/2023/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2023/07/07 v3.41 KOMA-Script package (using LaTeX hooks)
 
 
-(/usr/share/texmf-dist/tex/latex/koma-script/scrlogo.sty
-Package: scrlogo 2022/10/12 v3.38 KOMA-Script package (logo)
+(/net/TeXLive/2023/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2023/07/07 v3.41 KOMA-Script package (logo)
 )))))
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
-(/usr/share/texmf-dist/tex/latex/translator/translator.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasetranslator.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 ))
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasemisc.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
-\beamer@argscount=\count307
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasemisc.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasetwoscreens.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseoverlay.sty
+\beamer@argscount=\count309
 \beamer@lastskipcover=\skip51
-\beamer@trivlistdepth=\count308
+\beamer@trivlistdepth=\count310
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasetitle.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasesection.sty
-\c@lecture=\count309
-\c@part=\count310
-\c@section=\count311
-\c@subsection=\count312
-\c@subsubsection=\count313
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasetitle.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasesection.sty
+\c@lecture=\count311
+\c@part=\count312
+\c@section=\count313
+\c@subsection=\count314
+\c@subsubsection=\count315
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseframe.sty
 \beamer@framebox=\box66
 \beamer@frametitlebox=\box67
 \beamer@zoombox=\box68
-\beamer@zoomcount=\count314
-\beamer@zoomframecount=\count315
+\beamer@zoomcount=\count316
+\beamer@zoomframecount=\count317
 \beamer@frametextheight=\dimen271
-\c@subsectionslide=\count316
+\c@subsectionslide=\count318
 \beamer@frametopskip=\skip52
 \beamer@framebottomskip=\skip53
 \beamer@frametopskipautobreak=\skip54
 \beamer@framebottomskipautobreak=\skip55
-\beamer@envbody=\toks29
+\beamer@envbody=\toks30
 \framewidth=\dimen272
-\c@framenumber=\count317
+\c@framenumber=\count319
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseverbatim.sty
 \beamer@verbatimfileout=\write4
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseframesize.sty
 \beamer@splitbox=\box69
-\beamer@autobreakcount=\count318
+\beamer@autobreakcount=\count320
 \beamer@autobreaklastheight=\dimen273
-\beamer@frametitletoks=\toks30
-\beamer@framesubtitletoks=\toks31
+\beamer@frametitletoks=\toks31
+\beamer@framesubtitletoks=\toks32
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseframecomponents.sty
 \beamer@footins=\box70
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasecolor.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasecolor.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasenotes.sty
 \beamer@frameboxcopy=\box71
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
-\beamer@sbttoks=\toks32
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasetoc.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasetemplates.sty
+\beamer@sbttoks=\toks33
 
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseauxtemplates.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaseboxes.sty
 \bmb@box=\box72
 \bmb@colorbox=\box73
 \bmb@boxwidth=\dimen274
@@ -566,50 +582,49 @@ Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
 )
 \beamer@blockheadheight=\dimen281
 ))
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
-(/usr/share/texmf-dist/tex/latex/tools/enumerate.sty
-Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
-\@enLab=\toks33
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbaselocalstructure.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/tools/enumerate.sty
+Package: enumerate 2023/07/04 v3.00 enumerate extensions (DPC)
+\@enLab=\toks34
 )
 \beamer@bibiconwidth=\skip56
-\c@figure=\count319
-\c@table=\count320
+\c@figure=\count321
+\c@table=\count322
 \abovecaptionskip=\skip57
 \belowcaptionskip=\skip58
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasenavigationsymbols.tex)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasenavigation.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasenavigationsymbols.tex)
 \beamer@section@min@dim=\dimen282
-)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
-(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2022/04/08 v2.17n AMS math features
+) (/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasetheorems.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip59
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 
-(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks34
+\@emptytoks=\toks35
 \ex@=\dimen283
 ))
-(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen284
 )
-(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count321
+\inf@bad=\count323
 LaTeX Info: Redefining \frac on input line 234.
-\uproot@=\count322
-\leftroot@=\count323
+\uproot@=\count324
+\leftroot@=\count325
 LaTeX Info: Redefining \overline on input line 399.
 LaTeX Info: Redefining \colon on input line 410.
-\classnum@=\count324
-\DOTSCASE@=\count325
+\classnum@=\count326
+\DOTSCASE@=\count327
 LaTeX Info: Redefining \ldots on input line 496.
 LaTeX Info: Redefining \dots on input line 499.
 LaTeX Info: Redefining \cdots on input line 620.
@@ -622,63 +637,63 @@ LaTeX Info: Redefining \Bigg on input line 725.
 \big@size=\dimen285
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
-\macc@depth=\count326
+\macc@depth=\count328
 LaTeX Info: Redefining \bmod on input line 905.
 LaTeX Info: Redefining \pmod on input line 910.
 LaTeX Info: Redefining \smash on input line 940.
 LaTeX Info: Redefining \relbar on input line 970.
 LaTeX Info: Redefining \Relbar on input line 971.
-\c@MaxMatrixCols=\count327
+\c@MaxMatrixCols=\count329
 \dotsspace@=\muskip17
-\c@parentequation=\count328
-\dspbrk@lvl=\count329
-\tag@help=\toks35
-\row@=\count330
-\column@=\count331
-\maxfields@=\count332
-\andhelp@=\toks36
+\c@parentequation=\count330
+\dspbrk@lvl=\count331
+\tag@help=\toks36
+\row@=\count332
+\column@=\count333
+\maxfields@=\count334
+\andhelp@=\toks37
 \eqnshift@=\dimen286
 \alignsep@=\dimen287
 \tagshift@=\dimen288
 \tagwidth@=\dimen289
 \totwidth@=\dimen290
 \lineht@=\dimen291
-\@envbody=\toks37
+\@envbody=\toks38
 \multlinegap=\skip60
 \multlinetaggap=\skip61
-\mathdisplay@stack=\toks38
+\mathdisplay@stack=\toks39
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 )
-(/usr/share/texmf-dist/tex/latex/amscls/amsthm.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks39
-\thm@bodyfont=\toks40
-\thm@headfont=\toks41
-\thm@notefont=\toks42
-\thm@headpunct=\toks43
+\thm@style=\toks40
+\thm@bodyfont=\toks41
+\thm@headfont=\toks42
+\thm@notefont=\toks43
+\thm@headpunct=\toks44
 \thm@preskip=\skip62
 \thm@postskip=\skip63
 \thm@headsep=\skip64
-\dth@everypar=\toks44
+\dth@everypar=\toks45
 )
-\c@theorem=\count333
+\c@theorem=\count335
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
-(/usr/share/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
-(/usr/share/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerthemedefault.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen292
 \beamer@dimb=\dimen293
 )
-(/usr/share/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
-(/usr/share/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
-(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
-(/usr/share/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty))
-(/usr/share/texmf-dist/tex/latex/etex-pkg/etex.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerthemeMadrid.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamercolorthemewhale.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamercolorthemeorchid.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty)
+(/net/TeXLive/2023/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty))
+(/net/TeXLive/2023/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 2016/08/01 v2.7 eTeX basic definition package (PEB,DPC)
 
 
@@ -688,40 +703,40 @@ Package etex Warning: Extended allocation already in use.
 (etex)                \RequirePackage{etex}
 (etex)                at the start of the document.
 
-) (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+) (/net/TeXLive/2023/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfnodeparttextbox=\box76
-)
-(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+) (/net/TeXLive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.
+sty
 Package: pgfcomp-version-0-65 2023-01-15 v3.1.10 (3.1.10)
 \pgf@nodesepstart=\dimen294
 \pgf@nodesepend=\dimen295
 )
-(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.
+sty
 Package: pgfcomp-version-1-18 2023-01-15 v3.1.10 (3.1.10)
-))
-(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+)) (/net/TeXLive/2023/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@iter=\dimen296
 \pgffor@skip=\dimen297
-\pgffor@stack=\toks45
-\pgffor@toks=\toks46
+\pgffor@stack=\toks46
+\pgffor@toks=\toks47
 ))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
-x
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.
+code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count334
+\pgf@plot@mark@count=\count336
 \pgfplotmarksize=\dimen298
 )
 \tikz@lastx=\dimen299
@@ -736,94 +751,96 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box78
 \tikz@tempbox=\box79
 \tikz@tempbox@bg=\box80
-\tikztreelevel=\count335
-\tikznumberofchildren=\count336
-\tikznumberofcurrentchild=\count337
-\tikz@fig@count=\count338
- (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count339
-\pgfmatrixcurrentcolumn=\count340
-\pgf@matrix@numberofcolumns=\count341
-)
-\tikz@expandcount=\count342
+\tikztreelevel=\count337
+\tikznumberofchildren=\count338
+\tikznumberofcurrentchild=\count339
+\tikz@fig@count=\count340
 
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-topaths.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\pgfmatrixcurrentrow=\count341
+\pgfmatrixcurrentcolumn=\count342
+\pgf@matrix@numberofcolumns=\count343
+)
+\tikz@expandcount=\count344
+
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texmf-dist/tex/latex/tools/array.sty
-Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+)))
+(/net/TeXLive/2023/texmf-dist/tex/latex/tools/array.sty
+Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen307
 \ar@mcellbox=\box81
 \extrarowheight=\dimen308
-\NC@list=\toks47
+\NC@list=\toks48
 \extratabsurround=\skip65
 \backup@length=\skip66
 \ar@cellbox=\box82
 )
-(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-(/usr/share/texmf-dist/tex/latex/relsize/relsize.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
-(/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip67
-\multirow@cntb=\count343
+\multirow@cntb=\count345
 \multirow@dima=\skip68
 \bigstrutjot=\dimen309
 )
-(/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box83
 \UL@hyphenbox=\box84
 \UL@skip=\skip69
-\UL@hook=\toks48
+\UL@hook=\toks49
 \UL@height=\dimen310
-\UL@pe=\count344
+\UL@pe=\count346
 \UL@pixel=\dimen311
 \ULC@box=\box85
 Package: ulem 2019/11/18
 \ULdepth=\dimen312
 )
-(/usr/share/texmf-dist/tex/generic/kastrup/binhex.tex)
-(/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count345
+(/net/TeXLive/2023/texmf-dist/tex/generic/kastrup/binhex.tex)
+(/net/TeXLive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count347
 \lst@gtempboxa=\box86
-\lst@token=\toks49
-\lst@length=\count346
+\lst@token=\toks50
+\lst@length=\count348
 \lst@currlwidth=\dimen313
-\lst@column=\count347
-\lst@pos=\count348
+\lst@column=\count349
+\lst@pos=\count350
 \lst@lostspace=\dimen314
 \lst@width=\dimen315
-\lst@newlines=\count349
-\lst@lineno=\count350
+\lst@newlines=\count351
+\lst@lineno=\count352
 \lst@maxwidth=\dimen316
 
-(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-\c@lstnumber=\count351
-\lst@skipnumbers=\count352
+\c@lstnumber=\count353
+\lst@skipnumbers=\count354
 \lst@framebox=\box87
 )
-(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+(/net/TeXLive/2023/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
 
-(/usr/share/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count353
+\c@AlgoLine=\count355
 
-(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \algocf@hangindent=\skip70
 
-(/usr/share/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count354
+\c@checkoddpage=\count356
 )
 \skiptotal=\skip71
 \skiplinenumber=\skip72
@@ -855,123 +872,139 @@ Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
 \algoheightrule=\skip86
 \algotitleheightruledefault=\skip87
 \algotitleheightrule=\skip88
-\c@algocfline=\count355
-\c@algocfproc=\count356
-\c@algocf=\count357
+\c@algocfline=\count357
+\c@algocfproc=\count358
+\c@algocf=\count359
 \algocf@algoframe=\box94
 \algocf@algobox=\box95
 )
-(/usr/share/texmf-dist/tex/latex/algorithms/algorithmic.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/algorithms/algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
-\c@ALC@unique=\count358
-\c@ALC@line=\count359
-\c@ALC@rem=\count360
-\c@ALC@depth=\count361
+\c@ALC@unique=\count360
+\c@ALC@line=\count361
+\c@ALC@rem=\count362
+\c@ALC@depth=\count363
 \ALC@tlm=\skip89
 \algorithmicindent=\skip90
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-arrows.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryarrows.code.tex
 File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.t
+ex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen323
 ))
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.meta.c
+ode.tex
 File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowinset=\dimen324
 \pgfarrowlength=\dimen325
 \pgfarrowwidth=\dimen326
 \pgfarrowlinewidth=\dimen327
-) (/usr/share/texmf-dist/tex/latex/pgfplots/pgfplots.sty
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+) (/net/TeXLive/2023/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
 
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
-\t@pgfplots@toka=\toks50
-\t@pgfplots@tokb=\toks51
-\t@pgfplots@tokc=\toks52
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks51
+\t@pgfplots@tokb=\toks52
+\t@pgfplots@tokc=\toks53
 \pgfplots@tmpa=\dimen328
-\c@pgfplots@coordindex=\count362
-\c@pgfplots@scanlineindex=\count363
+\c@pgfplots@coordindex=\count364
+\c@pgfplots@scanlineindex=\count365
 
-(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_l
-oader.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.
+tex))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.te
+x)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
+fsupp_loader.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
 Package pgfplots: loading complementary utilities for your pgf version...
-\t@pgf@toka=\toks53
-\t@pgf@tokb=\toks54
-\t@pgf@tokc=\toks55
+\t@pgf@toka=\toks54
+\t@pgf@tokb=\toks55
+\t@pgf@tokc=\toks56
 
-(/usr/share/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_p
-gfutil-common-lists.tex))
-(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpg
+fsupp_pgfutil-common-lists.tex))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslistst
+ructure.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslistst
+ructureext.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.
+code.tex
+\c@pgfplotsarray@tmp=\count366
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix
 .code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure
-ext.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.te
-x
-\c@pgfplotsarray@tmp=\count364
-)
-(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.t
-ex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.t
-ex
-\c@pgfplotstable@counta=\count365
-\t@pgfplotstable@a=\toks56
-)
-(/usr/share/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.te
-x) (/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared
 .code.tex
-\c@pgfplotslibrarysurf@no=\count366
+\c@pgfplotstable@counta=\count367
+\t@pgfplotstable@a=\toks57
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.
+code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex
 
-(/usr/share/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.
-pgfsys-pdftex.def)))
-(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex)))
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-decorations.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.cod
+e.tex))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.
+tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surf
+shading.code.tex
+\c@pgfplotslibrarysurf@no=\count368
+
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfs
+hading.pgfsys-pdftex.def)))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.t
+ex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)
+)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.te
+x)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.te
+x
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code
+.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.t
+ex)))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code
+.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code
+.tex
 \pgfdecoratedcompleteddistance=\dimen329
 \pgfdecoratedremainingdistance=\dimen330
 \pgfdecoratedinputsegmentcompleteddistance=\dimen331
 \pgfdecoratedinputsegmentremainingdistance=\dimen332
 \pgf@decorate@distancetomove=\dimen333
-\pgf@decorate@repeatstate=\count367
+\pgf@decorate@repeatstate=\count369
 \pgfdecorationsegmentamplitude=\dimen334
 \pgfdecorationsegmentlength=\dimen335
 )
 \tikz@lib@dec@box=\box96
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-decorations.pathmorphing.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
-ons.pathmorphing.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-decorations.pathreplacing.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
-ons.pathreplacing.code.tex))
-(/usr/share/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua
-.code.tex)
-\pgfplots@numplots=\count368
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.pathmorphing.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
+ecorations.pathmorphing.code.tex))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.pathreplacing.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
+ecorations.pathreplacing.code.tex))
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.con
+tourlua.code.tex)
+\pgfplots@numplots=\count370
 \pgfplots@xmin@reg=\dimen336
 \pgfplots@xmax@reg=\dimen337
 \pgfplots@ymin@reg=\dimen338
@@ -979,120 +1012,119 @@ ons.pathreplacing.code.tex))
 \pgfplots@zmin@reg=\dimen340
 \pgfplots@zmax@reg=\dimen341
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-plotmarks.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryplotmarks.code.tex
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.cod
+e.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-))) (/usr/share/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-calc.code.tex
+))) (/net/TeXLive/2023/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-3d.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+library3d.code.tex
 File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)) (/usr/share/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2023/02/12 version 6.0.1 text color boxes
+))
+(/net/TeXLive/2023/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
 
-(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty
-Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks57
-\verbatim@line=\toks58
+(/net/TeXLive/2023/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks58
+\verbatim@line=\toks59
 \verbatim@in@stream=\read3
 )
-(/usr/share/texmf-dist/tex/latex/environ/environ.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 
-(/usr/share/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+(/net/TeXLive/2023/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 \tcb@titlebox=\box97
 \tcb@upperbox=\box98
 \tcb@lowerbox=\box99
 \tcb@phantombox=\box100
-\c@tcbbreakpart=\count369
-\c@tcblayer=\count370
-\c@tcolorbox@number=\count371
-\tcb@temp=\box101
+\c@tcbbreakpart=\count371
+\c@tcblayer=\count372
+\c@tcolorbox@number=\count373
+\l__tcobox_tmpa_box=\box101
+\l__tcobox_tmpa_dim=\dimen342
 \tcb@temp=\box102
 \tcb@temp=\box103
 \tcb@temp=\box104
+\tcb@temp=\box105
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-matrix.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-fit.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryfit.code.tex
 File: tikzlibraryfit.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-positioning.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-shapes.geometric.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+libraryshapes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes.geomet
-ric.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshapes
+.geometric.code.tex
 File: pgflibraryshapes.geometric.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-patterns.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarypatterns.code.tex
 File: tikzlibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code
+.tex
 File: pgflibrarypatterns.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-backgrounds.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@layerbox@background=\box105
-\pgf@layerboxsaved@background=\box106
+\pgf@layerbox@background=\box106
+\pgf@layerboxsaved@background=\box107
 )
-(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
-decorations.markings.code.tex
-(/usr/share/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorati
-ons.markings.code.tex)) (/usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikz
+librarydecorations.markings.code.tex
+(/net/TeXLive/2023/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibraryd
+ecorations.markings.code.tex))
+(/net/TeXLive/2023/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen342
-\lightrulewidth=\dimen343
-\cmidrulewidth=\dimen344
-\belowrulesep=\dimen345
-\belowbottomsep=\dimen346
-\aboverulesep=\dimen347
-\abovetopsep=\dimen348
-\cmidrulesep=\dimen349
-\cmidrulekern=\dimen350
-\defaultaddspace=\dimen351
-\@cmidla=\count372
-\@cmidlb=\count373
-\@aboverulesep=\dimen352
-\@belowrulesep=\dimen353
-\@thisruleclass=\count374
-\@lastruleclass=\count375
-\@thisrulewidth=\dimen354
+\heavyrulewidth=\dimen343
+\lightrulewidth=\dimen344
+\cmidrulewidth=\dimen345
+\belowrulesep=\dimen346
+\belowbottomsep=\dimen347
+\aboverulesep=\dimen348
+\abovetopsep=\dimen349
+\cmidrulesep=\dimen350
+\cmidrulekern=\dimen351
+\defaultaddspace=\dimen352
+\@cmidla=\count374
+\@cmidlb=\count375
+\@aboverulesep=\dimen353
+\@belowrulesep=\dimen354
+\@thisruleclass=\count376
+\@lastruleclass=\count377
+\@thisrulewidth=\dimen355
 )
-\c@remark=\count376
-\c@lem=\count377
-\c@defn=\count378
+\c@remark=\count378
+\c@lem=\count379
+\c@defn=\count380
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 153.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\new@ifnextchar' on input line 153.
-
-(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count379
-\l__pdf_internal_box=\box107
+(/net/TeXLive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count381
+\l__pdf_internal_box=\box108
 )
-No file main.aux.
+(./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 171.
@@ -1113,6 +1145,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 171.
 LaTeX Font Info:    ... okay on input line 171.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 171.
 LaTeX Font Info:    ... okay on input line 171.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1147,29 +1180,31 @@ LaTeX Font Info:    ... okay on input line 171.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/net/TeXLive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count380
-\scratchdimen=\dimen355
-\scratchbox=\box108
-\nofMPsegments=\count381
-\nofMParguments=\count382
-\everyMPshowfont=\toks59
-\MPscratchCnt=\count383
-\MPscratchDim=\dimen356
-\MPnumerator=\count384
-\makeMPintoPDFobject=\count385
-\everyMPtoPDFconversion=\toks60
-) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count382
+\scratchdimen=\dimen356
+\scratchbox=\box109
+\nofMPsegments=\count383
+\nofMParguments=\count384
+\everyMPshowfont=\toks60
+\MPscratchCnt=\count385
+\MPscratchDim=\dimen357
+\MPnumerator=\count386
+\makeMPintoPDFobject=\count387
+\everyMPtoPDFconversion=\toks61
+) (/net/TeXLive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 
-(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/net/TeXLive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring OFF on input line 171.
+
+(./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
 
@@ -1226,31 +1261,31 @@ LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
 ut line 171.
 
-(/usr/share/texmf-dist/tex/latex/translator/translator-basic-dictionary-English
-.dict
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator-basic-dictionary-
+English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-(/usr/share/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-
-English.dict
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator-bibliography-dict
+ionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
 )
-(/usr/share/texmf-dist/tex/latex/translator/translator-environment-dictionary-E
-nglish.dict
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator-environment-dicti
+onary-English.dict
 Dictionary: translator-environment-dictionary, Language: English 
 )
-(/usr/share/texmf-dist/tex/latex/translator/translator-months-dictionary-Englis
-h.dict
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator-months-dictionary
+-English.dict
 Dictionary: translator-months-dictionary, Language: English 
 )
-(/usr/share/texmf-dist/tex/latex/translator/translator-numbers-dictionary-Engli
-sh.dict
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator-numbers-dictionar
+y-English.dict
 Dictionary: translator-numbers-dictionary, Language: English 
 )
-(/usr/share/texmf-dist/tex/latex/translator/translator-theorem-dictionary-Engli
-sh.dict
+(/net/TeXLive/2023/texmf-dist/tex/latex/translator/translator-theorem-dictionar
+y-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@lstlisting=\count386
+\c@lstlisting=\count388
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
@@ -1258,992 +1293,265 @@ ick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into
 your preamble.
  on input line 171.
 
-No file main.nav.
+(./main.nav)
+<images/pmlogo.png, id=27, 200.75pt x 230.8625pt>
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 172.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [1
 
-Overfull \hbox (47.87425pt too wide) in paragraph at lines 171--171
- [] [] 
- []
-
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 172.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.172 \maketitle
-                
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Font Warning: Font shape `OT1/cmtt/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 172.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-]
+{/net/TeXLive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./images/pmlo
+go.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 186.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.186 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[2
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 184.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [2
 
 ]
 \openout4 = `main.vrb'.
 
  (./main.vrb
+<images/chatgpt.png, id=55, 1798.72pt x 1027.84pt>
+File: images/chatgpt.png Graphic file (type png)
+<use images/chatgpt.png>
+Package pdftex.def Info: images/chatgpt.png  used on input line 3.
+(pdftex.def)             Requested size: 320.84633pt x 183.3463pt.
 
-! LaTeX Error: File `images/graph' not found.
+
+./main.vrb:4: LaTeX Error: \caption outside figure or table.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.11 ...idth, height=0.5\textheight]{images/graph}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
+l.4     \caption
+                {generated using ChatGPT}
+You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 196.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [3
 
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 205.
+ <./images/chatgpt.png>]
+\openout4 = `main.vrb'.
 
+ (./main.vrb
+<images/serialization.png, id=65, 514.92375pt x 266.04393pt>
+File: images/serialization.png Graphic file (type png)
+<use images/serialization.png>
+Package pdftex.def Info: images/serialization.png  used on input line 3.
+(pdftex.def)             Requested size: 354.87347pt x 183.3463pt.
 
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.205 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
+Overfull \hbox (9.178pt too wide) in paragraph at lines 3--4
+ [] 
  []
 
-[3
+)
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 206.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [4
 
-]
+ <./images/serialization.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb
 LaTeX Font Info:    Trying to load font information for U+msa on input line 2.
- (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 2.
 
-(/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/net/TeXLive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on inp
 ut line 2.
 
-(/usr/share/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
+(/net/TeXLive/2023/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-
-! LaTeX Error: File `images/sage-squared' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...height=2cm, width=2cm]{images/sage-squared}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/python' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...hics[height=2cm, width=2cm]{images/python} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/cpp' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...graphics[height=2cm, width=2cm]{images/cpp}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/mathematica' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 ...height=2cm, width=2cm]{images/mathematica} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/magma' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 ...hics[height=1.5cm, width=3cm]{images/magma}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<images/pm-xml.png, id=75, 586.19pt x 778.91pt>
+File: images/pm-xml.png Graphic file (type png)
+<use images/pm-xml.png>
+Package pdftex.def Info: images/pm-xml.png  used on input line 4.
+(pdftex.def)             Requested size: 172.84773pt x 229.6695pt.
 )
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
+Overfull \hbox (13.42839pt too wide) in paragraph at lines 2--235
+[][]  
  []
 
-[4
-
-] (./main.vrb
-
-! LaTeX Error: File `images/sage-squared' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...height=2cm, width=2cm]{images/sage-squared}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/python' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...hics[height=2cm, width=2cm]{images/python} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/cpp' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...graphics[height=2cm, width=2cm]{images/cpp}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/mathematica' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 ...height=2cm, width=2cm]{images/mathematica} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/magma' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 ...hics[height=1.5cm, width=3cm]{images/magma}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 235.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [5
 
-] (./main.vrb
+ <./images/pm-xml.png>]
+\openout4 = `main.vrb'.
 
-! LaTeX Error: File `images/sage-squared' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...height=2cm, width=2cm]{images/sage-squared}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/python' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...hics[height=2cm, width=2cm]{images/python} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/cpp' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...graphics[height=2cm, width=2cm]{images/cpp}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/mathematica' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 ...height=2cm, width=2cm]{images/mathematica} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/magma' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 ...hics[height=1.5cm, width=3cm]{images/magma}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+ (./main.vrb
+<images/pm-demo.png, id=84, 587.19376pt x 196.735pt>
+File: images/pm-demo.png Graphic file (type png)
+<use images/pm-demo.png>
+Package pdftex.def Info: images/pm-demo.png  used on input line 4.
+(pdftex.def)             Requested size: 138.27608pt x 46.32578pt.
+<images/lp-file.png, id=85, 195.73125pt x 223.83624pt>
+File: images/lp-file.png Graphic file (type png)
+<use images/lp-file.png>
+Package pdftex.def Info: images/lp-file.png  used on input line 5.
+(pdftex.def)             Requested size: 114.52171pt x 130.96222pt.
+<images/mps-file.png, id=86, 622.325pt x 482.80376pt>
+File: images/mps-file.png Graphic file (type png)
+<use images/mps-file.png>
+Package pdftex.def Info: images/mps-file.png  used on input line 8.
+(pdftex.def)             Requested size: 168.80865pt x 130.96222pt.
 )
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
+Overfull \hbox (9.38931pt too wide) in paragraph at lines 2--251
+[][]  
  []
 
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 251.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [6
 
-] (./main.vrb
-
-! LaTeX Error: File `images/sage-squared' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...height=2cm, width=2cm]{images/sage-squared}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+ <./images/pm-demo.png> <./images/lp-file.png> <./images/mps-file.png>]
+\openout4 = `main.vrb'.
 
 
-! LaTeX Error: File `images/python' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...hics[height=2cm, width=2cm]{images/python} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/cpp' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...graphics[height=2cm, width=2cm]{images/cpp}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/mathematica' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 ...height=2cm, width=2cm]{images/mathematica} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/magma' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 ...hics[height=1.5cm, width=3cm]{images/magma}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+(./main.vrb
+<images/pm-json.png, id=95, 721.69624pt x 600.2425pt>
+File: images/pm-json.png Graphic file (type png)
+<use images/pm-json.png>
+Package pdftex.def Info: images/pm-json.png  used on input line 3.
+(pdftex.def)             Requested size: 251.93674pt x 209.54034pt.
 )
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 261.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [7
 
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[7
-
-] (./main.vrb
-
-! LaTeX Error: File `images/sage-squared' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...height=2cm, width=2cm]{images/sage-squared}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/python' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...hics[height=2cm, width=2cm]{images/python} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/cpp' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...graphics[height=2cm, width=2cm]{images/cpp}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/mathematica' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 ...height=2cm, width=2cm]{images/mathematica} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/magma' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 ...hics[height=1.5cm, width=3cm]{images/magma}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[8
-
-] (./main.vrb
-
-! LaTeX Error: File `images/sage-squared' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...height=2cm, width=2cm]{images/sage-squared}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/python' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...hics[height=2cm, width=2cm]{images/python} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/cpp' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...graphics[height=2cm, width=2cm]{images/cpp}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/mathematica' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.7 ...height=2cm, width=2cm]{images/mathematica} 
-                                                  \\
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/magma' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8 ...hics[height=1.5cm, width=3cm]{images/magma}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 232.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.232 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[9
-
-]
+ <./images/pm-json.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb
 
 Package amsfonts Warning: Obsolete command \bold; \mathbf should be used instea
-d on input line 11.
+d on input line 6.
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <9> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 11.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <6> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 11.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 6.
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <5> not available
-(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 11.
+(Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 6.
 )
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 256.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.256 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[10
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 276.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [8
 
 ] (./main.vrb)
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 276.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [9
 
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 256.
+]
+\openout4 = `main.vrb'.
 
+ (./main.vrb
+<images/demo.jpg, id=122, 228.6141pt x 144.0582pt>
+File: images/demo.jpg Graphic file (type jpg)
+<use images/demo.jpg>
+Package pdftex.def Info: images/demo.jpg  used on input line 2.
+(pdftex.def)             Requested size: 313.00407pt x 227.638pt.
+)
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 283.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [10
 
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
+ <./images/demo.jpg>]
+\openout4 = `main.vrb'.
 
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.256 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
+ (./main.vrb
+<images/tree-coloured.pdf, id=131, 242.79207pt x 440.87712pt>
+File: images/tree-coloured.pdf Graphic file (type pdf)
+<use images/tree-coloured.pdf>
+Package pdftex.def Info: images/tree-coloured.pdf  used on input line 4.
+(pdftex.def)             Requested size: 172.85405pt x 235.72902pt.
+)
+Overfull \vbox (8.30318pt too high) detected at line 320
  []
 
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 320.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [11
 
-]
+ <./images/tree-coloured.pdf>]
 \openout4 = `main.vrb'.
 
  (./main.vrb
+<images/polynomial-example.jpg, id=148, 207.4149pt x 202.1151pt>
+File: images/polynomial-example.jpg Graphic file (type jpg)
+<use images/polynomial-example.jpg>
+Package pdftex.def Info: images/polynomial-example.jpg  used on input line 2.
+(pdftex.def)             Requested size: 256.08409pt x 227.62563pt.
+)
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 328.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [12
 
-! LaTeX Error: File `images/mps_file' not found.
+ <./images/polynomial-example.jpg>]
+\openout4 = `main.vrb'.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5 ...ics[height=5cm, width=3cm]{images/mps_file}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+ (./main.vrb
+<images/oscar_logo.png, id=158, 542.025pt x 182.6825pt>
+File: images/oscar_logo.png Graphic file (type png)
+<use images/oscar_logo.png>
+Package pdftex.def Info: images/oscar_logo.png  used on input line 4.
+(pdftex.def)             Requested size: 103.70535pt x 52.38281pt.
 
-
-! LaTeX Error: File `images/json_file' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...cs[height=5cm, width=3cm]{images/json_file}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (13.42932pt too wide) in paragraph at lines 2--20
+[][]  
+ []
 
 )
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 355.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [13
 
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 282.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.282 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[12
-
-]
+ <./images/oscar_logo.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb
 
-! LaTeX Error: File `images/demo' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...aphics[height=8cm, width=11cm]{images/demo}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 289.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.289 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[13
-
-]
-\openout4 = `main.vrb'.
-
- (./main.vrb
-
-! LaTeX Error: File `images/tree-coloured' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...eight=0.9\textheight]{images/tree-coloured}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-Overfull \vbox (8.30318pt too high) detected at line 326
- []
-
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 326.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.326 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[14
-
-]
-\openout4 = `main.vrb'.
-
- (./main.vrb
-
-! LaTeX Error: File `images/polynomial-example' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2 ...=8cm, width=9cm]{images/polynomial-example}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 334.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.334 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[15
-
-]
-\openout4 = `main.vrb'.
-
- (./main.vrb
-
-! LaTeX Error: File `images/oscar_logo' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ..., height=0.2\textheight]{images/oscar_logo}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 361.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.361 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[16
-
-]
-\openout4 = `main.vrb'.
-
- (./main.vrb
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2255,7 +1563,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2267,7 +1575,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2278,19 +1586,15 @@ l.5         \begin
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+<images/blocks.jpg, id=169, 1129.21875pt x 752.8125pt>
+File: images/blocks.jpg Graphic file (type jpg)
+<use images/blocks.jpg>
+Package pdftex.def Info: images/blocks.jpg  used on input line 6.
+(pdftex.def)             Requested size: 142.25475pt x 113.8015pt.
 
-! LaTeX Error: File `images/blocks' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...phics[height=4cm, width=5cm]{images/blocks}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (3.97867pt too wide) in paragraph at lines 6--7
+[][] 
+ []
 
 LaTeX Font Info:    Font shape `OT1/cmss/b/n' in size <8> not available
 (Font)              Font shape `OT1/cmss/bx/n' tried instead on input line 7.
@@ -2300,72 +1604,349 @@ Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
  []
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--392
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
 [][]  
  []
 
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+[14
 
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 392.
+ <./images/blocks.jpg>] (./main.vrb
 
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.392 \end{frame}
-                 
+l.5         \begin
+                  {minipage}{0.4\textwidth}
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: images/blocks.jpg Graphic file (type jpg)
+<use images/blocks.jpg>
+Package pdftex.def Info: images/blocks.jpg  used on input line 6.
+(pdftex.def)             Requested size: 142.25475pt x 113.8015pt.
+
+Overfull \hbox (3.97867pt too wide) in paragraph at lines 6--7
+[][] 
  []
 
+
+Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
+\OT1/cmtt/m/n/8 plastic-[]shape-[]shorter-[]toy-[]11030155/$[]  
+ []
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+[][]  
+ []
+
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+[15
+
+] (./main.vrb
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: images/blocks.jpg Graphic file (type jpg)
+<use images/blocks.jpg>
+Package pdftex.def Info: images/blocks.jpg  used on input line 6.
+(pdftex.def)             Requested size: 142.25475pt x 113.8015pt.
+
+Overfull \hbox (3.97867pt too wide) in paragraph at lines 6--7
+[][] 
+ []
+
+
+Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
+\OT1/cmtt/m/n/8 plastic-[]shape-[]shorter-[]toy-[]11030155/$[]  
+ []
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+[][]  
+ []
+
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+[16
+
+] (./main.vrb
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+File: images/blocks.jpg Graphic file (type jpg)
+<use images/blocks.jpg>
+Package pdftex.def Info: images/blocks.jpg  used on input line 6.
+(pdftex.def)             Requested size: 142.25475pt x 113.8015pt.
+
+Overfull \hbox (3.97867pt too wide) in paragraph at lines 6--7
+[][] 
+ []
+
+
+Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
+\OT1/cmtt/m/n/8 plastic-[]shape-[]shorter-[]toy-[]11030155/$[]  
+ []
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+[][]  
+ []
+
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [17
 
 ] (./main.vrb
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2377,7 +1958,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2389,7 +1970,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2400,19 +1981,14 @@ l.5         \begin
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+File: images/blocks.jpg Graphic file (type jpg)
+<use images/blocks.jpg>
+Package pdftex.def Info: images/blocks.jpg  used on input line 6.
+(pdftex.def)             Requested size: 142.25475pt x 113.8015pt.
 
-! LaTeX Error: File `images/blocks' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...phics[height=4cm, width=5cm]{images/blocks}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (3.97867pt too wide) in paragraph at lines 6--7
+[][] 
+ []
 
 
 Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
@@ -2420,72 +1996,55 @@ Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
  []
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--392
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
 [][]  
  []
 
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 392.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.392 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [18
 
 ] (./main.vrb
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2497,7 +2056,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2509,7 +2068,7 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -2520,19 +2079,14 @@ l.5         \begin
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+File: images/blocks.jpg Graphic file (type jpg)
+<use images/blocks.jpg>
+Package pdftex.def Info: images/blocks.jpg  used on input line 6.
+(pdftex.def)             Requested size: 142.25475pt x 113.8015pt.
 
-! LaTeX Error: File `images/blocks' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...phics[height=4cm, width=5cm]{images/blocks}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (3.97867pt too wide) in paragraph at lines 6--7
+[][] 
+ []
 
 
 Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
@@ -2540,566 +2094,102 @@ Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
  []
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-! LaTeX Error: Something's wrong--perhaps a missing \item.
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.9         \end{figure}
-                        
+l.9       \end{figure}
+                      
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--392
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
 [][]  
  []
 
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 392.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.392 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [19
-
-] (./main.vrb
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/blocks' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...phics[height=4cm, width=5cm]{images/blocks}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
-\OT1/cmtt/m/n/8 plastic-[]shape-[]shorter-[]toy-[]11030155/$[]  
- []
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--392
-[][]  
- []
-
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 392.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.392 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[20
-
-] (./main.vrb
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/blocks' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...phics[height=4cm, width=5cm]{images/blocks}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
-\OT1/cmtt/m/n/8 plastic-[]shape-[]shorter-[]toy-[]11030155/$[]  
- []
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--392
-[][]  
- []
-
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 392.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.392 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[21
-
-] (./main.vrb
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.5         \begin
-                  {minipage}{0.4\textwidth}
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/blocks' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.6 ...phics[height=4cm, width=5cm]{images/blocks}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (12.47606pt too wide) in paragraph at lines 7--7
-\OT1/cmtt/m/n/8 plastic-[]shape-[]shorter-[]toy-[]11030155/$[]  
- []
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: Something's wrong--perhaps a missing \item.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.9         \end{figure}
-                        
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--392
-[][]  
- []
-
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 392.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.392 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[22
 
 ]
 \openout4 = `main.vrb'.
 
  (./main.vrb
-
-! LaTeX Error: File `images/schema-demo' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.3 ...[height=5cm, width=9cm]{images/schema-demo}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `images/schema' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.4 ...phics[height=5cm, width=3cm]{images/schema}
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<images/schema-demo.png, id=228, 188.3838pt x 64.0794pt>
+File: images/schema-demo.png Graphic file (type png)
+<use images/schema-demo.png>
+Package pdftex.def Info: images/schema-demo.png  used on input line 3.
+(pdftex.def)             Requested size: 256.08359pt x 142.26576pt.
+<images/schema.png, id=229, 166.4619pt x 202.5969pt>
+File: images/schema.png Graphic file (type png)
+<use images/schema.png>
+Package pdftex.def Info: images/schema.png  used on input line 4.
+(pdftex.def)             Requested size: 85.3567pt x 142.26509pt.
 )
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 402.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.402 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
+Overfull \hbox (10.82814pt too wide) in paragraph at lines 2--396
+[][]  
  []
 
-[23
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 396.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+[20
 
-]
+ <./images/schema-demo.png> <./images/schema.png>]
+\openout4 = `main.vrb'.
+
+ (./main.vrb
+<images/graph.png, id=240, 255.354pt x 185.9748pt>
+File: images/graph.png Graphic file (type png)
+<use images/graph.png>
+Package pdftex.def Info: images/graph.png  used on input line 11.
+(pdftex.def)             Requested size: 172.85135pt x 130.96468pt.
+)
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 416.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [21
+
+ <./images/graph.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 416.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.416 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[24
-
-]
-\openout4 = `main.vrb'.
-
- (./main.vrb
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.8     \\
-          
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: File `images/paper-qr' not found.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.11 ...[height=3cm, width=3cm]{images/paper-qr}\\
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-)
-
-LaTeX Warning: File `images/mardi-logo.png' not found on input line 436.
-
-
-! Package pdftex.def Error: File `images/mardi-logo.png' not found: using draft
- setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.436 \end{frame}
-                 
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (47.87425pt too wide) has occurred while \output is active
- [] [] 
- []
-
-[25
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 426.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+ [22
 
 ]
 \tf@nav=\write6
@@ -3112,38 +2202,33 @@ Overfull \hbox (47.87425pt too wide) has occurred while \output is active
 \openout8 = `main.snm'.
 
  (./main.aux)
-
-LaTeX Font Warning: Size substitutions with differences
-(Font)              up to 1.0pt have occurred.
-
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+ ***********
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+ ***********
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42525 strings out of 477985
- 1000935 string characters out of 5840059
- 1865388 words of memory out of 5000000
- 61838 multiletter control sequences out of 15000+600000
- 522327 words of font info for 70 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 128i,23n,122p,743b,718s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmssi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (25 pages, 126842 bytes).
+ 41921 strings out of 475401
+ 983533 string characters out of 5779163
+ 1938975 words of memory out of 5000000
+ 63139 multiletter control sequences out of 15000+600000
+ 568109 words of font info for 74 fonts, out of 8000000 for 9000
+ 525 hyphenation exceptions out of 8191
+ 128i,23n,123p,724b,720s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</net/TeXLive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></net
+/TeXLive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></net/TeXLive
+/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></net/TeXLive/2023/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></net/TeXLive/2023/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></net/TeXLive/2023/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb></net/TeXLive/2023/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt8.pfb></net/TeXLive/2023/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmtt9.pfb>
+Output written on main.pdf (22 pages, 4257655 bytes).
 PDF statistics:
- 259 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
- 51 named destinations out of 1000 (max. 500000)
- 85 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 302 PDF objects out of 1000 (max. 8388607)
+ 182 compressed objects within 2 object streams
+ 45 named destinations out of 1000 (max. 500000)
+ 165 words of extra memory for PDF output out of 10000 (max. 10000000)
 
