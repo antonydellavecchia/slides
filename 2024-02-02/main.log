@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  30 JAN 2024 16:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.1.29)  31 JAN 2024 15:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1481,12 +1481,12 @@ Package pdftex.def Info: images/pmlogo.png  used on input line 276.
 <images/demo.jpg, id=122, 228.6141pt x 144.0582pt>
 File: images/demo.jpg Graphic file (type jpg)
 <use images/demo.jpg>
-Package pdftex.def Info: images/demo.jpg  used on input line 2.
+Package pdftex.def Info: images/demo.jpg  used on input line 3.
 (pdftex.def)             Requested size: 313.00407pt x 227.638pt.
 )
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 283.
+Package pdftex.def Info: images/pmlogo.png  used on input line 285.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
  [10
 
@@ -1516,12 +1516,12 @@ Package pdftex.def Info: images/pmlogo.png  used on input line 320.
 <images/polynomial-example.jpg, id=148, 207.4149pt x 202.1151pt>
 File: images/polynomial-example.jpg Graphic file (type jpg)
 <use images/polynomial-example.jpg>
-Package pdftex.def Info: images/polynomial-example.jpg  used on input line 2.
+Package pdftex.def Info: images/polynomial-example.jpg  used on input line 3.
 (pdftex.def)             Requested size: 256.08409pt x 227.62563pt.
 )
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 328.
+Package pdftex.def Info: images/pmlogo.png  used on input line 330.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
  [12
 
@@ -1529,24 +1529,22 @@ Package pdftex.def Info: images/pmlogo.png  used on input line 328.
 \openout4 = `main.vrb'.
 
  (./main.vrb
-<images/oscar_logo.png, id=158, 542.025pt x 182.6825pt>
-File: images/oscar_logo.png Graphic file (type png)
-<use images/oscar_logo.png>
-Package pdftex.def Info: images/oscar_logo.png  used on input line 4.
-(pdftex.def)             Requested size: 103.70535pt x 52.38281pt.
-
-Overfull \hbox (13.42932pt too wide) in paragraph at lines 2--20
-[][]  
+<images/pm-oscar.png, id=158, 695.59875pt x 670.505pt>
+File: images/pm-oscar.png Graphic file (type png)
+<use images/pm-oscar.png>
+Package pdftex.def Info: images/pm-oscar.png  used on input line 3.
+(pdftex.def)             Requested size: 244.54584pt x 235.7304pt.
+)
+Overfull \vbox (7.35698pt too high) detected at line 341
  []
 
-)
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 355.
+Package pdftex.def Info: images/pmlogo.png  used on input line 341.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
- [13
+[13
 
- <./images/oscar_logo.png>]
+ <./images/pm-oscar.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb
@@ -1586,7 +1584,7 @@ l.5         \begin
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-<images/blocks.jpg, id=169, 1129.21875pt x 752.8125pt>
+<images/blocks.jpg, id=168, 1129.21875pt x 752.8125pt>
 File: images/blocks.jpg Graphic file (type jpg)
 <use images/blocks.jpg>
 Package pdftex.def Info: images/blocks.jpg  used on input line 6.
@@ -1640,13 +1638,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--372
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+Package pdftex.def Info: images/pmlogo.png  used on input line 372.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [14
 
@@ -1738,13 +1736,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--372
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+Package pdftex.def Info: images/pmlogo.png  used on input line 372.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [15
 
@@ -1836,13 +1834,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--372
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+Package pdftex.def Info: images/pmlogo.png  used on input line 372.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [16
 
@@ -1934,13 +1932,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--372
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+Package pdftex.def Info: images/pmlogo.png  used on input line 372.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [17
 
@@ -2032,13 +2030,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--372
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+Package pdftex.def Info: images/pmlogo.png  used on input line 372.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [18
 
@@ -2130,13 +2128,13 @@ Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 )
-Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--386
+Overfull \hbox (16.5117pt too wide) in paragraph at lines 2--372
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 386.
+Package pdftex.def Info: images/pmlogo.png  used on input line 372.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [19
 
@@ -2144,24 +2142,24 @@ Package pdftex.def Info: images/pmlogo.png  used on input line 386.
 \openout4 = `main.vrb'.
 
  (./main.vrb
-<images/schema-demo.png, id=228, 188.3838pt x 64.0794pt>
+<images/schema-demo.png, id=227, 188.3838pt x 64.0794pt>
 File: images/schema-demo.png Graphic file (type png)
 <use images/schema-demo.png>
 Package pdftex.def Info: images/schema-demo.png  used on input line 3.
 (pdftex.def)             Requested size: 256.08359pt x 142.26576pt.
-<images/schema.png, id=229, 166.4619pt x 202.5969pt>
+<images/schema.png, id=228, 166.4619pt x 202.5969pt>
 File: images/schema.png Graphic file (type png)
 <use images/schema.png>
 Package pdftex.def Info: images/schema.png  used on input line 4.
 (pdftex.def)             Requested size: 85.3567pt x 142.26509pt.
 )
-Overfull \hbox (10.82814pt too wide) in paragraph at lines 2--396
+Overfull \hbox (10.82814pt too wide) in paragraph at lines 2--382
 [][]  
  []
 
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 396.
+Package pdftex.def Info: images/pmlogo.png  used on input line 382.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
 [20
 
@@ -2169,27 +2167,133 @@ Package pdftex.def Info: images/pmlogo.png  used on input line 396.
 \openout4 = `main.vrb'.
 
  (./main.vrb
-<images/graph.png, id=240, 255.354pt x 185.9748pt>
-File: images/graph.png Graphic file (type png)
-<use images/graph.png>
-Package pdftex.def Info: images/graph.png  used on input line 11.
-(pdftex.def)             Requested size: 172.85135pt x 130.96468pt.
+./main.vrb:7: Undefined control sequence.
+l.7   \item \textbf{F}indable \textpbf
+                                      {A}ccessible \textbf{I}nteroperable \t...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+<images/mardi-logo.png, id=239, 365.365pt x 138.5175pt>
+File: images/mardi-logo.png Graphic file (type png)
+<use images/mardi-logo.png>
+Package pdftex.def Info: images/mardi-logo.png  used on input line 11.
+(pdftex.def)             Requested size: 138.17113pt x 52.38408pt.
 )
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 416.
+Package pdftex.def Info: images/pmlogo.png  used on input line 402.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
  [21
 
- <./images/graph.png>]
+ <./images/mardi-logo.png>]
+\openout4 = `main.vrb'.
+
+ (./main.vrb
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:5: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5         \begin
+                  {minipage}{0.4\textwidth}
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<images/ipc.png, id=249, 1027.84pt x 1027.84pt>
+File: images/ipc.png Graphic file (type png)
+<use images/ipc.png>
+Package pdftex.def Info: images/ipc.png  used on input line 6.
+(pdftex.def)             Requested size: 130.95769pt x 130.96222pt.
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./main.vrb:9: LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.9       \end{figure}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<images/ipc-example.png, id=250, 564.1075pt x 425.59pt>
+File: images/ipc-example.png Graphic file (type png)
+<use images/ipc-example.png>
+Package pdftex.def Info: images/ipc-example.png  used on input line 12.
+(pdftex.def)             Requested size: 173.58897pt x 130.96222pt.
+)
+Overfull \hbox (17.25294pt too wide) in paragraph at lines 2--422
+[][]  
+ []
+
+File: images/pmlogo.png Graphic file (type png)
+<use images/pmlogo.png>
+Package pdftex.def Info: images/pmlogo.png  used on input line 422.
+(pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
+[22
+
+ <./images/ipc.png> <./images/ipc-example.png>]
 \openout4 = `main.vrb'.
 
  (./main.vrb)
 File: images/pmlogo.png Graphic file (type png)
 <use images/pmlogo.png>
-Package pdftex.def Info: images/pmlogo.png  used on input line 426.
+Package pdftex.def Info: images/pmlogo.png  used on input line 432.
 (pdftex.def)             Requested size: 18.06671pt x 20.77672pt.
- [22
+ [23
 
 ]
 \tf@nav=\write6
@@ -2201,7 +2305,8 @@ Package pdftex.def Info: images/pmlogo.png  used on input line 426.
 \tf@snm=\write8
 \openout8 = `main.snm'.
 
- (./main.aux)
+
+(./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2210,10 +2315,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 41921 strings out of 475401
- 983533 string characters out of 5779163
+ 41949 strings out of 475401
+ 984143 string characters out of 5779163
  1938975 words of memory out of 5000000
- 63139 multiletter control sequences out of 15000+600000
+ 63163 multiletter control sequences out of 15000+600000
  568109 words of font info for 74 fonts, out of 8000000 for 9000
  525 hyphenation exceptions out of 8191
  128i,23n,123p,724b,720s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2225,10 +2330,10 @@ ist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></net/TeXLive/2023/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmtt10.pfb></net/TeXLive/2023/texmf-dist/fonts/type
 1/public/amsfonts/cm/cmtt8.pfb></net/TeXLive/2023/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt9.pfb>
-Output written on main.pdf (22 pages, 4257655 bytes).
+Output written on main.pdf (23 pages, 4541541 bytes).
 PDF statistics:
- 302 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 165 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 312 PDF objects out of 1000 (max. 8388607)
+ 187 compressed objects within 2 object streams
+ 47 named destinations out of 1000 (max. 500000)
+ 175 words of extra memory for PDF output out of 10000 (max. 10000000)
 

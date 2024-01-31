@@ -279,9 +279,10 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\oscar Demo}
-  \includegraphics[height=8cm, width=11cm]{images/demo}
+  \begin{center}
+    \includegraphics[height=8cm, width=11cm]{images/demo}
+  \end{center}
 \end{frame}
-  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -316,7 +317,6 @@ Technische Universit\"at Berlin
         }
       \end{tabular}  \\
   \end{tabular}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -324,7 +324,9 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{Example File Serialized with \oscar}
-  \includegraphics[height=8cm, width=9cm]{images/polynomial-example}
+  \begin{center}
+    \includegraphics[height=8cm, width=9cm]{images/polynomial-example}
+  \end{center}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -332,26 +334,10 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{Current Status and Features of \oscar Serialization}
-      \begin{tabular}{cl}  
-      \begin{tabular}{c}
-        \includegraphics[width=.3\textwidth, height=0.2\textheight]{images/oscar_logo} 
-    \end{tabular}
-    & \begin{tabular}{l}
-        \parbox{0.6\linewidth}{%  change the parbox width as appropiate
-          
-          \begin{itemize}
-          \item Over 100* registered types.
-          \item Can store sessions over multiple files.
-          \item Parameter Overriding.
-          \item Serialization extensible from outside \oscar due to \texttt{Julia} multiple dispatch.
-          \item Option to attach metadata (name and ORCID for author).
-          \item Upgrade scripts.
-          \end{itemize}
-        }
-      \end{tabular}  \\
-  \end{tabular}y
-
+\begin{frame}[fragile]{Namespaces}
+  \begin{center}
+    \includegraphics[height=.9\textheight]{images/pm-oscar}
+  \end{center}
 \end{frame}
 
 
@@ -401,18 +387,38 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{MaRDI and the FAIR Principles}
+\begin{frame}[fragile]{MaRDI and the FAIR principles}
   \begin{itemize}
   \item \textbf{Ma}thematics \textbf{R}esearch \textbf{D}ata \text{I}nitiative.
   \item Develop a mathematical research data infrastructure.
   \item Set standards for confirmable workflows and certified mathematical research data.
   \item Provide services to both the mathematical and wider scientific community.
-  \item \textbf{F}indable \textbf{A}ccessible \textbf{I}nteroperable \textbf{R}eusable [M. D. Wilkinson et al. 2016]
+  \item \textbf{F}indable \textpbf{A}ccessible \textbf{I}nteroperable \textbf{R}eusable [M. D. Wilkinson et al. 2016]
 
   \end{itemize}
   \begin{center}
-    \includegraphics[width=0.5\textwidth, height=0.5\textheight]{images/graph}
+    \includegraphics[height=0.2\textheight]{images/mardi-logo}
   \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Benefits of Julia}
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \begin{figure}
+        \begin{minipage}{0.4\textwidth}
+          \includegraphics[height=0.5\textheight]{images/ipc}
+          \caption{ChatGPT}
+        \end{minipage}
+      \end{figure}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \includegraphics[height=0.5 \textheight]{images/ipc-example}
+      \end{tabular}  \\
+  \end{tabular}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -421,7 +427,7 @@ Technische Universit\"at Berlin
 
 \begin{frame}[fragile]{End}
   \begin{center}
-    Thank You!\\
+    Now try and serialize something.
   \end{center}
 \end{frame}
 
