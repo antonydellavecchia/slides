@@ -244,6 +244,12 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Example File Serialized with \oscar}
+  \begin{center}
+    \includegraphics[height=8cm, width=9cm]{images/polynomial-example}
+  \end{center}
+\end{frame}
+
 
 \begin{frame}[fragile]{Namespaces}
   \begin{center}
