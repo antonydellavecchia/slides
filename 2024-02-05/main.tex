@@ -174,22 +174,6 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{Overview}
-  \begin{itemize}
-  \item MaRDI and the FAIR principles
-  \item History of Files in Mathematical Software
-  \item Technicalities with Algebraic Data
-  \item Current Status of Prototype
-  \item The File Format Specification
-  \item Future Work
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \begin{frame}[fragile]{MaRDI and the FAIR Principles}
   \begin{itemize}
   \item \textbf{Ma}thematics \textbf{R}esearch \textbf{D}ata \text{I}nitiative.
@@ -212,40 +196,26 @@ Technische Universit\"at Berlin
   \begin{center}
     \includegraphics[height=0.8\textheight]{images/notebook}
   \end{center}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Storing Computer Algebra Data}
-  \begin{itemize}
-    \item It's common to have multiple perspectives on an object in mathematics. 
-    \item While storing mathematical data a choice of perspective must me made.
-    \item Such a choice might not be describeable in an email.
-    \end{itemize}
-
-  Say we want to store:
-  \begin{align*}
-    p = 2y^3z^4 + (\bold{a} + 3)z^2 + 5\bold{a}y + 1
-  \end{align*} \pause
-
-  \begin{itemize}
-  \item Some technicalities with the coefficients.
-  \item Is y considered a coefficient of z?
-  \item What is $\bold{a}$?
-  \item How can we guarantee the objects behave as expected on load?
-  \end{itemize}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\oscar Demo}
+\begin{frame}[fragile]{Alice's File}
   \begin{center}
-    \includegraphics[height=8cm, width=11cm]{images/demo}
+    \includegraphics[height=0.7\textheight]{images/separate}
+  \end{center}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Bob loads}
+  Bob can now choose which file to load and to do similar computations with.
+  \begin{center}
+    \includegraphics[height=0.5\textheight]{images/load}
   \end{center}
 \end{frame}
 
@@ -253,9 +223,10 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Example File Serialized with \oscar}
+\begin{frame}[fragile]{Bob's File}
+  Bob wants to change labels, and use polynomial ring that lives in his environment.
   \begin{center}
-    \includegraphics[height=8cm, width=9cm]{images/polynomial-example}
+    \includegraphics[height=0.7\textheight]{images/bob_save}
   \end{center}
 \end{frame}
 
@@ -264,9 +235,9 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\begin{frame}[fragile]{Namespaces}
+\begin{frame}[fragile]{\texttt{result.mrdi}}
   \begin{center}
-    \includegraphics[height=.9\textheight]{images/pm-oscar}
+    \includegraphics[height=.8\textheight]{images/example-file}
   \end{center}
 \end{frame}
 
@@ -274,7 +245,24 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Schema}
+
+\begin{frame}[fragile]{Parsing Outside \oscar}
+  \begin{center}
+    \includegraphics[height=.5\textheight]{images/read_json}
+  \end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}[fragile]{10 Years Later}
     \begin{tabular}{cl}  
       \begin{tabular}{c}
         \begin{figure}
@@ -286,14 +274,19 @@ Technische Universit\"at Berlin
     \end{tabular}
     & \begin{tabular}{l}
         \parbox{0.5\linewidth}{%  change the parbox width as appropiate
-        \begin{itemize}
-        \item A schema defines a structure for data. \pause
-        \item Schema languages. (RELAX NG [2002], JSON Schema [2022])\pause
-        \item Is possible to define recursive structure. \pause
-        \item Schemata allow data to be validated before loading. \pause
-        \item Adds structure to document based databases. \pause
-        \item \polydb, Paffenholz [2017]
-        \end{itemize}
+            Latest \oscar version is \texttt{2.10.5}.
+  
+            \begin{itemize} 
+            \item There have been many contributions by other parties. 
+            \item They all used different \oscar versions. 
+            \end{itemize}
+            \pause
+
+            Solution
+            \begin{itemize}
+            \item \oscar provides update scripts.
+            \item Bob and Alice decide to define a schema based on the \texttt{mrdi} schema.
+            \end{itemize}
 
         }
       \end{tabular}  \\
@@ -303,38 +296,8 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{File Format Specification}
-  \begin{tabular}{c}
-    \includegraphics[height=5cm, width=9cm]{images/schema-demo}
-    \includegraphics[height=5cm, width=3cm]{images/schema}
-    \end{tabular}
-\end{frame}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-\begin{frame}[fragile]{MaRDI and the FAIR principles}
-  \begin{itemize}
-  \item \textbf{Ma}thematics \textbf{R}esearch \textbf{D}ata \text{I}nitiative.
-  \item Develop a mathematical research data infrastructure.
-  \item Set standards for confirmable workflows and certified mathematical research data.
-  \item Provide services to both the mathematical and wider scientific community.
-  \item \textbf{F}indable \textpbf{A}ccessible \textbf{I}nteroperable \textbf{R}eusable [M. D. Wilkinson et al. 2016]
-
-  \end{itemize}
-  \begin{center}
-    \includegraphics[height=0.2\textheight]{images/mardi-logo}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{Benefits of Julia}
+\begin{frame}[fragile]{Collaboration of Processes}
   \begin{tabular}{cl}  
     \begin{tabular}{c}
       \begin{figure}
@@ -354,10 +317,46 @@ Technische Universit\"at Berlin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Alice and Bob's Database (Future Work)}
+  \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \begin{figure}
+        \begin{minipage}{0.3\textwidth}
+          \begin{center}
+            \includegraphics[height=0.4\textheight]{images/mongo}
+            \end{center}
+        \end{minipage}
+      \end{figure}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+          \begin{itemize}
+          \item MongoDB is a document based database.
+          \item Structure is determined by providing a schema.
+          \item \polydb, Paffenholz [2017].
+          \end{itemize}
+        }
+      \end{tabular}  \\
+  \end{tabular}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}[fragile]{End}
   \begin{center}
     Thank you!
   \end{center}
+  \begin{center}
+    \\
+    See here for the details \\
+
+    \includegraphics[height=3cm, width=3cm]{images/paper-qr}\\
+    \url{https://arxiv.org/abs/2309.00465}
+
+  \end{center}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
