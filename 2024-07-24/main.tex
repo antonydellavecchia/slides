@@ -151,14 +151,15 @@
 \newtheorem{lem}{Lemma}
 \newtheorem{defn}{Definition}
 
-\author{Antony Della Vecchia}
-\title{Building Software Infrastructure for Research Mathematics}
-% \newtheorem*{example}{Example}
+\author[Antony Della Vecchia]{Antony Della Vecchia \\ \vspace{4mm} \small{Joint work with M. Joswig and B. Lorenz} }
+\title{A FAIR File Format for Mathematical Software}
+
 \institute[]{
   TU Berlin
 }
 \date{
-  2024-06-20
+  ICMS Mathematical Research Data
+  2024-07-24
 }
 \logo{
   \includegraphics[width=2cm]{images/mardi-logo.png}
@@ -174,150 +175,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-
-\begin{frame}[fragile]{Overview}
-  \begin{itemize}
-  \item MaRDI and the FAIR Principles
-  \item \Julia and \OSCAR
-  \item Serialization and Datasets
-  \end{itemize}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-
-\begin{frame}[fragile]{The FAIR Guiding Principles for scientific data management and stewardship}
-  \begin{tcolorbox}[title={M. Wilkinson et al. 2019}]
-    \begin{itemize}
-    \item Findable
-    \item Accessible
-    \item Interoperable
-    \item Reusable
-    \end{itemize}
-  \end{tcolorbox}
-  
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-
-\begin{frame}[fragile]{Mathematics Research Data Initiative}
-
-  \begin{itemize}
-  \item Develop a mathematical research data infrastructure.
-  \item Set standards for confirmable workflows and certified mathematical research data.
-  \item Provide services to both the mathematical and wider scientific community.
-  \end{itemize}
-  \begin{center}
-    \includegraphics[width=0.5\textwidth, height=0.5\textheight]{images/graph}
-  \end{center}
-  Find the MaRDI proposal here \url{https://zenodo.org/records/6552436}.
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{MaRDI Task Area Breakdown}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/mardi-ta}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-
-\begin{frame}[fragile]{Computer Algebra Task Area}
-  \begin{tcolorbox}[title={Principle Investigators}]
-    \begin{itemize}
-    \item Claus Fieker (RPTU Kaiserslautern)
-    \item Michael Joswig (TU Berlin)
-    \end{itemize}
-  \end{tcolorbox}
-
-  \begin{tcolorbox}[title={On Going Projects}]
-    \begin{itemize}
-    \item Confirmable workflows (OSCAR Book) Lars Kastner
-    \item Technical Peer Review (ANTS, LuCANT, MEGA) Jereon Hanselman
-    \item Containerization and environments (MaPS) Aaruni Kaushik
-    \item Serialization and Databases (\texttt{.mrdi} File Format) 
-    \end{itemize}
-  \end{tcolorbox}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Some Key Features of \Julia}
-  \begin{tcolorbox}[title={Reproducibility}]
-    \begin{itemize}
-    \item Built-in package manager.
-    \item Intuitive and user friendly environment functionality.
-    \item Uses git hash when recreating environments.
-    \end{itemize}
-  \end{tcolorbox}
-
-  \begin{tcolorbox}[title={Interoperability}]
-    \begin{itemize}
-    \item Consistent tool for building and wrapping binaries. (Binary builder)
-    \item Excellent Multiple dispatch functionality.
-    \end{itemize}
-  \end{tcolorbox}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{\OSCAR}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/OSCAR-Organigramm}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-
-\begin{frame}[fragile]{Serialization}
-  \begin{tcolorbox}[title={Why Files?}]
-    \begin{itemize}
-    \item People often have a preferred software system. \pause
-    \item Computations can be expensive. \pause
-    \item Verification of results is at most as computationally expensive.\pause
-    \item Software changes often. 
-    \end{itemize}
-  \end{tcolorbox}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Storing Mathematical Data}
-  \begin{itemize}
-  \item It's common to have multiple perspectives on an object in mathematics. \pause
-  \item While storing mathematical data a choice of perspective must me made. \pause
-  \end{itemize}
-
-  Say we want to store:
-  \begin{align*}
-    p = 2y^3z^4 + (a + 3)z^2 + 5ay + 1
-  \end{align*} \pause
-
-  \begin{itemize}
-  \item Some technicalities with the coefficients.
-  \item Is x considered as a coefficient of y?
-  \end{itemize}
+\begin{frame}[fragile]{The Importance of Files for Computer Algebra}
+    \begin{tabular}{cl}  
+    \begin{tabular}{c}
+      \includegraphics[height=2cm, width=2cm]{images/sage-squared}
+      \includegraphics[height=2cm, width=2cm]{images/python} \\
+      \includegraphics[height=2cm, width=2cm]{images/cpp}
+      \includegraphics[height=2cm, width=2cm]{images/mathematica} \\
+      \includegraphics[height=1.5cm, width=3cm]{images/magma}
+    \end{tabular}
+    & \begin{tabular}{l}
+        \parbox{0.5\linewidth}{%  change the parbox width as appropiate
+          \begin{itemize}
+          \item People often have a preferred software system. \pause
+          \item Computations can be expensive. \pause
+          \item Software changes often and requires maintenance. \pause
+          \item Data is often more valuable than the software. \pause
+          \item Verification of results is at most as computationally expensive. \pause
+          \end{itemize}
+        }
+      \end{tabular}  \\
+  \end{tabular}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -349,63 +227,41 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{The Polymake File Format}
-  
-  \begin{tabular}{cl}  
-    \begin{tabular}{c}
-      \includegraphics[height=6cm, width=4cm]{images/xml_file}
-    \end{tabular}
-    & \begin{tabular}{l}
-      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
-      \begin{itemize}
-      \item First version (XML) published in 2016.
-      \end{itemize}
-      }
-    \end{tabular}  \\
-  \end{tabular}
-\end{frame}
+\begin{frame}[fragile]{Storing Computer Algebra Data}
+  \begin{itemize}
+  \item It's common to have multiple perspectives on an object in mathematics. 
+  \item While storing mathematical data a choice of perspective must me made.
+  \item Such a choice might not be describeable in an email.
+  \end{itemize}
+    
+  Say we want to store:
+  \begin{align*}
+    p = 2y^3z^4 + (\bold{a} + 3)z^2 + 5\bold{a}y + 1
+  \end{align*} \pause
 
-\begin{frame}[fragile]{The Polymake File Format}
-  \begin{tabular}{cl}  
-    \begin{tabular}{c}
-      \includegraphics[height=6cm, width=4cm]{images/json_file}
-    \end{tabular}
-    & \begin{tabular}{l}
-      \parbox{0.5\linewidth}{%  change the parbox width as appropiate
-      \begin{itemize}
-      \item First version (XML) published in 2016. 
-      \item Currently using JSON.\pause
-      \item Builds on already existing infrastructure. \pause
-      \item Extensible, tree structure. \pause
-      \item Has a Schema. \pause
-      \item Older formats will be upgraded on load. \pause
-      \end{itemize}
-      }
-    \end{tabular}  \\
-  \end{tabular}
+  \begin{itemize}
+  \item Some technicalities with the coefficients.
+  \item Is y considered a coefficient of z?
+  \item What is $\bold{a}$?
+  \item How can we guarantee the objects behave as expected on load?
+  \end{itemize}
 \end{frame}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{The \texttt{mrdi} File Format}
-  \begin{tcolorbox}[title={2024, joint work with Michael Joswig and Benjamin Lorenz}]
+  \begin{tcolorbox}[]
     \begin{itemize}
-    \item JSON based file format.
+    \item JSON file format.
     \item Similar to \texttt{polymake} format but generalizes to include algebraic data.
-    \item Uses namespaces for semantic seperation.
-    \item Uses references stored with UUIDs.
+    \item Namespaces for semantic seperation.
+    \item References stored with UUIDs.
     \item Prototype developed using \OSCAR.
     \end{itemize}
   \end{tcolorbox}
 \end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
 
 \begin{frame}[fragile]{ Demo}
   \includegraphics[height=0.8\textheight]{images/demo}
@@ -451,67 +307,26 @@
   \includegraphics[height=0.9\textheight]{images/polynomial-example}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Parallelization}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/parallel}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Beyond \OSCAR (within Julia)}
-  \begin{center}
-    \includegraphics[width=0.9\textwidth]{images/labelled-poly}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Beyond \OSCAR (beyond Julia)}
-  \begin{tcolorbox}[title={Other Implementations}]
-    \begin{itemize}
-    \item Magma
-    \item Sage
-    \item CoCoa
-    \item Lean
-    \end{itemize}
-  \end{tcolorbox}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Johnson Solids}
-  \begin{center}
-    \includegraphics[height=0.5\textheight]{images/solids}
-  \end{center}
-
-  \begin{center}
-    \includegraphics[height=0.2\textheight]{images/jq}
-    \url{https://zenodo.org/records/10729583}
-  \end{center}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{Other datasets}
+\begin{frame}[fragile]{Namespaces}
   \begin{itemize}
-  \item Surfaces in $\PP^4$
-  \item QSM Models in F-theory
-  \item Small Phylogenetic Tree Website (ongoing work)
-  \item \dots
+  \item We make no attempt to formalise the language of Mathematical Research Data.
+  \item We rely on namespaces to pin the semantics to a specific software.
+  \item Open source software provides example implementations for saving and loading.
+  \item Freedom to upgrade encoding.
+  \item Similar with PDF.
   \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{ Serialized Toric Divisor}
+  \includegraphics[width=\textwidth]{images/toric-divisor}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -522,23 +337,22 @@
     \begin{tabular}{cl}  
       \begin{tabular}{c}
         \begin{figure}
-        \begin{minipage}{0.4\textwidth}
+          \begin{minipage}{0.4\textwidth}
             \includegraphics[height=4cm, width=5cm]{images/blocks}
             \caption{\url{https://www.pexels.com/photo/plastic-shape-shorter-toy-11030155/}}
-        \end{minipage}
+          \end{minipage}
         \end{figure}
     \end{tabular}
     & \begin{tabular}{l}
         \parbox{0.5\linewidth}{%  change the parbox width as appropiate
           \begin{itemize}
-        \item A schema defines a structure for data. \pause
-        \item Schema languages. (RELAX NG [2002], JSON Schema [2022])\pause
-        \item Is possible to define recursive structure. \pause
-        \item Schemata allow data to be validated before loading. \pause
-        \item Adds structure to document based databases. \pause
-        \item \polydb, Paffenholz [2017]
-        \end{itemize}
-
+          \item A schema defines a structure for data. \pause
+          \item Schema languages. (RELAX NG [2002], JSON Schema [2022])\pause
+          \item Is possible to define recursive structure. \pause
+          \item Schemata allow data to be validated before loading. \pause
+          \item Adds structure to document based databases. \pause
+          \item \polydb, Paffenholz [2017]
+          \end{itemize}
         }
       \end{tabular}  \\
   \end{tabular}
@@ -548,17 +362,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}[fragile]{Data Collections}
+  \begin{itemize}
+  \item Johnson Solids.
+  \item Non-general type surfaces in $\PP^4$.
+  \item F-Theory models.
+  \item Small Phylogenetic Trees. (Luis David Garcia-Puente, Jacob Porter)
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[fragile]{}
-  \begin{center}
-    \\
-    You can find more information here \\
-
-    \includegraphics[height=3cm, width=3cm]{images/paper-qr}\\
-    \url{https://arxiv.org/abs/2309.00465}
-
-  \end{center}
-
   \begin{center}
     Thank You!
   \end{center}
