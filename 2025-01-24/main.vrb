@@ -1,0 +1,7 @@
+\frametitle{Overview}
+\begin{itemize}
+  \item What is Serialization?
+  \item \texttt{polymake} Serialization
+  \item \oscar Serialization
+  \item Differences and Similarities
+  \end{itemize}
