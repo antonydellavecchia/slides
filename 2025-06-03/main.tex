@@ -1,12 +1,14 @@
 \documentclass[9pt]{beamer}
 \beamertemplatenavigationsymbolsempty
-\usetikzlibrary{positioning}
+
 \usepackage{subfig}
 %\usetheme{Berlin}
 
 \usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
 \usepackage{ulem}
 
+\usetikzlibrary{arrows}
+\usetikzlibrary{tikzmark}
 \input binhex
 
 % For code inclusion
@@ -178,102 +180,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 
-\begin{frame}[fragile]{Algebraic Shifting motivation}
-  %  \begin{itemize}
-  %  \item f vector and betti number
-  %  \item near cone
-  %  \item classifying betti and f vector sequences
-  %  \item rigidity?
-  %  \end{itemize}
-  \begin{figure}[h!]
-    \centering
-    \subfloat{\tikz[remember picture]{\node(1AL){
-          \begin{tikzpicture}
-
-            % DEF COORDINATES
-            \coordinate (v0_unnamed__1) at (1.33661, -1.24914, -0.520718);
-            \coordinate (v1_unnamed__1) at (0.605842, -0.898371, 1.5633);
-            \coordinate (v2_unnamed__1) at (-0.962171, 0.693911, 1.48688);
-            \coordinate (v3_unnamed__1) at (-1.2005, 1.32724, -0.64435);
-            \coordinate (v4_unnamed__1) at (0.220225, 0.126361, -1.88511);
-
-
-            % VERTEXCOLOR
-            \definecolor{vertexcolor_unnamed__1}{rgb}{ 1 0 0 }
-
-            % DEF VERTEXSTYLES
-            \tikzstyle{vertexstyle_unnamed__1_0} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:1},]
-            \tikzstyle{vertexstyle_unnamed__1_1} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:2},]
-            \tikzstyle{vertexstyle_unnamed__1_2} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:3},]
-            \tikzstyle{vertexstyle_unnamed__1_3} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:4},]
-            \tikzstyle{vertexstyle_unnamed__1_4} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:5},]
-
-            % EDGECOLOR
-            \definecolor{edgecolor_unnamed__1}{rgb}{ 0 0 0 }
-            \tikzstyle{edgestyle_unnamed__1} = [thick,color=edgecolor_unnamed__1]
-
-            % EDGES
-
-            \foreach \i/\k in {1/0,2/1,3/2,4/0,4/3} {
-              \draw[edgestyle_unnamed__1] (v\i_unnamed__1) -- (v\k_unnamed__1);
-            }
-
-
-            % POINTS
-            \foreach \i in {1,2,0,3,4} {
-              \node at (v\i_unnamed__1) [vertexstyle_unnamed__1_\i] {};
-            }
-
-
-          \end{tikzpicture}
-        }%
-        \hspace*{3cm}%
-        \subfloat{\tikz[remember picture]{\node(1AR){
-              \begin{tikzpicture}
-
-                % DEF COORDINATES
-                \coordinate (v0_unnamed__1) at (1.33661, -1.24914, -0.520718);
-                \coordinate (v1_unnamed__1) at (0.605842, -0.898371, 1.5633);
-                \coordinate (v2_unnamed__1) at (-0.962171, 0.693911, 1.48688);
-                \coordinate (v3_unnamed__1) at (-1.2005, 1.32724, -0.64435);
-                \coordinate (v4_unnamed__1) at (0.220225, 0.126361, -1.88511);
-
-
-                % VERTEXCOLOR
-                \definecolor{vertexcolor_unnamed__1}{rgb}{ 1 0 0 }
-
-                % DEF VERTEXSTYLES
-                \tikzstyle{vertexstyle_unnamed__1_0} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:1},]
-                \tikzstyle{vertexstyle_unnamed__1_1} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:2},]
-                \tikzstyle{vertexstyle_unnamed__1_2} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:3},]
-                \tikzstyle{vertexstyle_unnamed__1_3} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:4},]
-                \tikzstyle{vertexstyle_unnamed__1_4} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:5},]
-
-                % EDGECOLOR
-                \definecolor{edgecolor_unnamed__1}{rgb}{ 0 0 0 }
-                \tikzstyle{edgestyle_unnamed__1} = [thick,color=edgecolor_unnamed__1]
-
-                % EDGES
-
-                \foreach \i/\k in {1/0,2/1,3/2,4/0,4/3} {
-                  \draw[edgestyle_unnamed__1] (v\i_unnamed__1) -- (v\k_unnamed__1);
-                }
-
-
-                % POINTS
-                \foreach \i in {1,2,0,3,4} {
-                  \node at (v\i_unnamed__1) [vertexstyle_unnamed__1_\i] {};
-                }
-
-
-              \end{tikzpicture}
-  }}
-\end{figure}
-\tikz[overlay,remember picture]{\draw[-latex,thick] (1AL) -- (1AL-|1AR.west)
-node[midway,below,text width=2.5cm]{Physical Line Graph Transformation};} 
-
+\begin{frame}[fragile]{Algebraic Shifting}
+  \begin{definition}
+    A collection $C \in \binom{[n]}{k}$ is called \emph{shifted}
+    Let $K$ be a simplicial complex
+  \end{definition}
   
+  \begin{itemize}
+  \item f vector and betti number
+  \item shifted families
+  \item near cone
+  \item classifying betti and f vector sequences
+  \item rigidity?
+  \end{itemize}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+  \centering
+  \input{cycle-labelled.tikz}
+\end{column}
 
+\begin{column}{.1\textwidth}
+\tikz\draw[blue,->] (0,0) -- (\textwidth,0);
+\end{column}
+
+\begin{column}{0.4\textwidth}
+  \centering
+  \input{shifted-cycle.tikz}
+\end{column}
+\end{columns}
 \end{frame}
 
 
@@ -283,7 +217,6 @@ node[midway,below,text width=2.5cm]{Physical Line Graph Transformation};}
 
 \begin{frame}[fragile]{Algebraic Shifting constructions}
   \begin{itemize}
-  \item shifted families
   \item explain the change of basis algorithm
   \item mention monte carlo and issues with finite characteristic
   \end{itemize}

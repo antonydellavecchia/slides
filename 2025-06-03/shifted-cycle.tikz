@@ -1,0 +1,45 @@
+% polymake for vecchia
+% Fri May 23 16:11:19 2025
+% unnamed
+
+\begin{tikzpicture}[scale = 1,
+                    color = {lightgray}]
+
+
+  % DEF COORDINATES
+  \coordinate (v0_unnamed__1) at (0.0, -1.0, -0);
+  \coordinate (v1_unnamed__1) at (-0.866, -0.5, -0);
+  \coordinate (v2_unnamed__1) at (-0.866, 0.5, 0);
+  \coordinate (v3_unnamed__1) at (0.0, 1.0, 0);
+  \coordinate (v4_unnamed__1) at (0.866, 0.5, 0);
+  \coordinate (v5_unnamed__1) at (0.866, -0.5, -0);
+
+
+  % VERTEXCOLOR
+  \definecolor{vertexcolor_unnamed__1}{rgb}{ 1 0 0 }
+
+  % DEF VERTEXSTYLES
+  \tikzstyle{vertexstyle_unnamed__1_0} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, below right, align=left]:1},]
+  \tikzstyle{vertexstyle_unnamed__1_1} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above left, align=left]:2},]
+  \tikzstyle{vertexstyle_unnamed__1_2} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:3},]
+  \tikzstyle{vertexstyle_unnamed__1_3} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:4},]
+  \tikzstyle{vertexstyle_unnamed__1_4} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:5},]
+  \tikzstyle{vertexstyle_unnamed__1_5} = [circle, scale=0.25, fill=vertexcolor_unnamed__1,label={[text=black, above right, align=left]:6},]
+
+  % EDGECOLOR
+  \definecolor{edgecolor_unnamed__1}{rgb}{ 0 0 0 }
+  \tikzstyle{edgestyle_unnamed__1} = [thick,color=edgecolor_unnamed__1]
+
+  % EDGES
+
+  \foreach \i/\k in {1/0,2/1,2/0, 3/0,4/0,5/0} {
+   \draw[edgestyle_unnamed__1] (v\i_unnamed__1) -- (v\k_unnamed__1);
+  }
+  
+  % POINTS
+  \foreach \i in {3,2,4,1,5,0} {
+    \node at (v\i_unnamed__1) [vertexstyle_unnamed__1_\i] {};
+  }
+
+
+\end{tikzpicture}
