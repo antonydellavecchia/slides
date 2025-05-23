@@ -175,21 +175,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Overview}
-  \begin{itemize}
-  \item 
-  \item statement of result
-  \item 
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Algebraic Shifting motivation}
   \begin{itemize}
   \item f vector and betti number
+  \item near cone
   \item classifying betti and f vector sequences
   \item rigidity?
   \end{itemize}
@@ -202,8 +192,9 @@
 
 \begin{frame}[fragile]{Algebraic Shifting constructions}
   \begin{itemize}
+  \item shifted families
   \item explain the change of basis algorithm
-  \item different perspectives GIN and plucker
+  \item mention monte carlo and issues with finite characteristic
   \end{itemize}
 \end{frame}
 
@@ -211,10 +202,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Algebraic Shifting constructions}
+\begin{frame}[fragile]{different perspectives }
   \begin{itemize}
-  \item explain the basic algorithm
-  \item different perspectives GIN and plucker
+  \item GIN
+  \item plucker
+  \item pick one and spell it out
   \end{itemize}
 \end{frame}
 
@@ -224,8 +216,102 @@
 
 \begin{frame}[fragile]{Partial Algebraic Shifting }
   \begin{itemize}
-  \item explain the basic algorithm
-  \item different perspectives GIN and plucker
+  \item loose definition as a way to replace the generic matrix with a matrix that is parametrized by weyl group elements
+  \item state result about standard n cycle
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Real Projective Plane Example}
+  \begin{itemize}
+  \item show example of how we can compute full shift og projective plane with standard n cycle
+  \item computations inspired us to find result
+  \item example shows that our result is tight
+  \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{LU decomposition and Bruhat decomposition }
+  \begin{itemize}
+  \item $\Delta_{gb}(K) = \Delta_g(K)$ for any upper triangular $b$
+  \item $w_0g = lu = w_0u'w_0u$ (bring the two decompositions together)
+  \item $u'w_0$ uses only $\frac{1}{2}n(n-1)$ transcendentals, which is a huge win computationally
+  \item can we do better?
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Inversions and Rothe matrix}
+  \begin{itemize}
+  \item Want a normal for Bw where B has minimal transcendentals.
+  \item define inversions and show an example of how we we can remove transcendentals on the left.
+  \item example of how to create a rothe matrix in Oscar
+  \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{ Near cones}
+  \begin{itemize}
+  \item definition of near cone
+  \item formula for computing their betti numbers
+  \item State lemma about shifting to near cones
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Shifting to Near cones proof}
+  \begin{itemize}
+  \item sketch proof extending permutation lemma
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Weak Bruhat order}
+  \begin{itemize}
+  \item definition and equivalent formulation
+  \item an example with rothe matrix that shows shifting to near cones
+  \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Proof of results}
+  \begin{itemize}
+  \item state proposition 25
+  \item sketch proof
+  \end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Mardi slide?}
+  \begin{itemize}
+  \item talk about how file format was useful
   \end{itemize}
 \end{frame}
 
@@ -235,6 +321,8 @@
 
 \begin{frame}[fragile]{}
   \begin{center}
+    QR codes to both papers
+
     Thank You!
   \end{center}
 \end{frame}
