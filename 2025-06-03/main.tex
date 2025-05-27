@@ -41,26 +41,17 @@
 \newcommand\set[1]{\{#1\}}
 \newcommand\toi{\xrightarrow{\sim}} % category
 \newcommand\Z{\mathbb{Z}}
-
+\newcommand{\RepVert}[3]{#1|_{#2}^{#3}}
 
 % For drawing
 %% Tikz drawing
-\usepackage{tikz}
-\usetikzlibrary{arrows}
-\usetikzlibrary{arrows.meta}
-\usepackage{pgfplots}
-\usepackage{tikz-3dplot}
-\usepackage{tcolorbox}
+\usepackage{tikz} \usetikzlibrary{arrows} \usetikzlibrary{arrows.meta}
+\usepackage{pgfplots} \usepackage{tikz-3dplot} \usepackage{tcolorbox}
 \usetikzlibrary{matrix,fit,positioning,shapes.geometric,patterns,backgrounds}
 \usetikzlibrary{decorations.pathreplacing}
-\usetikzlibrary{decorations.markings}
-\usetikzlibrary{arrows,calc}
+\usetikzlibrary{decorations.markings} \usetikzlibrary{arrows,calc}
 \tikzstyle{bigbox} = [draw=blue!50, thick, rounded corners, rectangle]
-\tikzset{
-  >=stealth'
-}
-\tikzset{->-/.style={decoration={
-      markings,
+\tikzset{ >=stealth' } \tikzset{->-/.style={decoration={ markings,
       mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
 
 %% Software names
@@ -182,7 +173,9 @@
 
 \begin{frame}[fragile]{Algebraic Shifting}
   \begin{definition}
-    A collection $C \in \binom{[n]}{k}$ is called \emph{shifted}
+    $C \in \binom{[n]}{k}$ is called \emph{shifted} if for any $\sigma \in C$,
+    $\RepVert{\sigma}{i}{j} \in C$ for $i \in \sigma$ and $ j < i$.
+    A simplicial complex $K$ is shifted if the 
     Let $K$ be a simplicial complex
   \end{definition}
   
