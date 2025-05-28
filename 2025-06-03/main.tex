@@ -17,7 +17,7 @@
 \lstset{escapeinside={<@}{@>}}
 \usepackage{algorithm2e}
 \usepackage{algorithmic}
-
+\usepackage{nicematrix}
 % Commands
 \newcommand\A{\mathcal{A}}
 \newcommand\cc{\mathcal{C}}
@@ -42,6 +42,9 @@
 \newcommand\toi{\xrightarrow{\sim}} % category
 \newcommand\Z{\mathbb{Z}}
 \newcommand{\RepVert}[3]{#1|_{#2}^{#3}}
+\newcommand\FF{{\mathbb F}}
+\newcommand\EE{{\mathbb E}}
+\newcommand{\GL}{\mathrm{GL}}
 
 % For drawing
 %% Tikz drawing
@@ -173,19 +176,15 @@
 
 \begin{frame}[fragile]{Algebraic Shifting}
   \begin{definition}
-    $C \in \binom{[n]}{k}$ is called \emph{shifted} if for any $\sigma \in C$,
+    $C \in \binom{[n]}{k}$ is \emph{shifted} if for any $\sigma \in C$,
     $\RepVert{\sigma}{i}{j} \in C$ for $i \in \sigma$ and $ j < i$.
-    A simplicial complex $K$ is shifted if the 
-    Let $K$ be a simplicial complex
   \end{definition}
-  
-  \begin{itemize}
-  \item f vector and betti number
-  \item shifted families
-  \item near cone
-  \item classifying betti and f vector sequences
-  \item rigidity?
-  \end{itemize}
+
+  \begin{theorem}[Kalai, Bjoner-Kalai]
+    Given $K$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
+    $\Delta^{\FF}(K)$ with the same $f$-vector and betti numbers as $K$.
+  \end{theorem}
+
 \begin{columns}
 \begin{column}{0.5\textwidth}
   \centering
@@ -208,7 +207,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Algebraic Shifting constructions}
+\begin{frame}[fragile]{Algebraic Exterior Shifting}
+    Let $\EE \supset \FF$ be a field extension, for $g \in \GL(\EE, n)$ 
+    the $k$th \emph{compound matrix} $g^{\wedge k}$ is the $\binom{n}{k} \times \binom{n}{k}$-matrix
+    of $k$-minors of $g$.
+
+    \def\matriximg{%
+  \begin{matrix}
+    1 & 1 & 0 & \cdot & \cdot & \cdot & 0 & 1 \\
+    0 & 0 & 1 & \cdot & \cdot & \cdot & 1 & 0 \\
+    \cdot                                     \\
+    \cdot                                     \\
+    \cdot                                     \\
+    0 & 1 & 1 & \cdot & \cdot & \cdot & 1 & 1
+   \end{matrix}
+}%
+\[
+  \text{\scriptsize 10~rows}\left\{\left(\vphantom{\matriximg}\right.\right.\kern-2\nulldelimiterspace
+  \overbrace{\matriximg}^{\text{12 columns}}\kern-\nulldelimiterspace\left.\vphantom{\matriximg}\right)
+\]
   \begin{itemize}
   \item explain the change of basis algorithm
   \item mention monte carlo and issues with finite characteristic
