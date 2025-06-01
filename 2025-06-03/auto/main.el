@@ -3,6 +3,8 @@
  (lambda ()
    (TeX-add-to-alist 'LaTeX-provided-class-options
                      '(("beamer" "9pt")))
+   (TeX-add-to-alist 'LaTeX-provided-package-options
+                     '(("csvsimple" "legacy")))
    (add-to-list 'LaTeX-verbatim-environments-local "lstlisting")
    (add-to-list 'LaTeX-verbatim-environments-local "semiverbatim")
    (add-to-list 'LaTeX-verbatim-macros-with-braces-local "lstinline")
@@ -17,9 +19,13 @@
    (add-to-list 'LaTeX-verbatim-macros-with-delims-local "path")
    (TeX-run-style-hooks
     "latex2e"
+    "definitions"
     "b"
+    "cycle-labelled"
+    "shifted-cycle"
     "beamer"
     "beamer10"
+    "subfig"
     "etex"
     "tikz"
     "array"
@@ -31,6 +37,9 @@
     "listings"
     "algorithm2e"
     "algorithmic"
+    "svg"
+    "nicematrix"
+    "csvsimple"
     "pgfplots"
     "tikz-3dplot"
     "tcolorbox"
@@ -39,8 +48,7 @@
     "amsmath")
    (TeX-add-symbols
     '("oursetting" 1)
-    '("blue" 1)
-    '("scalp" 1)
+    '("Rot" 1)
     '("set" 1)
     '("rstr" 2)
     "A"
@@ -73,10 +81,7 @@
     "gfan"
     "cddlib"
     "polydb"
-    "OSCAR"
     "Julia"
-    "polymake"
-    "polymakejl"
     "singular"
     "CPP"
     "eval"
@@ -85,22 +90,14 @@
     "groupElem"
     "jbound"
     "switchTableSize"
-    "pc"
-    "ZZ"
-    "QQ"
-    "OO"
-    "CC"
-    "PP"
-    "RR"
-    "wt"
-    "cT"
-    "adm"
     "pmsmall"
     "pmlogo"
     "pmbluesmall"
     "Disjoint"
     "Discriminant"
     "surj")
+   (LaTeX-add-labels
+    "def:shift")
    (LaTeX-add-xcolor-definecolors
     "green"
     "yellow"
@@ -109,6 +106,7 @@
    (LaTeX-add-amsthm-newtheorems
     "remark"
     "lem"
-    "defn"))
+    "defn"
+    "question"))
  :latex)
 

@@ -6,6 +6,7 @@
 
 \usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
 \usepackage{ulem}
+\input{definitions}
 
 \usetikzlibrary{arrows}
 \usetikzlibrary{tikzmark}
@@ -17,6 +18,7 @@
 \lstset{escapeinside={<@}{@>}}
 \usepackage{algorithm2e}
 \usepackage{algorithmic}
+\usepackage{svg}
 \usepackage{nicematrix}
 % Commands
 \newcommand\A{\mathcal{A}}
@@ -41,10 +43,10 @@
 \newcommand\set[1]{\{#1\}}
 \newcommand\toi{\xrightarrow{\sim}} % category
 \newcommand\Z{\mathbb{Z}}
-\newcommand{\RepVert}[3]{#1|_{#2}^{#3}}
-\newcommand\FF{{\mathbb F}}
-\newcommand\EE{{\mathbb E}}
-\newcommand{\GL}{\mathrm{GL}}
+
+\newcommand\Rot[1]{\rotatebox{90}{#1}}%
+
+\usepackage[legacy]{csvsimple}
 
 % For drawing
 %% Tikz drawing
@@ -69,7 +71,6 @@
 \newcommand\gfan{\texttt{Gfan}\xspace}
 \newcommand\cddlib{\texttt{cddlib}\xspace}
 \newcommand\polydb{\texttt{PolyDB}\xspace}
-\newcommand\OSCAR{\texttt{OSCAR}\xspace}
 \newcommand\Julia{\texttt{Julia}\xspace}
 
 \usepackage{xcolor}
@@ -82,8 +83,6 @@
 
 \usepackage{booktabs}
 % For software citations
-\newcommand{\polymake}{\texttt{po\-ly\-ma\-ke}\xspace}
-\newcommand{\polymakejl}{\texttt{Po\-ly\-ma\-ke.jl}\xspace}
 \newcommand{\singular}{\texttt{Sin\-gu\-lar}\xspace}
 \newcommand\CPP{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\xspace}
 
@@ -96,20 +95,7 @@
 \newcommand{\jbound}{\psi}          % bound on the number of elements of set J
 \newcommand{\switchTableSize}{\mu}  % index of last non-trivial row in switch table
 
-\newcommand{\pc}{\mathcal P\mathcal C}
-\newcommand{\ZZ}{\mathbb Z}
-\renewcommand{\AA}{\mathcal A}
-\newcommand{\QQ}{\mathbb Q}
-\newcommand{\OO}{\mathcal O}
-\newcommand{\CC}{\mathbb C}
-\newcommand{\PP}{\mathbb P}
-\newcommand{\RR}{\mathbb R}
-\newcommand{\scalp}[1]{\langle #1 \rangle}
-\newcommand{\wt}{\omega}
-\newcommand{\cT}{\mathcal T}
-\renewcommand{\O}{\mathcal O}
-\newcommand{\adm}{\mathcal A(\D, M)}
-\newcommand{\blue}[1]{{\usebeamercolor[fg]{palette primary}#1}}
+
 
 \DeclareMathOperator{\CaDiv}{CaDiv}
 \DeclareMathOperator{\conv}{conv}
@@ -125,7 +111,6 @@
 \DeclareMathOperator{\Spec}{Spec}
 \DeclareMathOperator{\Sets}{Sets}
 \DeclareMathOperator{\relint}{relint}
-\DeclareMathOperator{\rk}{rk}
 \DeclareMathOperator{\smallestFace}{smallestFace}
 \DeclareMathOperator{\Pic}{Pic}
 \DeclareMathOperator{\Hom}{Hom}
@@ -148,6 +133,7 @@
 
 \newtheorem{lem}{Lemma}
 \newtheorem{defn}{Definition}
+\newtheorem{question}{Question}
 
 \author[Antony Della Vecchia]{Antony Della Vecchia \\ \vspace{4mm} \small{Joint work with F. Lenzen and M. Joswig } }
 \title{Partial Algebraic Shifting}
@@ -180,7 +166,7 @@
     $\RepVert{\sigma}{i}{j} \in C$ for $i \in \sigma$ and $ j < i$.
   \end{definition}
 
-  \begin{theorem}[Kalai, Bjoner-Kalai]
+  \begin{theorem}[Kalai, Bj\"orner-Kalai]
     Given $K$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
     $\Delta^{\FF}(K)$ with the same $f$-vector and betti numbers as $K$.
   \end{theorem}
@@ -202,46 +188,47 @@
 \end{columns}
 \end{frame}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Algebraic Exterior Shifting}
-    Let $\EE \supset \FF$ be a field extension, for $g \in \GL(\EE, n)$ 
-    the $k$th \emph{compound matrix} $g^{\wedge k}$ is the $\binom{n}{k} \times \binom{n}{k}$-matrix
-    of $k$-minors of $g$.
-
-    \def\matriximg{%
-  \begin{matrix}
-    1 & 1 & 0 & \cdot & \cdot & \cdot & 0 & 1 \\
-    0 & 0 & 1 & \cdot & \cdot & \cdot & 1 & 0 \\
-    \cdot                                     \\
-    \cdot                                     \\
-    \cdot                                     \\
-    0 & 1 & 1 & \cdot & \cdot & \cdot & 1 & 1
-   \end{matrix}
-}%
-\[
-  \text{\scriptsize 10~rows}\left\{\left(\vphantom{\matriximg}\right.\right.\kern-2\nulldelimiterspace
-  \overbrace{\matriximg}^{\text{12 columns}}\kern-\nulldelimiterspace\left.\vphantom{\matriximg}\right)
-\]
-  \begin{itemize}
-  \item explain the change of basis algorithm
-  \item mention monte carlo and issues with finite characteristic
-  \end{itemize}
+\begin{frame}[fragile]{Exterior Algebraic Shifting}
+  \begin{definition}
+    Let $\EE \supset \FF$ be a field extension and let $g \in \GL(\EE, n)$.
+    \begin{itemize}
+      \item The $k$th \emph{compound matrix} $g^{\wedge k}$ is the $\binom{n}{k} \times \binom{n}{k}$-matrix
+        of $k$-minors of $g$.
+        \item $g^{\wedge K_k}$ is the $\abs{K_k} \times \binom{n}{k}$-submatrix of $g^{\wedge k}$ with rows indexed by $K_k$.
+    \end{itemize}
+    \end{definition}
+\begin{definition}\label{def:shift}
+  The \emph{partial (exterior) shift} of $K$ by $g$ is
+  \begin{equation*}
+    \Delta^{\FF}_g(K) \coloneqq \bigcup_{k \leq \text{dim}(K)} \Set[\big]{ \sigma \in \tbinom{[n]}{k}; g^{\wedge K_k}_{*\sigma} \notin \Span_{\EE}[\big]{(g^{\wedge K_k}_{*\rho})_{\rho \lex< \sigma}} }.
+  \end{equation*}
+\end{definition}
+For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
+\begin{center}
+  $g^{\wedge 2} = \begin{psmallmatrix} x_{11}x_{22} - x_{12}x_{21} & x_{11}x_{23} - x_{13}x_{21} &  x_{12}x_{23} - x_{22}x_{13} \\
+    x_{21}x_{32} - x_{22}x_{31} & x_{21}x_{33} - x_{23}x_{31} &  x_{22}x_{33} - x_{23}x_{32}
+  \end{psmallmatrix}$,
+  \end{center}
+  $\Delta(K) = \{\{1, 2\}, \{1, 3\}\}$
+  mention monte carlo
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{different perspectives }
-  \begin{itemize}
-  \item GIN
-  \item plucker
-  \item pick one and spell it out
-  \end{itemize}
+\begin{frame}[fragile]{Algebraic Exterior Shifting}
+  $e_{\sigma} = e_{\sigma_1} \wedge \ldots \wedge e_{\sigma_k}$ for $\sigma = \{\sigma_1 < \ldots < \sigma_k\}$.
+  \[
+    I \coloneqq (e_\sigma\colon \sigma \notin K) \subset \bigwedge \EE^n,
+    I_{\Delta_{g(K)}} = \text{in}(g \cdot I)
+  \]
+
+  plucker?
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -249,10 +236,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Partial Algebraic Shifting }
-  \begin{itemize}
-  \item loose definition as a way to replace the generic matrix with a matrix that is parametrized by weyl group elements
-  \item state result about standard n cycle
-  \end{itemize}
+  Consider now $\Set{\frR(w) \in \GL(\EE, n); w \in S_n}$.\\
+  Let $c_n \coloneqq (1 \ldots n) \in S_n$.
+
+  \begin{theorem}[DV-Joswig-Lenzen]
+    For any simplical complex $K$ and $w \in S_n$ such that $c_n \leq w$ in the weak Bruhat order we have the following,
+    \begin{enumerate}
+    \item $\Delta_{\frR(w)}(K)$ is a homotopy equivalent to a wedge of spheres.
+    \item $\Delta_{\frR(w)}(K)$ has the same Betti numbers as $K$.
+    \end{enumerate}
+
+  \end{theorem}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -260,6 +254,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Real Projective Plane Example}
+  $K = \RP^2_6$, $\FF = \QQ$
+
+  \begin{figure}
+    \includegraphics[width=10cm]{images/rp_graph}
+  \end{figure}
+
   \begin{itemize}
   \item show example of how we can compute full shift og projective plane with standard n cycle
   \item computations inspired us to find result
@@ -272,48 +272,183 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{LU decomposition and Bruhat decomposition }
-  \begin{itemize}
-  \item $\Delta_{gb}(K) = \Delta_g(K)$ for any upper triangular $b$
-  \item $w_0g = lu = w_0u'w_0u$ (bring the two decompositions together)
-  \item $u'w_0$ uses only $\frac{1}{2}n(n-1)$ transcendentals, which is a huge win computationally
-  \item can we do better?
-  \end{itemize}
-\end{frame}
+\begin{frame}[fragile]{LU decomposition }
+  \begin{lemma}
+    $\Delta_{gb}(K) = \Delta_g(K)$ for any upper triangular $b$ and any simplicial complex $K$.
+  \end{lemma}
+  \vspace{8mm}
+
+  \textbf{LU decomposition}
+    For $g \in \GL(n, \EE)$ with non zero leading principal minors, there exists
+    $l$ lower triangular, $u$ upper triangular such that
+
+    \[
+      g = lu
+    \]
+    \vspace{8mm}
+
+    For generic $g \in \GL(n, \EE)$ , $\Delta_l(K) = \Delta_g(K)$.
+    
+    I.e. we can use $l$ with $\frac{1}{2}n(n-1)$ transcendentals.
+  \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Inversions and Rothe matrix}
-  \begin{itemize}
-  \item Want a normal for Bw where B has minimal transcendentals.
-  \item define inversions and show an example of how we we can remove transcendentals on the left.
-  \item example of how to create a rothe matrix in Oscar
-  \end{itemize}
+  \begin{definition}
+    For $w \in S_n$, let
+    \[
+      \inv w \ \coloneqq \ \Set{(i,j); i < j, i \cdot w > j \cdot w} \enspace 
+    \]
+
+    \[
+            \ell(w) \ \coloneqq \ \abs{\inv w}.
+    \]
+    % inversion table Stanley enumerative combinatorics
+
+    \begin{equation*}
+      \frU(w) \coloneqq
+      \begin{psmallmatrix}
+        1 & u_{12} & \cdots & u_{1n}    \\
+          & \ddots & \ddots & \vdots    \\
+          &        & 1      & u_{n-1,n} \\
+          &        &        & 1
+      \end{psmallmatrix}
+      \quad \text{with} \quad
+      u_{ij} = \begin{cases*}
+        x_{ij} & if $(i,j) \in \inv w$,\\
+        0 & otherwise,
+      \end{cases*}
+    \end{equation*}
+    and let $\frR(w) \coloneqq \frU(w)w$.
+  \end{definition}
+
+  \begin{example}
+    Take $w = (2 \enspace 3)$, $\inv w = \{ (1, 2), (1, 3)\}$.
+
+    \[
+      \begin{psmallmatrix}
+	1 & x & y \\
+          & 1 & z \\
+          &   & 1
+      \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 &   &   \\
+          &   & 1 \\
+          & 1 &
+      \end{psmallmatrix}
+      \ = \
+      \begin{psmallmatrix}
+	1 & y & x \\
+	0  & z & 1 \\
+	0  & 1 & 0
+      \end{psmallmatrix}
+      \ = \
+      \begin{psmallmatrix}
+	1 & 0 & 0 \\
+          & 1 & z \\
+          &   & 1
+      \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 &   &   \\
+          &   & 1 \\
+          & 1 &
+      \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 & y & x \\
+          & 1 & 0 \\
+          &   & 1
+      \end{psmallmatrix} \enspace.
+    \]
+  \end{example}
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  \begin{frame}[fragile]{ Bruhat decomposition}
+    Let $B \subset \GL(n, \EE)$ be the subgroup of upper triangular matrices, 
+    \begin{equation*}
+      \GL(n, \EE) \ = \ \smashoperator{\coprod_{w \in \SymmetricGroup{n}}} BwB \enspace .
+    \end{equation*}
+
+    
+    Describe $w_0$
+
+    $\Delta_{w_0g}(K) = \Delta_{g}(K)$
+    
+    $w_0g = lu = w_0u'w_0u$ (bring the two decompositions together)
+    
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{ Near cones}
-  \begin{itemize}
-  \item definition of near cone
-  \item formula for computing their betti numbers
-  \item State lemma about shifting to near cones
-  \end{itemize}
+  \begin{definition}
+    A simplicial complex $K$ is a \emph{near cone} if for every $\sigma \in K$ with $1 \notin \sigma$ we have $\RepVert{\sigma}{i}{1} \in K$
+    for each $i \in \sigma$.
+  \end{definition}
+
+  \begin{lemma}[Bj\"orner-Kalai 88]
+    Let $K$ be a near cone. 
+    Then $K$ is homotopy equivalent to a wedge of spheres and $\beta_k(K) = \abs{\Set{\sigma \in K^k ; \sigma \cup \{1\} \notin K}}$.
+  \end{lemma}
+  \begin{figure}
+    \centering
+    \input{shifted-cycle.tikz}
+  \end{figure}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Shifting to Near cones proof}
-  \begin{itemize}
-  \item sketch proof extending permutation lemma
-  \end{itemize}
+\begin{frame}[fragile]{Shifting to near cones}
+  \begin{lemma}[DV-Joswig-Lenzen]
+    Let $K$ be a simplicial complex on $n$ vertices.
+    Further, let $g\in\GL(n,\EE)$ be a matrix whose entries in the first column are algebraically independent over $\FF$ and the other entries of $g$.
+    Then $\Delta_g(K)$ is a near cone.
+  \end{lemma}
+
+  \begin{example}
+	The $n$-cycle $c_n \coloneqq (1\ 2\ \ldots\ n)$ gives rise to the matrix
+	\[
+	\frR(c_n) = \begin{psmallmatrix}
+		x_{1,n}   & 1 &        &   \\
+		\vdots    &   & \ddots &   \\
+		x_{n-1,n} &   &        & 1 \\
+		1         & 0 & \cdots & 0
+	\end{psmallmatrix}.
+      \]
+      \begin{align*}
+        \Delta^{\QQ}_{\frR(c_6)}(\RP^2_6) &=\Delta\{123, 124, 125, 126, 134, 135, 136, 145, 146, 156\} \\
+        &=\Delta^{\QQ}(\RP^2_6)
+      \end{align*}
+\end{example}
+
+
+\end{frame}
+
+\begin{frame}[fragile]{Shifting to near cones}
+  \begin{lemma}[Bj\"orner-Kalai]
+    Let $g \in \GL(n, \EE)$ be generic and suppose for $\tau \in \binom{[n]}{k}$ there exists    $\gamma \in \EE$ such that,
+    \[
+      g^{\wedge K_k}_{\tau} = \sum_{\sigma \in K_k}\gamma_{\sigma} g^{\wedge K_k}_{\sigma}.
+    \]
+    If $w \in S_n$, then there exists $\gamma' \in \EE$ such that
+    \[
+      g^{\wedge K_k}_{\tau \cdot w} = \sum_{\sigma \in K_k}\gamma'_{\sigma \cdot w} g^{\wedge K_k}_{\sigma \cdot w}
+    \]
+  \end{lemma}
+
+  spell out connection with generic first column shifting to near cone
+  
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -332,10 +467,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Proof of results}
-  \begin{itemize}
-  \item state proposition 25
-  \item sketch proof
-  \end{itemize}
+  \begin{theorem}[DV-Joswig-Lenzen]
+    For $K$ a simplicial complex, $v$, $w \in S_n$ with $\ell(vw) = \ell(v)+\ell(w)$,
+    \[
+      \Delta_{\frR(v w)}(K) = \Delta_{\frR(v) \: \frR(w)^v}(K)
+    \]
+  \end{theorem}
+  
 \end{frame}
 
 
