@@ -6,6 +6,7 @@
 
 \usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
 \usepackage{ulem}
+\usepackage{faktor} 
 \input{definitions}
 
 \usetikzlibrary{arrows}
@@ -135,7 +136,7 @@
 \newtheorem{defn}{Definition}
 \newtheorem{question}{Question}
 
-\author[Antony Della Vecchia]{Antony Della Vecchia \\ \vspace{4mm} \small{Joint work with F. Lenzen and M. Joswig } }
+\author[Antony Della Vecchia]{Antony Della Vecchia \\ \vspace{4mm} \small{Joint work with  M. Joswig and F. Lenzen} }
 \title{Partial Algebraic Shifting}
 
 \institute[]{
@@ -166,9 +167,9 @@
     $\RepVert{\sigma}{i}{j} \in C$ for $i \in \sigma$ and $ j < i$.
   \end{definition}
 
-  \begin{theorem}[Kalai, Bj\"orner-Kalai]
+  \begin{theorem}[Kalai '84, Bj\"orner-Kalai '88]
     Given $K$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
-    $\Delta^{\FF}(K)$ with the same $f$-vector and betti numbers as $K$.
+    $\Delta^{\FF}(K)$ with the same $f$-vector and Betti numbers as $K$.
   \end{theorem}
 
 \begin{columns}
@@ -194,7 +195,7 @@
 
 \begin{frame}[fragile]{Exterior Algebraic Shifting}
   \begin{definition}
-    Let $\EE \supset \FF$ be a field extension and let $g \in \GL(\EE, n)$.
+    Let $\EE \supset \FF$ be a field extension and let $g \in \GL(n, \EE)$.
     \begin{itemize}
       \item The $k$th \emph{compound matrix} $g^{\wedge k}$ is the $\binom{n}{k} \times \binom{n}{k}$-matrix
         of $k$-minors of $g$.
@@ -204,17 +205,20 @@
 \begin{definition}\label{def:shift}
   The \emph{partial (exterior) shift} of $K$ by $g$ is
   \begin{equation*}
-    \Delta^{\FF}_g(K) \coloneqq \bigcup_{k \leq \text{dim}(K)} \Set[\big]{ \sigma \in \tbinom{[n]}{k}; g^{\wedge K_k}_{*\sigma} \notin \Span_{\EE}[\big]{(g^{\wedge K_k}_{*\rho})_{\rho \lex< \sigma}} }.
+    \Delta^{\FF}_g(K) \coloneqq \bigcup_{k} \Set[\big]{ \sigma \in \tbinom{[n]}{k}; g^{\wedge K_k}_{*\sigma} \notin \Span_{\EE}[\big]{(g^{\wedge K_k}_{*\rho})_{\rho \lex< \sigma}} }.
   \end{equation*}
 \end{definition}
-For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
-\begin{center}
-  $g^{\wedge 2} = \begin{psmallmatrix} x_{11}x_{22} - x_{12}x_{21} & x_{11}x_{23} - x_{13}x_{21} &  x_{12}x_{23} - x_{22}x_{13} \\
-    x_{21}x_{32} - x_{22}x_{31} & x_{21}x_{33} - x_{23}x_{31} &  x_{22}x_{33} - x_{23}x_{32}
-  \end{psmallmatrix}$,
+\pause
+\begin{example}
+  For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
+  \begin{center}
+    $g^{\wedge K_2} = \begin{psmallmatrix} x_{11}x_{22} - x_{12}x_{21} & x_{11}x_{23} - x_{13}x_{21} &  x_{12}x_{23} - x_{22}x_{13} \\
+      x_{21}x_{32} - x_{22}x_{31} & x_{21}x_{33} - x_{23}x_{31} &  x_{22}x_{33} - x_{23}x_{32}
+    \end{psmallmatrix}$,
   \end{center}
   $\Delta(K) = \{\{1, 2\}, \{1, 3\}\}$
-  mention monte carlo
+  \end{example}
+  %mention monte carlo
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -222,13 +226,23 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Algebraic Exterior Shifting}
-  $e_{\sigma} = e_{\sigma_1} \wedge \ldots \wedge e_{\sigma_k}$ for $\sigma = \{\sigma_1 < \ldots < \sigma_k\}$.
+  \textbf{Generic Initial Ideals}\\
+  For $\sigma = \{\sigma_1 < \ldots < \sigma_k\}$ set $e_{\sigma} = e_{\sigma_1} \wedge \ldots \wedge e_{\sigma_k}$ 
   \[
-    I \coloneqq (e_\sigma\colon \sigma \notin K) \subset \bigwedge \EE^n,
-    I_{\Delta_{g(K)}} = \text{in}(g \cdot I)
+    I_K \coloneqq (e_\sigma\colon \sigma \notin K) \subset \bigwedge \FF^n 
   \]
 
-  plucker?
+  The exterior face ring is,
+  \[
+    \FF[K] \coloneq {\bigwedge \FF^n}\Big/{ I_k},
+  \]
+
+  and
+
+  \[
+    \FF[\Delta(K)] = {\bigwedge \FF^n}\Big/{ \text{gin}(I_k)}
+  \]
+  See [Herzog-Tarai '99] Stable Properties of algebraic shifting.
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -236,13 +250,13 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Partial Algebraic Shifting }
-  Consider now $\Set{\frR(w) \in \GL(\EE, n); w \in S_n}$.\\
+  Consider now $\Set{\frR(w) \in \GL(n, \EE); w \in S_n}$.\\
   Let $c_n \coloneqq (1 \ldots n) \in S_n$.
 
-  \begin{theorem}[DV-Joswig-Lenzen]
+  \begin{theorem}[DV-Joswig-Lenzen '24+]
     For any simplical complex $K$ and $w \in S_n$ such that $c_n \leq w$ in the weak Bruhat order we have the following,
     \begin{enumerate}
-    \item $\Delta_{\frR(w)}(K)$ is a homotopy equivalent to a wedge of spheres.
+    \item $\Delta_{\frR(w)}(K)$ is homotopy equivalent to a wedge of spheres.
     \item $\Delta_{\frR(w)}(K)$ has the same Betti numbers as $K$.
     \end{enumerate}
 
@@ -287,7 +301,7 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
     \textbf{Bruhat Decomposition}
     Let $B \subset \GL(n, \EE)$ be the subgroup of upper triangular matrices, 
     \begin{equation*}
-      \GL(n, \EE) \ = \ \smashoperator{\coprod_{w \in \SymmetricGroup{n}}} BwB \enspace .
+      \GL(n, \EE) \ = \ \smashoperator{\coprod_{w \in S_n}} BwB \enspace .
     \end{equation*}
   \end{frame}
 
@@ -303,7 +317,7 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
 
   If $g$ is generic, then so is $w_0g$, hence
   \[
-    \Delta_{w_0g}(K) = \Delta_{g}(K).
+    \Delta_{w_0g}(K) = \Delta_{g}(K) = \Delta(K).
   \]
 
   For the same reason $w_0g$ there exist some lower triangular $l$, and upper triangular $u', u$ such that,
@@ -318,7 +332,7 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Inversions and Rothe matrix}
+\begin{frame}[fragile]{Inversions}
   \begin{definition}
     For $w \in S_n$, let
     \[
@@ -332,28 +346,9 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
           \[
             w_0 = \text{argmax}_{w \in S_n} \ell(w)
           \]
-
-
-    \begin{equation*}
-      \frU(w) \coloneqq
-      \begin{psmallmatrix}
-        1 & u_{12} & \cdots & u_{1n}    \\
-          & \ddots & \ddots & \vdots    \\
-          &        & 1      & u_{n-1,n} \\
-          &        &        & 1
-      \end{psmallmatrix}
-      \quad \text{with} \quad
-      u_{ij} = \begin{cases*}
-        x_{ij} & if $(i,j) \in \inv w$,\\
-        0 & otherwise,
-      \end{cases*}
-    \end{equation*}
-    and let $\frR(w) \coloneqq \frU(w)w$.
-  \end{definition}
-
-  \begin{example}
+            \pause
+    \begin{example}
     Take $w = (2 \enspace 3)$, $\inv w = \{ (1, 2), (1, 3)\}$.
-
     \[
       \begin{psmallmatrix}
 	1 & x & y \\
@@ -367,16 +362,21 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
       \end{psmallmatrix}
       \ = \
       \begin{psmallmatrix}
-	1 & y & x \\
-	0  & z & 1 \\
-	0  & 1 & 0
+	1 & x & y \\
+          & 1 & z \\
+          &   & 1
       \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 &   &   \\
+          &   & 1 \\
+          & 1 &
+      \end{psmallmatrix} 
       \ = \
       \begin{psmallmatrix}
 	1 & 0 & 0 \\
           & 1 & z \\
           &   & 1
-      \end{psmallmatrix}
+      \end{psmallmatrix} 
       \begin{psmallmatrix}
 	1 &   &   \\
           &   & 1 \\
@@ -387,8 +387,75 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
           & 1 & 0 \\
           &   & 1
       \end{psmallmatrix} \enspace.
-    \]
+      \]
   \end{example}
+\pause
+          \textbf{Minimal representatives}\\
+    \begin{equation*}
+      \frU(w) \coloneqq
+      \begin{psmallmatrix}
+        1 & u_{12} & \cdots & u_{1n}    \\
+          & \ddots & \ddots & \vdots    \\
+          &        & 1      & u_{n-1,n} \\
+          &        &        & 1
+      \end{psmallmatrix}
+      \quad \text{with} \quad
+      u_{ij} = \begin{cases*}
+        x_{ij} & if $(i,j) \in \inv w$,\\
+        0 & otherwise
+      \end{cases*}\enspace.
+    \end{equation*}
+    \vspace{3mm}
+    We call $\frR(w) \coloneqq \frU(w)w$ the \emph{Rothe matrix}.
+  \end{definition}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\begin{frame}[fragile]{Weak Bruhat order}
+  \begin{definition}[Bj\"orner-Brenti '05]
+    The weak Bruhat right order is a partial ordering on $S_n$,
+    \[
+      w = uv \geq u
+    \]
+    if $\ell(w) = \ell(u) + \ell(v)$.
+  \end{definition}
+
+  \begin{lemma}
+    For $u, v \in S_n$ with $uv \geq u$ if and only if
+    \begin{align*}
+      \inv uv &= \inv u \cup (\inv v) \cdot u^{-1} \\
+      \emptyset &= \inv u \cap \inv v
+    \end{align*}
+  \end{lemma}
+\end{frame}
+
+
+\begin{frame}[fragile]{Rothe Matrix of the n cycle}
+  Consider $c_n = (1 \enspace 2 \dots n)$,
+
+  \begin{itemize}
+  \item For $ 1 \leq i < j < n$, $i \cdot c_n < j \cdot c_n$
+  \item $\inv c_n = \{ (i, n) : 1 \leq i < n \}$
+  \end{itemize}
+
+  \[
+    \frR(c_n) = \begin{psmallmatrix}
+      x_{1,n}   & 1 &        &   \\
+      \vdots    &   & \ddots &   \\
+      x_{n-1,n} &   &        & 1 \\
+      1         & 0 & \cdots & 0
+    \end{psmallmatrix}.
+  \]
+
+  For $w \geq c_n$
+  \begin{itemize}
+  \item $\inv c_n \subset \inv w$
+  \item $\frR(c_n)$ and $\frR(w)$ have the same first column.
+  \end{itemize}
 \end{frame}
 
 
@@ -402,7 +469,7 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
     for each $i \in \sigma$.
   \end{definition}
 
-  \begin{lemma}[Bj\"orner-Kalai 88]
+  \begin{lemma}[Bj\"orner-Kalai '88]
     Let $K$ be a near cone. 
     Then $K$ is homotopy equivalent to a wedge of spheres and $\beta_k(K) = \abs{\Set{\sigma \in K^k ; \sigma \cup \{1\} \notin K}}$.
   \end{lemma}
@@ -412,98 +479,86 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
   \end{figure}
 \end{frame}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Permutation Lemma}
+  \begin{lemma}[Bj\"orner-Kalai '88]
+    Let $g \in \GL(n, \EE)$ be generic and suppose for $\tau \in \binom{[n]}{k}$ there exists    $\gamma \in \EE$ such that,
+    \[
+      g^{\wedge K_k}_{\tau} = \sum_{\sigma \in K_k}\gamma_{\sigma} g^{\wedge K_k}_{\sigma}.
+    \]
+    If $\pi \in S_n$, then there exists $\gamma' \in \EE$ such that
+    \[
+      g^{\wedge K_k}_{\tau \cdot \pi} = \sum_{\sigma \in K_k}\gamma'_{\sigma \cdot \pi} g^{\wedge K_k}_{\sigma \cdot \pi}
+    \]
+  \end{lemma}
+
+\end{frame}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Shifting to near cones}
-  \begin{lemma}[DV-Joswig-Lenzen]
+  \begin{lemma}[DV-Joswig-Lenzen '24+]
     Let $K$ be a simplicial complex on $n$ vertices.
     Further, let $g\in\GL(n,\EE)$ be a matrix whose entries in the first column are algebraically independent over $\FF$ and the other entries of $g$.
     Then $\Delta_g(K)$ is a near cone.
   \end{lemma}
 
-  \begin{example}
-	The $n$-cycle $c_n \coloneqq (1\ 2\ \ldots\ n)$ gives rise to the matrix
-	\[
-	\frR(c_n) = \begin{psmallmatrix}
-		x_{1,n}   & 1 &        &   \\
-		\vdots    &   & \ddots &   \\
-		x_{n-1,n} &   &        & 1 \\
-		1         & 0 & \cdots & 0
-	\end{psmallmatrix}.
-      \]
-      \begin{align*}
-        \Delta^{\QQ}_{\frR(c_6)}(\RP^2_6) &=\Delta\{123, 124, 125, 126, 134, 135, 136, 145, 146, 156\} \\
-        &=\Delta^{\QQ}(\RP^2_6)
-      \end{align*}
-\end{example}
+  \textbf{Proof sketch} \\
+  Let $\pi = (1 \enspace i)$ and suppose $\tau \notin K$,
+    \[
+      g^{\wedge K_k}_{\tau} = \sum_{\sigma < \tau}\gamma_{\sigma} g^{\wedge K_k}_{\sigma}.
+    \]
 
+    Then there exists $\gamma' \in \EE$ such that,
+    \[
+      g^{\wedge K_k}_{\tau \cdot \pi} = \sum_{\sigma < \tau \cdot \pi}\gamma'_{\sigma } g^{\wedge K_k}_{\sigma}
+    \]
 
 \end{frame}
 
-\begin{frame}[fragile]{Shifting to near cones}
-  \begin{lemma}[Bj\"orner-Kalai]
-    Let $g \in \GL(n, \EE)$ be generic and suppose for $\tau \in \binom{[n]}{k}$ there exists    $\gamma \in \EE$ such that,
-    \[
-      g^{\wedge K_k}_{\tau} = \sum_{\sigma \in K_k}\gamma_{\sigma} g^{\wedge K_k}_{\sigma}.
-    \]
-    If $w \in S_n$, then there exists $\gamma' \in \EE$ such that
-    \[
-      g^{\wedge K_k}_{\tau \cdot w} = \sum_{\sigma \in K_k}\gamma'_{\sigma \cdot w} g^{\wedge K_k}_{\sigma \cdot w}
-    \]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\begin{frame}[fragile]{Preserving Betti Numbers}
+  \begin{lemma}[DV-Joswig-Lenzen '24+]
+    Let $v$, $w \in S_n$ with $\ell(vw) = \ell(v)+\ell(w)$ then  $\frR(v w)^{K_k}$ and
+    $(\frR(v) \frR(w)^v)^{\wedge K_k}$.
+    have the same column matroid.
   \end{lemma}
 
-  spell out connection with generic first column shifting to near cone
-  
+  \textbf{Proof sketch} of shifting by $w \geq c_n$ preserves Betti numbers \\
+  It is enough to show,
+  \[
+    \abs{\Set{\sigma \in \Delta_{\frR(w_0)}(K^k); 1 \in \sigma}} = \abs{\Set{\sigma \in \Delta_{\frR(w)}(K^k); 1 \in \sigma}}.
+  \]
+  Use lemma and do some algebra in the subscripts of $\Delta_{\frR(w)}$ and $\Delta_{\frR(w_0)}$
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Weak Bruhat order}
-  \begin{itemize}
-  \item definition and equivalent formulation
-  \item an example with rothe matrix that shows shifting to near cones
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Proof of results}
-  \begin{theorem}[DV-Joswig-Lenzen]
-    For $K$ a simplicial complex, $v$, $w \in S_n$ with $\ell(vw) = \ell(v)+\ell(w)$,
-    \[
-      \Delta_{\frR(v w)}(K) = \Delta_{\frR(v) \: \frR(w)^v}(K)
-    \]
-  \end{theorem}
-  
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}[fragile]{Mardi slide?}
-  \begin{itemize}
-  \item talk about how file format was useful
-  \end{itemize}
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{}
+  \textbf{Problem} How and or when can we find $\Delta(K)$ from $\Delta_{\frR(c_n)}(K)$?
+  \pause
   \begin{center}
-    QR codes to both papers
-
+    \includegraphics[width=2cm]{images/frame}
+      \url{https://arxiv.org/abs/2410.24044}
+    \end{center}
+  \begin{center}
     Thank You!
   \end{center}
+
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
