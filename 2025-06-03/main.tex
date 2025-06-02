@@ -253,18 +253,15 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Real Projective Plane Example}
+\begin{frame}[fragile]{Real Projective Plane}
   $K = \RP^2_6$, $\FF = \QQ$
 
   \begin{figure}
     \includegraphics[width=10cm]{images/rp_graph}
+    \caption{
+      The partial shift graph starting from $\RP^2_6$, generated using \OSCAR.
+    }
   \end{figure}
-
-  \begin{itemize}
-  \item show example of how we can compute full shift og projective plane with standard n cycle
-  \item computations inspired us to find result
-  \item example shows that our result is tight
-  \end{itemize}
 \end{frame}
 
 
@@ -272,7 +269,7 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{LU decomposition }
+\begin{frame}[fragile]{Matrix decompositions }
   \begin{lemma}
     $\Delta_{gb}(K) = \Delta_g(K)$ for any upper triangular $b$ and any simplicial complex $K$.
   \end{lemma}
@@ -285,12 +282,37 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
     \[
       g = lu
     \]
-    \vspace{8mm}
+    \vspace{3mm}
 
-    For generic $g \in \GL(n, \EE)$ , $\Delta_l(K) = \Delta_g(K)$.
-    
-    I.e. we can use $l$ with $\frac{1}{2}n(n-1)$ transcendentals.
+    \textbf{Bruhat Decomposition}
+    Let $B \subset \GL(n, \EE)$ be the subgroup of upper triangular matrices, 
+    \begin{equation*}
+      \GL(n, \EE) \ = \ \smashoperator{\coprod_{w \in \SymmetricGroup{n}}} BwB \enspace .
+    \end{equation*}
   \end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+  
+\begin{frame}[fragile]{ Finding the Bruhat cell of $g$}
+  \[
+    w_0 = (1 \enspace n)(2 \enspace n - 1)\ldots(\floor{\frac{n}{2}} \ceil{\frac{n}{2} + 1})
+  \]
+
+  If $g$ is generic, then so is $w_0g$, hence
+  \[
+    \Delta_{w_0g}(K) = \Delta_{g}(K).
+  \]
+
+  For the same reason $w_0g$ there exist some lower triangular $l$, and upper triangular $u', u$ such that,
+    \begin{align*}
+      w_0g &= lu = w_0u'w_0u\\
+      g &= u'w_0u
+    \end{align*}
+    $g \in Bw_0B$
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -302,11 +324,15 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
     \[
       \inv w \ \coloneqq \ \Set{(i,j); i < j, i \cdot w > j \cdot w} \enspace 
     \]
-
-    \[
-            \ell(w) \ \coloneqq \ \abs{\inv w}.
-    \]
     % inversion table Stanley enumerative combinatorics
+    \[
+            \ell(w) \ \coloneqq \ \abs{\inv w}
+          \]
+
+          \[
+            w_0 = \text{argmax}_{w \in S_n} \ell(w)
+          \]
+
 
     \begin{equation*}
       \frU(w) \coloneqq
@@ -365,25 +391,6 @@ For $g = (x_{ij})_{1\leq i, j\leq 3}$ and $K = \{ \{1, 2\}, \{2, 3\}\}$.
   \end{example}
 \end{frame}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-  \begin{frame}[fragile]{ Bruhat decomposition}
-    Let $B \subset \GL(n, \EE)$ be the subgroup of upper triangular matrices, 
-    \begin{equation*}
-      \GL(n, \EE) \ = \ \smashoperator{\coprod_{w \in \SymmetricGroup{n}}} BwB \enspace .
-    \end{equation*}
-
-    
-    Describe $w_0$
-
-    $\Delta_{w_0g}(K) = \Delta_{g}(K)$
-    
-    $w_0g = lu = w_0u'w_0u$ (bring the two decompositions together)
-    
-\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
