@@ -1,0 +1,18 @@
+\begin{tikzpicture}[every node/.style={circle, draw, thick, minimum size=0.20cm}]
+% Triangle fill colors
+\definecolor{TriangleColor}{RGB}{255,170,128} % Soft Coral
+\definecolor{LineColor}{RGB}{0,128,128} % Darker Blue
+\definecolor{VertexColor}{RGB}{255,255,128} % Light Yellow
+
+% Draw edges
+\draw[color=LineColor, thick] (1, 0.5) -- (1, -0.5);
+\draw[color=LineColor, thick] (1, -0.5) -- (0, 0);
+
+
+% Define vertices with colors
+\node[scale=0.5,label=below:{1}, fill=VertexColor] (1) at (0,0) {};
+\node[scale=0.5,label=above:{2}, fill=VertexColor] (2) at (1, 0.5) {};
+\node[scale=0.5,label=below:{3}, fill=VertexColor] (3) at (1, -0.5) {};
+\node[scale=0.5,label=above:{4}, fill=VertexColor] (4) at (2,0) {};
+
+\end{tikzpicture}
