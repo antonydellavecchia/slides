@@ -1,5 +1,5 @@
 \makeatletter
-\usepackage{mathtools,bm,microtype,calc,array,pdfpages,nicematrix,blkarray,tikz,tikz-cd,booktabs,hyphenat,csquotes,hyperref,cleveref}
+\usepackage{mathtools,bm,microtype,calc,array,pdfpages,nicematrix,blkarray,tikz,tikz-cd,booktabs,hyphenat,csquotes,hyperref,cleveref, siunitx, xcolor, pifont, bbding}
 \RequirePackage{biblatex}
 \usepackage[flushmargin]{footmisc} % Remove footnote indentation
 \graphicspath{{visualizations/}}
@@ -295,6 +295,23 @@
 }
 \newcommand{\mathlist}[1]{$\mathcode`\,=\string"8000 #1$}
 
+\newcommand\Rot[1]{\rotatebox{90}{#1}}%
+\newcommand\CS[1]{\csname #1\endcsname}%
+\newcommand\Tick[1]{\resizebox{!}{\heightof{t}}{\ifthenelse{#1=1}{\Checkmark}{\XSolidBrush}}}%
+\newcommand\EarlyReturn[1]{\ifthenelse{\equal{\CS{#1LvmaxLenBefore}}{n/a}}{*}{}}%
+\newcommand\TimeOrDash[2][]{%
+	\IfSubStr{\CS{#2Trials}}{>}%
+	{{--}}%
+	{\tablenum[table-auto-round,table-format=#1]{\CS{#2Time}}}%
+}
+\newcommand\FailedShift[1]{\IfSubStr{\CS{#1LvTrials}}{>}{${}^\dagger$}{}}%
+\DeclareSIUnit{\noop}{\kern 0pt}%
+\newcommand{\Mem}[1]{%
+	\IfInteger{#1}{%
+		\makebox[\widthof{\SI{10}{\giga\byte}}][r]{\SI[exponent-mode=engineering, exponent-to-prefix = true, round-mode=places, round-precision=0]{#1}{\noop}}
+	}{#1}%
+}%
+
 % Create a new columntype A[fmt] := S[table-format=fmt]
 \makeatletter
 \newtoks\mytoks
@@ -326,3 +343,4 @@
 
 
 \makeatother
+
