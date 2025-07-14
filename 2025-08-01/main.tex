@@ -198,21 +198,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}
+  \begin{theorem}[DV, Joswig, Lenzen '25]
+    There exists a fast in practice Las Vegas algorithm for determing $\Delta(K)$.
+  \end{theorem}
+  \begin{center}
+    \includegraphics[width=0.3\textwidth]{images/oscar.png}
+  \end{center}
+  \pause
   \begin{problem}[Kalai '02]
     Does there exist a Las Vegas polynomial time algorithm for determing $\Delta(K)$?
   \end{problem}
 
-  \pause
-  \begin{theorem}[DV, Joswig, Lenzen '25]
-    There exists a fast in practice Las Vegas algorithm for determing $\Delta(K)$
-  \end{theorem}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Compound Matrices}
+\begin{frame}[fragile]{Exterior Algebraic Shift}
   \begin{definition}
     Let $\EE \supset \FF$ be a field extension and let $g \in \GL(n, \EE)$.
     \begin{itemize}
@@ -223,30 +226,18 @@
   \end{definition}
   \vspace{8mm}
   Let $\sigma_i \in S$, $\abs{S} = m$ and $\tau_i \in \binom{[n]}{k}$ such that
-  \vspace{4mm}
-  \begin{center}
-    $\sigma_1 <_{\text{lex}} \sigma_2  <_{\text{lex}} \dots <_{\text{lex}} \sigma_m$ and   $\tau_1  <_{\text{lex}} \tau_2 <_{\text{lex}} \dots  <_{\text{lex}} \tau_{\binom{n}{k}}$
-  \end{center}
-
     \vspace{4mm}
     \[
       g^{\wedge S} \ = \ \begin{psmallmatrix} \det g_{\sigma_1 \tau_1} & \det g_{\sigma_1 \tau_2} & \dots &  \det g_{\sigma_m \tau_{\binom{n}{k}}} \\
         \vdots & \vdots & \vdots & \vdots \\
         \det g_{\sigma_m \tau_1} & \det g_{\sigma_m \tau_2} & \dots & \det g_{\sigma_m \tau_{\binom{n}{k}}}\end{psmallmatrix} \enspace.
-  \]
-\end{frame}
+    \]
 
-\begin{frame}[fragile]{Exterior Algebraic Shifting}
-  \begin{definition}\label{def:shift}
-    The \emph{partial (exterior) shift} of a $k$-uniform hypergraph $S$ on $n$  vertices by $g \in \GL(\EE, n)$ is
-    \begin{equation*}
-      \Delta^{\FF}_g(S) \coloneqq \Set[\big]{ \sigma \in \tbinom{[n]}{k}; \sigma \text{ indexes a column with a pivot of  } g^{\wedge S } }.
-    \end{equation*}
-  \end{definition}
-  \vspace{16mm}
-  \pause
-  (Bj\"orner-Kalai '88) For $\EE$ \emph{sufficiently large} we can find $g \in \GL(n, \EE)$ such that $\Delta^{\FF}_g(K) = \Delta^{\FF}(K)$.
-  e.g. Take $\EE = \FF(x_{ij} 1 \leq i, j \leq n)$ and $g = (x_{ij})_{1\leq i, j\leq n}$
+    \pause
+
+      \begin{equation*}
+        \Delta^{\FF}_g(S) \coloneqq \Set[\big]{ \sigma \in \tbinom{[n]}{k}; \sigma \text{ indexes a column with a pivot of  } g^{\wedge S } }.
+      \end{equation*}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -313,20 +304,20 @@
     \end{example}
 \end{frame}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{monte carlo slide}
+  blah
+\end{frame}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]
-  \begin{definition}[Randomized Algorithms]
-    \begin{itemize}
-    \item \emph{Monte Carlo} correct result with probability greater than $1/2$.
-    \item \emph{Las Vegas} if the output can be tested for correctness.
-    \end{itemize}
-  \end{definition}
-  \pause
+\begin{frame}[fragile]{Verification Algorithm}
   \begin{algorithm}[H]
     \begin{algorithmic}[1]
       \REQUIRE $u \in \EE^{n \times n}$, $S$ a $k$-uniform hypergraph.
