@@ -20,7 +20,46 @@
 
 \makeatletter
 \PassOptionsToPackage{sortcites,isbn=false}{biblatex}
-\PassOptionsToPackage{inline}{enumitem}
+
+
+% Set frame title color
+\setbeamercolor{frametitle}{fg=LineColor}
+
+% Set section title color  
+\setbeamercolor{title}{fg=LineColor}
+
+
+\renewenvironment{theorem}[1][]
+{\textcolor{LineColor}{\textbf{Theorem #1}} }
+{}
+
+\renewenvironment{definition}[1][]
+{\textcolor{LineColor}{\textbf{Definition #1}} }
+{}
+
+\renewenvironment{problem}[1][]
+{\textcolor{LineColor}{\textbf{Problem #1}} }
+{}
+
+\renewenvironment{lemma}[1][]
+{\textcolor{LineColor}{\textbf{Lemma #1 }} }
+{}
+
+% Set subtitle color
+\setbeamercolor{subtitle}{fg=LineColor}
+
+% Set author color
+%\setbeamercolor{author}{fg=purple}
+
+% Set institute color
+%\setbeamercolor{institute}{fg=orange}
+
+% Set date color
+%\setbeamercolor{date}{fg=brown}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=\textcolor{LineColor}{\textbullet}}
+%\PassOptionsToPackage{inline}{enumitem}
 \PassOptionsToPackage{hyperfootnotes=false}{hyperref}
 \PassOptionsToPackage{capitalise}{cleveref}
 \usepackage{bbding}
@@ -29,10 +68,12 @@
 \usepackage{layout}
 \overfullrule=1ex
 
+\usepackage{minted}
 
 \usepackage[textsize=tiny]{todonotes}
 \setlength{\marginparwidth}{1.75cm}
 \setlength{\marginparsep}{1mm}
+
 
 % Data tables
 \usepackage{siunitx}
@@ -197,17 +238,26 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}
+\begin{frame}[fragile]
   \begin{theorem}[DV, Joswig, Lenzen '25]
-    There exists a fast in practice Las Vegas algorithm for determing $\Delta(K)$.
+    There exists a fast in practice Las Vegas algorithm for determing $\Delta^{\FF}(K)$.
   \end{theorem}
-  \begin{center}
-    \includegraphics[width=0.3\textwidth]{images/oscar.png}
-  \end{center}
+  \begin{minted}{julia}
+    julia> using Oscar
+
+    julia> exterior_shift(GF(2), real_projective_plane())
+    Abstract simplicial complex of dimension 2 on 6 vertices
+  \end{minted}
   \pause
+  \vspace{8mm}
   \begin{problem}[Kalai '02]
-    Does there exist a Las Vegas polynomial time algorithm for determing $\Delta(K)$?
+    Does there exist a deterministic or Las Vegas polynomial time algorithm for determing $\Delta(K)$?
   \end{problem}
+  \vspace{8mm}
+  
+  \begin{theorem}[Keehn, Nevo '24+]
+    There exists a deterministic polynomial time algorithm for computing $\Delta^{\QQ}(K)$ when $K$ is a triangulation of the torus, the klein bottle and the real projective plane.
+  \end{theorem}
 
 \end{frame}
 
@@ -294,7 +344,7 @@
     \vspace{3mm}
     \pause
     \begin{example}
-      $K = \{\{1, 2\}, \{2, 3\}, \{4\}\}$, and  $\ell^{\wedge S2} $ reduces to
+      $K = \{\{1, 2\}, \{2, 3\}, \{4\}\}$, and  $\ell^{\wedge S} $ reduces to
       \[
         \begin{psmallmatrix}
           x_{13} x_{24} + x_{14} x_{23} & x_{12} x_{24} + x_{14}                                                                                             & x_{24}                                                        & x_{12} x_{23} + x_{13}                                                                                            & x_{23}                                                        & 1                                                  \\[3.5pt]
@@ -308,8 +358,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{monte carlo slide}
-  blah
+\begin{frame}[fragile]{Monte Carlo Algorithm}
+  \begin{itemize}
+  \item Randomized algorithm.
+  \item Current Standard for computing $\Delta^{\FF}(S)$.
+  \item Pick $u$ by sampling from $\FF$.
+  \item Computing $\Delta_u^{\FF}(S)$ is fast.
+  \item Successful with high probability in characteristic $0$.
+  \item Not the case for small fields.
+  \end{itemize}
 \end{frame}
 
 
@@ -404,50 +461,52 @@
 
 \begin{frame}[fragile]{Table of timings}
   \begin{table}[p]
-    \centering
-    \setlength\tabcolsep{2pt}
-    \small%
-    \renewcommand{\arraystretch}{0.965}% Tighter
-    \csvreader[
-    head to column names,
-    tabular = {
-      r |
-      *{5}{r}
-      | c A[ 1] c  % QQ
-      | c A[<3] c  % F2
-      | c A[ 1] c  % F4
-    },
-    table head = {
-      \toprule
-      &&&&&&
-      \multicolumn{3}{c}{$\QQ$} &
-      \multicolumn{3}{c}{$\GF{2}$} &
-      \multicolumn{3}{c}{$\GF{4}$} \\
-      & $n$ & $o$ & $g$ & $i$ & \Rot{\#$2$-faces} &
-      \Rot{time} & \Rot{\#trials} &&
-      \Rot{time} & \Rot{\#trials} &&
-      \Rot{time} & \Rot{\#trials} & \\
-      \midrule
-    },
-    table foot = \bottomrule,
-    respect all, % file names in csv files contain tex special characters,
-    filter equal={\q}{2}
-    ]{surfaces_table_born.csv}{}{%
-      \thecsvrow & \nVertices & \Tick{\orientable} &\genus & \index & \nFaces &
-      \TimeOrDash[3.1]{QQLv}        & \CS{QQLvTrials}        & \EarlyReturn{QQ}        &
-      \TimeOrDash[4.1]{F2Lv}        & \CS{F2LvTrials}        & \EarlyReturn{F2}        &
-      \TimeOrDash[4.1]{F4Lv}        & \CS{F4LvTrials}        & \EarlyReturn{F4}        
-    }
-  \end{table}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-\begin{frame}
-  Thank you!
+  \centering
+  \setlength\tabcolsep{2pt}
+  \small%
+  \renewcommand{\arraystretch}{0.965}% Tighter
+  \csvreader[
+  head to column names,
+  tabular = {
+    *{5}{r}
+    | c A[ 1] c  % QQ
+    | c A[<3] c  % F2
+    | c A[ 1] c  % F4
+    | c        % Add column for vertical dots
+  },
+  table head = {
+    \toprule
+    &&&&&
+    \multicolumn{3}{c}{$\QQ$} &
+    \multicolumn{3}{c}{$\GF{2}$} &
+    \multicolumn{3}{c}{$\GF{4}$} & \\
+     $n$ & $o$ & $g$ & $i$ & \Rot{\#$2$-faces} &
+    \Rot{time} & \Rot{\#trials} &&
+    \Rot{time} & \Rot{\#trials} &&
+    \Rot{time} & \Rot{\#trials} & & $\dots$ \\
+    \midrule
+     &   & $\vdots$ & &  & & $\vdots$ & &  & $\vdots$  & &  & $\vdots$ & \\
+  },
+  table foot = {
+    $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & 
+    $\vdots$ & $\vdots$ & $\vdots$ & 
+    $\vdots$ & $\vdots$ & $\vdots$ & 
+    $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ \\
+    \bottomrule
+  },
+  respect all,
+  filter equal={\q}{2}
+  ]{surfaces_table_born.csv}{}{%
+    \nVertices & \Tick{\orientable} &\genus & \index & \nFaces &
+    \TimeOrDash[3.1]{QQLv}        & \CS{QQLvTrials}        & \EarlyReturn{QQ}        &
+    \TimeOrDash[4.1]{F2Lv}        & \CS{F2LvTrials}        & \EarlyReturn{F2}        &
+    \TimeOrDash[4.1]{F4Lv}        & \CS{F4LvTrials}        & \EarlyReturn{F4}        & $\dots$
+  }
+\end{table}
+\pause
+  \begin{center}
+    Thank you!
+  \end{center}
 \end{frame}
 
 
