@@ -185,6 +185,7 @@
 \author[Antony Della Vecchia]{\textbf{Antony Della Vecchia}, Michael Joswig and Fabian Lenzen} 
 \title{Faster Algebraic Shifting}
 
+add conference title
 \institute[]{
   TU Berlin
 }
@@ -226,7 +227,7 @@
 \vspace{12mm}
 
 \pause
-
+simplicial complex symbol should be $\Sigma$, clearly show what is the shift
   \begin{theorem}[Kalai '84, Bj\"orner-Kalai '88]
     Given $K$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
     $\Delta^{\FF}(K)$ with the same $f$-vector and Betti numbers as $K$.
@@ -240,8 +241,10 @@
 
 \begin{frame}[fragile]
   \begin{theorem}[DV, Joswig, Lenzen '25]
-    There exists a fast in practice Las Vegas algorithm for determing $\Delta^{\FF}(K)$.
+    There exists a fast in practice Las Vegas algorithm for determining $\Delta^{\FF}(S)$.
   \end{theorem}
+  
+  change to uniform hypergraph
   \begin{minted}{julia}
     julia> using Oscar
 
@@ -251,12 +254,12 @@
   \pause
   \vspace{8mm}
   \begin{problem}[Kalai '02]
-    Does there exist a deterministic or Las Vegas polynomial time algorithm for determing $\Delta(K)$?
+    Does there exist a deterministic or Las Vegas polynomial time algorithm for determining $\Delta(K)$?
   \end{problem}
   \vspace{8mm}
   
   \begin{theorem}[Keehn, Nevo '24+]
-    There exists a deterministic polynomial time algorithm for computing $\Delta^{\QQ}(K)$ when $K$ is a triangulation of the torus, the klein bottle and the real projective plane.
+    There exists a deterministic polynomial time algorithm for computing $\Delta^{\QQ}(K)$ when $K$ is a triangulation of either the torus, the klein bottle or the real projective plane.
   \end{theorem}
 
 \end{frame}
@@ -284,7 +287,7 @@
     \]
 
     \pause
-
+We denote the \emph{algbraic shift} by,
       \begin{equation*}
         \Delta^{\FF}_g(S) \coloneqq \Set[\big]{ \sigma \in \tbinom{[n]}{k}; \sigma \text{ indexes a column with a pivot of  } g^{\wedge S } }.
       \end{equation*}
@@ -375,6 +378,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Verification Algorithm}
+  add example on same slide
   \begin{algorithm}[H]
     \begin{algorithmic}[1]
       \REQUIRE $u \in \EE^{n \times n}$, $S$ a $k$-uniform hypergraph.
@@ -409,6 +413,7 @@
     An \emph{abstract simplicial complex} $K$, is a collection of non empty sets of $[n] := \{1, 2,\ldots, n\}$,
       such that for any $\tau, \sigma \subset [n]$, if $\tau \subset  \sigma \in K$ then $\tau \in K$.
       \vspace{8mm}
+      change lower case k
     \begin{itemize}
     \item $\sigma \in K$ a \emph{$k$-simplex} or a \emph{face}, dim$(\sigma) = k + 1$.
     \item \emph{$f$-vector} number of $k$-faces for each $k$.
