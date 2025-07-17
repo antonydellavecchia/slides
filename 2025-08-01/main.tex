@@ -251,8 +251,7 @@
   \begin{theorem}[DV, Joswig, Lenzen '25]
     There exists a fast in practice Las Vegas algorithm for determining $\Delta^{\FF}(S)$.
   \end{theorem}
-  
-  change to uniform hypergraph
+
   \begin{minted}{julia}
     julia> using Oscar
 
@@ -388,7 +387,7 @@ The (exterior) \emph{algbraic shift} is,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Verification Algorithm}
+\begin{frame}[fragile]{Verification Algorithm (Las Vegas)}
    \begin{algorithm}[H]
     \begin{algorithmic}[1]
       \REQUIRE $u \in \EE^{n \times n}$, $S$ a $k$-uniform hypergraph.
@@ -409,11 +408,12 @@ The (exterior) \emph{algbraic shift} is,
     \label{alg:seq}
   \end{algorithm}
   \begin{center}
-    $\ell^{\wedge S}$ = \begin{pmatrix}
+    $\ell^{\wedge S} = \begin{pmatrix}
       |   & |     & \dots & |           & |                    & \dots\\
       c_1 & c_2   & \dots & c_{\abs{T}} &  \sigma_{\text{max}} & \dots\\
       |   & |     & \dots & |           & |                    & \dots 
     \end{pmatrix}
+    $
   \end{center}
 \end{frame}
 
