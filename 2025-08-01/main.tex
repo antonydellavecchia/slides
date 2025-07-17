@@ -29,6 +29,7 @@
 \setbeamercolor{title}{fg=LineColor}
 
 
+
 \renewenvironment{theorem}[1][]
 {\textcolor{LineColor}{\textbf{Theorem #1}} }
 {}
@@ -185,11 +186,12 @@
 \author[Antony Della Vecchia]{\textbf{Antony Della Vecchia}, Michael Joswig and Fabian Lenzen} 
 \title{Faster Algebraic Shifting}
 
-add conference title
+
 \institute[]{
   TU Berlin
 }
 \date{
+  ISSAC
   2025-08-01
 }
 
@@ -207,13 +209,17 @@ add conference title
 \begin{frame}[fragile]{Algebraic Shifting}
   \begin{definition}
     A \emph{$k$-uniform hypergraph} is a collection $S \subseteq \binom{[n]}{k}$.
+
     $S$ is \emph{shifted} if for any $\sigma \in S$,
     $\RepVert{\sigma}{i}{j} \in S$ for $i \in \sigma$ and $ j < i$.
   \end{definition}
 \begin{columns}
 \begin{column}{0.5\textwidth}
   \centering
-  \input{cycle-labelled.tikz}
+  \begin{figure}
+    \input{cycle-labelled.tikz}
+    \\ $S$
+  \end{figure}
 \end{column}
 \begin{column}{.1\textwidth}
 \tikz\draw[blue,->] (0,0) -- (\textwidth,0);
@@ -221,16 +227,18 @@ add conference title
 
 \begin{column}{0.4\textwidth}
   \centering
+  \begin{figure}
   \input{shifted-cycle.tikz}
+  \\ $\Delta(S)$
+  \end{figure}
 \end{column}
 \end{columns}
 \vspace{12mm}
 
 \pause
-simplicial complex symbol should be $\Sigma$, clearly show what is the shift
-  \begin{theorem}[Kalai '84, Bj\"orner-Kalai '88]
-    Given $K$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
-    $\Delta^{\FF}(K)$ with the same $f$-vector and Betti numbers as $K$.
+\begin{theorem}[Kalai '84, Bj\"orner-Kalai '88]
+    Given $\Sigma$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
+    $\Delta^{\FF}(\Sigma)$ with the same $f$-vector and Betti numbers as $\Sigma$.
   \end{theorem}
 
 \end{frame}
@@ -248,18 +256,21 @@ simplicial complex symbol should be $\Sigma$, clearly show what is the shift
   \begin{minted}{julia}
     julia> using Oscar
 
-    julia> exterior_shift(GF(2), real_projective_plane())
-    Abstract simplicial complex of dimension 2 on 6 vertices
+    julia> S = uniform_hypergraph([[1, 2], [2, 3], [3, 4], [4, 1]])
+    UniformHypergraph(4, 2, [[1, 2], [1, 4], [2, 3], [3, 4]])
+
+    julia> exterior_shift(GF(2), S)
+    UniformHypergraph(4, 2, [[1, 2], [1, 3], [1, 4], [2, 3]])
   \end{minted}
   \pause
   \vspace{8mm}
   \begin{problem}[Kalai '02]
-    Does there exist a deterministic or Las Vegas polynomial time algorithm for determining $\Delta(K)$?
+    Does there exist a deterministic or Las Vegas polynomial time algorithm for determining $\Delta(S)$?
   \end{problem}
   \vspace{8mm}
   
   \begin{theorem}[Keehn, Nevo '24+]
-    There exists a deterministic polynomial time algorithm for computing $\Delta^{\QQ}(K)$ when $K$ is a triangulation of either the torus, the klein bottle or the real projective plane.
+    There exists a deterministic polynomial time algorithm for computing $\Delta^{\QQ}(\Sigma)$ when $\Sigma$ is a triangulation of either the torus, the klein bottle or the real projective plane.
   \end{theorem}
 
 \end{frame}
@@ -287,7 +298,7 @@ simplicial complex symbol should be $\Sigma$, clearly show what is the shift
     \]
 
     \pause
-We denote the \emph{algbraic shift} by,
+The (exterior) \emph{algbraic shift} is,
       \begin{equation*}
         \Delta^{\FF}_g(S) \coloneqq \Set[\big]{ \sigma \in \tbinom{[n]}{k}; \sigma \text{ indexes a column with a pivot of  } g^{\wedge S } }.
       \end{equation*}
@@ -333,7 +344,7 @@ We denote the \emph{algbraic shift} by,
 
 \begin{frame}[fragile]{LU decomposition}
   \begin{lemma}
-    $\Delta_{gb}(K) = \Delta_g(K)$ for any upper triangular $b$ and any simplicial complex $K$.
+    $\Delta_{gb}(S) = \Delta_g(S)$ for any upper triangular $b$ and any simplicial complex $S$.
   \end{lemma}
   \vspace{8mm}
 
@@ -378,8 +389,7 @@ We denote the \emph{algbraic shift} by,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{frame}[fragile]{Verification Algorithm}
-  add example on same slide
-  \begin{algorithm}[H]
+   \begin{algorithm}[H]
     \begin{algorithmic}[1]
       \REQUIRE $u \in \EE^{n \times n}$, $S$ a $k$-uniform hypergraph.
       \ENSURE \texttt{true} if $\Delta^{\FF}(S) = \Delta^{\FF}_u(S)$; otherwise \texttt{false}
@@ -398,8 +408,15 @@ We denote the \emph{algbraic shift} by,
     \caption{Verify $u$ computes the algebraic shift of $S$}
     \label{alg:seq}
   \end{algorithm}
-
+  \begin{center}
+    $\ell^{\wedge S}$ = \begin{pmatrix}
+      |   & |     & \dots & |           & |                    & \dots\\
+      c_1 & c_2   & \dots & c_{\abs{T}} &  \sigma_{\text{max}} & \dots\\
+      |   & |     & \dots & |           & |                    & \dots 
+    \end{pmatrix}
+  \end{center}
 \end{frame}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -410,12 +427,12 @@ We denote the \emph{algbraic shift} by,
 
 \begin{frame}[fragile]{Simplicial Complexes}
   \begin{definition}
-    An \emph{abstract simplicial complex} $K$, is a collection of non empty sets of $[n] := \{1, 2,\ldots, n\}$,
-      such that for any $\tau, \sigma \subset [n]$, if $\tau \subset  \sigma \in K$ then $\tau \in K$.
+    An \emph{abstract simplicial complex} $\Sigma$, is a collection of non empty sets of $[n] := \{1, 2,\ldots, n\}$,
+      such that for any $\tau, \sigma \subset [n]$, if $\tau \subset  \sigma \in K$ then $\tau \in \Sigma$.
       \vspace{8mm}
       change lower case k
     \begin{itemize}
-    \item $\sigma \in K$ a \emph{$k$-simplex} or a \emph{face}, dim$(\sigma) = k + 1$.
+    \item $\sigma \in \Sigma$ a \emph{$k$-simplex} or a \emph{face}, dim$(\sigma) = k + 1$.
     \item \emph{$f$-vector} number of $k$-faces for each $k$.
     \end{itemize}
   \end{definition}
@@ -438,12 +455,12 @@ We denote the \emph{algbraic shift} by,
 
 \begin{frame}[fragile]{Simplicial Homology}
   \begin{definition}
-    Given a field $\FF$, and a simplicial complex $K$ we define the
+    Given a field $\FF$, and a simplicial complex $\Sigma$ we define the
     $k$th simplicial homology to be the vector space
     \[
-      H_k^{\FF}(K) \coloneq {k \text{-cycles}}\Big/{ k + 1 \text{-boundaries} }.
+      H_k^{\FF}(\Sigma) \coloneq {k \text{-cycles}}\Big/{ k + 1 \text{-boundaries} }.
     \]
-    The $k$th \emph{Betti number} of $K$ is the dimension of $H_k^{\FF}(K)$.
+    The $k$th \emph{Betti number} of $\Sigma$ is the dimension of $H_k^{\FF}(\Sigma)$.
   \end{definition}
   \pause
   \begin{columns}
