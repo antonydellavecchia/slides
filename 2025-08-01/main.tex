@@ -531,6 +531,46 @@ The (exterior) \emph{algebraic shift} is,
   \end{center}
 \end{frame}
 
+\begin{frame}[fragile]{Table of sizes}
+  \begin{table}[p]
+  \centering
+  \setlength\tabcolsep{2pt}
+  \small%
+  \renewcommand{\arraystretch}{0.965}% Tighter
+  \csvreader[
+  head to column names,
+  tabular = {
+    *{5}{r}
+    | c c c  % QQ
+    | c c c  % F2
+    | c        % Add column for vertical dots
+  },
+  table head = {
+    \toprule
+    &&&&&
+    \multicolumn{3}{c}{$\QQ$} &
+    \multicolumn{3}{c}{$\GF{2}$} & \\
+     $n$ & $o$ & $g$ & $i$ & \Rot{\#$2$-faces} &
+    \Rot{\#terms} & \Rot{max-degree} &&
+    \Rot{\#terms} & \Rot{max-degree} && $\dots$ \\
+    \midrule
+     &   & $\vdots$ & &  & & $\vdots$ & &  & $\vdots$  & &  & \\
+  },
+  table foot = {
+    $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & 
+    $\vdots$ & $\vdots$ & $\vdots$ & 
+    $\vdots$ & $\vdots$ & $\vdots$ & $\ddots$ \\
+    \bottomrule
+  },
+  respect all,
+  filter equal={\q}{2}
+  ]{surfaces_table_born.csv}{}{%
+    \nVertices & \Tick{\orientable} &\genus & \index & \nFaces &
+    \CS{QQLvmaxLenAfter} & \CS{QQLvmaxDegAfter} & \EarlyReturn{QQ}        &
+    \CS{F2LvmaxLenAfter} & \CS{F2LvmaxDegAfter} & \EarlyReturn{F2}        & $\dots$
+  }
+\end{table}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
