@@ -1,20 +1,15 @@
-\frametitle{Simplicial Homology}
-\begin{definition}
-    Given a field $\FF$, and a simplicial complex $\Sigma$ we define the
-    $k$th simplicial homology to be the vector space
-    \[
-      H_k^{\FF}(\Sigma) \coloneq {k \text{-cycles}}\Big/{ k + 1 \text{-boundaries} }.
-    \]
-    The $k$th \emph{Betti number} of $\Sigma$ is the dimension of $H_k^{\FF}(\Sigma)$.
-  \end{definition}
-  \pause
-  \begin{columns}
-    \begin{column}{0.5\textwidth}
-      The Betti numbers are $(1, 1, 0)$
-    \end{column}
+\frametitle{Open Questions}
 
-    \begin{column}{0.5\textwidth}
-      \centering
-      \input{complex.tikz}
-    \end{column}
-  \end{columns}
+  \begin{itemize}
+  \item For what other $\mathcal{F}$ is $\Gamma_{\mathcal{F}}$ still acyclic?
+  \item When can we determine apriori that $\Delta_{\frR(w_0)}(K) = \Delta_{\frR(w)}(K)$?
+  \item  Can we find bounded sequences $(w_i)_{i =1}^m$ such that  $\Delta_{w_m}(\dots \Delta_{w_1}(K)) = \Delta(K)$
+  \end{itemize}
+
+  \pause
+  \vspace{8mm}
+  \begin{center}
+    Thank You!
+  \end{center}
+
+
