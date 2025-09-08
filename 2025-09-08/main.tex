@@ -1,0 +1,803 @@
+\documentclass[9pt]{beamer}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{subfig}
+%\usetheme{Berlin}
+
+\definecolor{TriangleColor}{RGB}{255,170,128} % Soft Coral
+\definecolor{LineColor}{RGB}{0,128,128} % Darker Blue
+\definecolor{VertexColor}{RGB}{255,255,128} % Light Yellow
+
+
+\usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
+\usepackage{ulem}
+\usepackage{faktor} 
+\input{definitions}
+
+\usetikzlibrary{arrows}
+\usetikzlibrary{tikzmark}
+\input binhex
+
+\makeatletter
+\PassOptionsToPackage{sortcites,isbn=false}{biblatex}
+
+
+% Set frame title color
+\setbeamercolor{frametitle}{fg=LineColor}
+
+% Set section title color  
+\setbeamercolor{title}{fg=LineColor}
+
+
+
+\renewenvironment{theorem}[1][]
+{\textcolor{LineColor}{\textbf{Theorem #1}} }
+{}
+
+\renewenvironment{definition}[1][]
+{\textcolor{LineColor}{\textbf{Definition #1}} }
+{}
+
+\renewenvironment{problem}[1][]
+{\textcolor{LineColor}{\textbf{Problem #1}} }
+{}
+
+\renewenvironment{lemma}[1][]
+{\textcolor{LineColor}{\textbf{Lemma #1 }} }
+{}
+
+% Set subtitle color
+\setbeamercolor{subtitle}{fg=LineColor}
+
+% Set author color
+%\setbeamercolor{author}{fg=purple}
+
+% Set institute color
+%\setbeamercolor{institute}{fg=orange}
+
+% Set date color
+%\setbeamercolor{date}{fg=brown}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=\textcolor{LineColor}{\textbullet}}
+%\PassOptionsToPackage{inline}{enumitem}
+\PassOptionsToPackage{hyperfootnotes=false}{hyperref}
+\PassOptionsToPackage{capitalise}{cleveref}
+\usepackage{bbding}
+\usepackage{pdflscape}
+\usepackage{rotating}\setlength{\rotFPtop}{0pt plus 1fil}
+\usepackage{layout}
+\overfullrule=1ex
+
+
+\usepackage[textsize=tiny]{todonotes}
+\setlength{\marginparwidth}{1.75cm}
+\setlength{\marginparsep}{1mm}
+
+
+% Data tables
+\usepackage{siunitx}
+\sisetup{reset-math-version = false}
+\sisetup{table-auto-round}
+\usepackage{xstring}
+
+\usepackage[legacy]{csvsimple}
+
+\sisetup{reset-math-version = false}
+\sisetup{table-auto-round}
+
+% For code inclusion
+\usepackage{listings}
+\lstset{ breaklines=true}
+\lstset{escapeinside={<@}{@>}}
+\usepackage{algorithm,algorithmic}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+
+\usepackage{svg}
+\usepackage{nicematrix}
+
+\usepackage[legacy]{csvsimple}
+
+% For drawing
+%% Tikz drawing
+\usepackage{tikz} \usetikzlibrary{arrows} \usetikzlibrary{arrows.meta}
+\usepackage{pgfplots} \usepackage{tikz-3dplot} \usepackage{tcolorbox}
+\usetikzlibrary{matrix,fit,positioning,shapes.geometric,patterns,backgrounds}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings} \usetikzlibrary{arrows,calc}
+\tikzstyle{bigbox} = [draw=blue!50, thick, rounded corners, rectangle]
+\tikzset{ >=stealth' } \tikzset{->-/.style={decoration={ markings,
+      mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+%% Software names
+\newcommand\topcom{\texttt{TOPCOM}\xspace}
+\newcommand\mptopcom{\texttt{MPTOPCOM}\xspace}
+\newcommand\mptopcomone{\texttt{MPTOPCOM-1}\xspace}
+\newcommand\mts{\texttt{mts}\xspace}
+\newcommand\mplrs{\texttt{mplrs}\xspace}
+\newcommand\soplex{\texttt{soplex}\xspace}
+\newcommand\openmpi{\texttt{OpenMPI}\xspace}
+\newcommand\mpi{\texttt{MPI}\xspace}
+\newcommand\gfan{\texttt{Gfan}\xspace}
+\newcommand\cddlib{\texttt{cddlib}\xspace}
+\newcommand\polydb{\texttt{PolyDB}\xspace}
+\newcommand\Julia{\texttt{Julia}\xspace}
+
+\usepackage{xcolor}
+\definecolor{green}{rgb}{0.1,0.59,0.1}
+\definecolor{yellow}{rgb}{0.8,0.67,0}
+\definecolor{red}{rgb}{0.89,0.1,0.1}
+\definecolor{blue}{rgb}{0.1,0.1,0.89}
+
+\usenavigationsymbolstemplate{}
+
+\usepackage{booktabs}
+% For software citations
+\newcommand{\singular}{\texttt{Sin\-gu\-lar}\xspace}
+\newcommand\CPP{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\xspace}
+
+\usepackage{amsmath}
+% Newcommands specifically for this article
+\newcommand{\eval}{v}               % evaluation function giving switch table
+\newcommand{\graph}{\Gamma}         % reverse search graph
+\newcommand{\group}{G}              % group acting on point config
+\newcommand{\groupElem}{g}          % element of group
+\newcommand{\jbound}{\psi}          % bound on the number of elements of set J
+\newcommand{\switchTableSize}{\mu}  % index of last non-trivial row in switch table
+
+
+
+\DeclareMathOperator{\CaDiv}{CaDiv}
+\DeclareMathOperator{\conv}{conv}
+\DeclareMathOperator{\below}{defect}
+\DeclareMathOperator{\vertex}{vertex}
+\DeclareMathOperator{\Cox}{Cox}
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\cone}{cone}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\Quot}{Quot}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Sets}{Sets}
+\DeclareMathOperator{\relint}{relint}
+\DeclareMathOperator{\smallestFace}{smallestFace}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\TV}{TV}
+\DeclareMathOperator{\tail}{tail}
+\DeclareMathOperator{\rep}{rep}
+\DeclareMathOperator{\vspan}{span}
+\DeclareMathOperator{\canonical}{can}
+\DeclareMathOperator{\gkz}{gkz}
+
+\newcommand{\pmsmall}{\includegraphics[scale=0.03]{pmlogo.png}}
+\newcommand{\pmlogo}{\includegraphics[scale=0.09]{pmlogo.png}}
+\newcommand{\pmbluesmall}{\includegraphics[scale=0.03]{pmbluelogo.png}}
+\newcommand{\Disjoint}{\mathop{\coprod}}
+\newcommand{\Discriminant}{\mathcal{D}}
+
+\author[Antony Della Vecchia]{\textbf{Antony Della Vecchia}, Michael Joswig and Fabian Lenzen} 
+\title{Partial Algebraic Shifting}
+
+
+\institute[]{
+  TU Berlin
+}
+\date{
+  2025-09-08
+}
+
+
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\oursetting}[1]{\textcolor{blue}{#1}}
+
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{Simplicial Complexes}
+  \begin{definition}
+    An \emph{abstract simplicial complex} $K$, is a collection of non empty sets of $[n] := \{1, 2,\ldots, n\}$,
+      such that for any $\tau, \sigma \subset [n]$, if $\tau \subset  \sigma \in K$ then $\tau \in K$.
+      \vspace{8mm}
+    \begin{itemize}
+    \item $\sigma \in K$ a \emph{$k$-simplex} or a \emph{face}, dim$(\sigma) = k + 1$.
+    \item \emph{$f$-vector} number of $k$-faces for each $k$.
+    \end{itemize}
+  \end{definition}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \input{complex.tikz}
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      The $f$-vector is $(4, 5, 1)$
+    \end{column}
+  \end{columns}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\begin{frame}[fragile]{Simplicial Homology}
+  \begin{definition}
+    Given a field $\FF$, and a simplicial complex $K$ we define the
+    $k$th simplicial homology to be the vector space
+    \[
+      H_k^{\FF}(K) \coloneq {k \text{-cycles}}\Big/{ k + 1 \text{-boundaries} }.
+    \]
+    The $k$th \emph{Betti number} of $K$ is the dimension of $H_k^{\FF}(K)$.
+  \end{definition}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      The Betti numbers are $(1, 1, 0)$
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \centering
+      \input{complex.tikz}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\begin{frame}[fragile]{Algebraic Shifting}
+  \begin{definition}
+    A \emph{$k$-uniform hypergraph} is a collection $S \subseteq \binom{[n]}{k}$.
+
+    $S$ is \emph{shifted} if for any $\sigma \in S$,
+    $\RepVert{\sigma}{i}{j} \in S$ for $i \in \sigma$ and $ j < i$.
+  \end{definition}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+  \centering
+  \begin{figure}
+    \input{cycle-labelled.tikz}
+    \\ $S$
+  \end{figure}
+\end{column}
+\begin{column}{.1\textwidth}
+\tikz\draw[blue,->] (0,0) -- (\textwidth,0);
+\end{column}
+
+\begin{column}{0.4\textwidth}
+  \centering
+  \begin{figure}
+  \input{shifted-cycle.tikz}
+  \\ $\Delta(S)$
+  \end{figure}
+\end{column}
+\end{columns}
+\vspace{12mm}
+
+\pause
+\begin{theorem}[Kalai '84, Bj\"orner-Kalai '88]
+    Given $K$ a simplicial complex and a field $\FF$, there exists a shifted simplicial complex
+    $\Delta^{\FF}(K)$ with the same $f$-vector and Betti numbers as $K$.
+  \end{theorem}
+
+\end{frame}
+
+\begin{frame}[fragile]{Exterior Algebraic Shift}
+  \begin{definition}
+    Let $\EE \supset \FF$ be a field extension and let $g \in \GL(n, \EE)$.
+    \begin{itemize}
+      \item The $k$th \emph{compound matrix} $g^{\wedge k}$ is the $\binom{n}{k} \times \binom{n}{k}$-matrix
+        of $k$-minors of $g$.
+        \item $g^{\wedge S}$ is the $\abs{S} \times \binom{n}{k}$-submatrix of $g^{\wedge k}$ with rows indexed by $S$.
+    \end{itemize}
+  \end{definition}
+  \vspace{8mm}
+  Let $\sigma_i \in S$, $\abs{S} = m$ and $\tau_i \in \binom{[n]}{k}$ such that
+    \vspace{4mm}
+    \[
+      g^{\wedge S} \ = \ \begin{psmallmatrix} \det g_{\sigma_1 \tau_1} & \det g_{\sigma_1 \tau_2} & \dots &  \det g_{\sigma_m \tau_{\binom{n}{k}}} \\
+        \vdots & \vdots & \vdots & \vdots \\
+        \det g_{\sigma_m \tau_1} & \det g_{\sigma_m \tau_2} & \dots & \det g_{\sigma_m \tau_{\binom{n}{k}}}\end{psmallmatrix} \enspace.
+    \]
+
+    \pause
+The (exterior) \emph{algebraic shift} is,
+      \begin{equation*}
+        \Delta^{\FF}_g(S) \coloneqq \Set[\big]{ \sigma \in \tbinom{[n]}{k}; \sigma \text{ indexes a column with a pivot of  } g^{\wedge S } }.
+      \end{equation*}
+      for a "generic enough" $g$.
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Small Example}
+  For $g = (x_{ij})_{1\leq i, j\leq 4}$  $S = \{ \{1, 2\}, \{2, 3\} \} \subset \binom{[4]}{2}$, $\FF = \GF2$.
+  \[
+    g^{\wedge S} \ = \ \begin{psmallmatrix} x_{11}x_{22} + x_{12}x_{21} & x_{11}x_{23} + x_{13}x_{21} & x_{11}x_{24} + x_{14}x_{21} &  x_{12}x_{23} + x_{22}x_{13} &  x_{12}x_{24}+ x_{14}x_{22} &  x_{13}x_{24} + x_{14}x_{23} \\  x_{21}x_{32} + x_{22}x_{31} & x_{21}x_{33} + x_{23}x_{31} & x_{21}x_{34} + x_{24}x_{31} & x_{22}x_{33} + x_{23}x_{32} & x_{22}x_{34} + x_{24}x_{32} & x_{23}x_{34} + x_{24}x_{33}\end{psmallmatrix} \enspace.
+  \]
+  Which row reduces to, 
+  \[
+    \begin{psmallmatrix} x_{11}x_{22} + x_{12}x_{21} & x_{11}x_{23} + x_{13}x_{21} & x_{11}x_{24} + x_{14}x_{21} &  x_{12}x_{23} + x_{13}x_{22} &  x_{12}x_{24}+ x_{14}x_{22} &  x_{13}x_{24} + x_{14}x_{23} \\[3pt]
+      0 & \substack{x_{11}x_{21}x_{22}x_{33} \\ + x_{11}x_{21}x_{23}x_{32} \\ + x_{12}x_{21}^2x_{33} \\+ x_{13}x_{21}^2x_{32} \\ + x_{12}x_{21}x_{23}x_{31} \\ + x_{13}x_{21}x_{22}x_{31}} & \substack{x_{11}x_{21}x_{22}x_{34} \\+ x_{11}x_{21}x_{24}x_{32} \\ + x_{12}x_{21}^2x_{34} \\+ x_{14}x_{21}^2x_{32} \\ + x_{12}x_{21}x_{24}x_{31} \\+ x_{14}x_{21}x_{22}x_{31}} & \substack{x_{11}x_{22}^2x_{33} \\+ x_{11}x_{22}x_{23}x_{32} \\+ x_{12}x_{21}x_{22}x_{33} \\+ x_{13}x_{21}x_{22}x_{32} \\+ x_{12}x_{22}x_{23}x_{31} \\+ x_{13}x_{22}^2x_{31}} & \substack{x_{11}x_{22}^2x_{34} \\+ x_{11}x_{22}x_{24}x_{32} \\+ x_{12}x_{21}x_{22}x_{34} \\+ x_{14}x_{21}x_{22}x_{32} \\+ x_{12}x_{22}x_{24}x_{31} \\+ x_{14}x_{22}^2x_{31}} & \substack{x_{11}x_{22}x_{23}x_{34} \\+ x_{11}x_{22}x_{24}x_{33} \\+ x_{12}x_{21}x_{23}x_{34} \\+ x_{12}x_{21}x_{24}x_{33} \\+ x_{13}x_{21}x_{24}x_{32} \\+ x_{14}x_{21}x_{23}x_{32} \\+ x_{13}x_{22}x_{24}x_{31} \\+ x_{14}x_{22}x_{23}x_{31}} \enspace .
+    \end{psmallmatrix} 
+  \]
+
+  \begin{columns}
+\begin{column}{0.4\textwidth}
+  \centering
+  \input{small-example.tikz}
+\end{column}
+
+\begin{column}{.1\textwidth}
+  \tikz\draw[blue,->] (0,0) -- (\textwidth,0);
+\end{column}
+
+\begin{column}{0.4\textwidth}
+  \centering
+  \input{small-example-shift.tikz}
+\end{column}
+\end{columns}
+  
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\begin{frame}
+  \begin{problem}[Kalai '02]
+    For $K$ a simplicial complex, what can be said about the complexes $\Delta_M(K)$ where $M$ varies over all $n \times n$ matrices?
+  \end{problem}
+
+  \pause
+
+  \vspace{10mm}
+  
+  \begin{definition}[Partial Shift Graph]
+    \begin{itemize}
+    \item $V$ the set of simplicial complexes with a fixed $f$-vector.
+    \item  $\mathcal{F} \subseteq \GL(\EE, n)$
+    \item  $E = \Set{(K_1, K_2) \mid \exists M \in \mathcal{F} \text{ with } \Delta_M(K_1) = K_2 } $
+    \end{itemize}
+    
+    The partial shift graph $\Gamma_{\mathcal{F}}$ is the graph with vertex set $V$ and edge set $E$.
+  \end{definition}
+
+  \pause
+  \vspace{8mm}
+  
+  For which $\mathcal{F}$ is $\Gamma_{\mathcal{F}}$ acyclic?
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{frame}[fragile]
+  \begin{figure}
+    \includegraphics[width=10cm]{images/shift_graph_5_edges_on_4_vertices}
+  \end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Matrix decomposition}
+  \begin{lemma}
+    $\Delta_{gb}(S) = \Delta_g(S)$ for any upper triangular $b$ and any simplicial complex $S$.
+  \end{lemma}
+  \vspace{8mm}
+
+  \textbf{LU decomposition}
+    For $g \in \GL(n, \EE)$ with non zero leading principal minors, there exists
+    $l$ lower triangular, $u$ upper triangular such that
+
+    \[
+      g = l u \enspace.
+    \]
+    \vspace{3mm}
+    \pause
+    \textbf{Bruhat Decomposition}
+    Let $B \subset \GL(n, \EE)$ be the subgroup of upper triangular matrices, 
+    \begin{equation*}
+      \GL(n, \EE) \ = \ \smashoperator{\coprod_{w \in \SymmetricGroup{n}}} BwB \enspace .
+    \end{equation*}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Finding the Bruhat cell of $g$}
+  Let $g \in GL(\EE, n)$ be generic, and let
+  \[
+    w_0 = (1 \enspace n)(2 \enspace n - 1)\ldots(\floor{\frac{n}{2}} \ceil{\frac{n}{2} + 1})
+  \]
+  Hence $w_0g$ is also generic and we have
+  \[
+    \Delta_{w_0g}(K) = \Delta_{g}(K) = \Delta(K).
+  \]
+
+  We also have lower triangular $l$, and upper triangular $u', u$ such that,
+    \begin{align*}
+      w_0g &= lu = w_0u'w_0u\\
+      g &= u'w_0u
+    \end{align*}
+    $g \in Bw_0B$, and $\Delta_{u'w_0}(K) = \Delta(K)$
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Inversions}
+  \begin{definition}
+    For $w \in \SymmetricGroup{n}$, let
+    \[
+      \inv w \ \coloneqq \ \Set{(i,j); i < j, i \cdot w > j \cdot w} \enspace 
+    \]
+    % inversion table Stanley enumerative combinatorics
+    \[
+      \ell(w) \ \coloneqq \ \abs{\inv w}
+    \]
+
+    \[
+      w_0 = \text{argmax}_{w \in \SymmetricGroup{n}} \ell(w)
+    \]
+  \end{definition}
+
+  \begin{example}
+    Take $w = (2 \enspace 3)$, $\inv w = \{ (2, 3)\}$.
+    \[
+      \begin{psmallmatrix}
+	1 & x & y \\
+          & 1 & z \\
+          &   & 1
+      \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 &   &   \\
+          &   & 1 \\
+          & 1 &
+      \end{psmallmatrix}
+      \ = \
+      \begin{psmallmatrix}
+	1 & x & y \\
+          & 1 & z \\
+          &   & 1
+      \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 &   &   \\
+          &   & 1 \\
+          & 1 &
+      \end{psmallmatrix} 
+      \ = \
+      \begin{psmallmatrix}
+	1 & 0 & 0 \\
+          & 1 & z \\
+          &   & 1
+      \end{psmallmatrix} 
+      \begin{psmallmatrix}
+	1 &   &   \\
+          &   & 1 \\
+          & 1 &
+      \end{psmallmatrix}
+      \begin{psmallmatrix}
+	1 & y & x \\
+          & 1 & 0 \\
+          &   & 1
+      \end{psmallmatrix} \enspace.
+    \]
+  \end{example}
+\end{frame}
+
+\begin{frame}{Rothe Matrices}
+  \begin{definition}
+    We call $\frR(w) \coloneqq \frU(w)w$ the \emph{Rothe matrix}, where
+    
+    \begin{equation*}
+      \frU(w) \coloneqq
+      \begin{psmallmatrix}
+        1 & u_{12} & \cdots & u_{1n}    \\
+          & \ddots & \ddots & \vdots    \\
+          &        & 1      & u_{n-1,n} \\
+          &        &        & 1
+      \end{psmallmatrix}
+      \quad \text{with} \quad
+      u_{ij} = \begin{cases*}
+        x_{ij} & if $(i,j) \in \inv w$,\\
+        0 & otherwise
+      \end{cases*}\enspace.
+    \end{equation*}
+  \end{definition}
+  \pause
+  
+  \vspace{8mm}
+  \begin{theorem}[DV-Joswig-Lenzen 24+]
+    For $\mathcal{F} = \Set{\frR(w) \mid w \in \SymmetricGroup{n}}$, $\Gamma_{\mathcal{F}}$ is acyclic.
+  \end{theorem}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+\begin{frame}[fragile]
+  \begin{figure}
+    \includegraphics[width=10cm]{images/shift_graph_5_edges_on_4_vertices}
+  \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Weak Bruhat order}
+  \begin{definition}[Bj\"orner-Brenti '05]
+    The weak Bruhat right order is a partial ordering on $\SymmetricGroup{n}$,
+    \[
+      w = uv \geq u
+    \]
+    if $\ell(w) = \ell(u) + \ell(v)$.
+  \end{definition}
+
+  \pause
+  \vspace{8mm}
+  
+  \begin{lemma}
+    For $u, v \in \SymmetricGroup{n}$ with $uv \geq u$ if and only if
+    \begin{align*}
+      \inv uv &= \inv u \cup (\inv v) \cdot u^{-1} \\
+      \emptyset &= \inv u \cap (\inv v) \cdot u^{-1}
+    \end{align*}
+  \end{lemma}
+  \pause
+  \begin{example}
+    \[
+      w = s_1s_2 = (1 \enspace 3 \enspace 2), \hspace{2mm} \text{inv}(w) = \Set{(1, 2), (1, 3)}
+    \]
+
+    \[
+      \text{inv}(s_3) = \Set{(3, 4)}
+    \]
+    \[
+      ws_3 = (1 \enspace 4 \enspace 3 \enspace 2), \hspace{2mm} \text{inv}(ws_3) = \Set{(1, 2), (1, 3), (1, 4)}
+    \]
+  \end{example}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}{Ingredients to acyclicity proof}
+  \begin{lemma}[DV-Joswig-Lenzen '24+]
+    Let $S$ be a uniform hypergraph, let $v$, $w \in \SymmetricGroup{n}$ with $\ell(vw) = \ell(v)+\ell(w)$ then  $\frR(v w)^{S}$ and
+    $(\frR(v) \frR(w)^v)^{\wedge S}$  have the same column matroid.
+  \end{lemma}
+
+  \vspace{8mm}
+  
+  \begin{lemma}[DV-Joswig-Lenzen '24+]
+    Let $S$ be a uniform hypergraph, $w \in \SymmetricGroup{n}$ and $s = (i \enspace i+1)$ such that $\ell(ws) = \ell(w) + \ell(s)$,
+    \[
+      \Delta_{\frR(ws)}(S) \leq \Delta_{\frR(w)}(S) \enspace .
+    \]
+    
+  \end{lemma}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+\begin{frame}[fragile]
+  \begin{theorem}[DV-Joswig-Lenzen 24+]
+    Let $K$ be a simplicial complex, $c_n = (1 \enspace 2 \enspace \cdots \enspace n)$ and $w \in \SymmetricGroup{n}$ such that $w \geq c_n$ in the weak order.
+    \begin{itemize}
+    \item  $\Delta_{\frR(w)}(K)$ has the same Betti numbers as $K$.
+    \item  $\Delta_{\frR (w)}(K)$ is homotopy equivalent to a wedge of spheres.
+    \end{itemize}
+  \end{theorem}
+
+  \begin{figure}
+    \includegraphics[width=10cm]{images/rp_graph}
+    \caption{
+      The partial shift graph starting from $\RP^2_6$, generated using \OSCAR.
+    }
+  \end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{ Near cones}
+  \begin{definition}
+    A simplicial complex $K$ is a \emph{near cone} if for every $\sigma \in K$ with $1 \notin \sigma$ we have $\RepVert{\sigma}{i}{1} \in K$
+    for each $i \in \sigma$.
+  \end{definition}
+
+  \vspace{8mm}
+  
+  \begin{lemma}[Bj\"orner-Kalai '88]
+    Let $K$ be a near cone. 
+    Then $K$ is homotopy equivalent to a wedge of spheres and $\beta_k(K) = \abs{\Set{\sigma \in K^k ; \sigma \cup \{1\} \notin K}}$.
+  \end{lemma}
+  \begin{figure}
+    \centering
+    \input{shifted-cycle.tikz}
+  \end{figure}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Permutation Lemma}
+  \begin{lemma}[Bj\"orner-Kalai '88]
+    Let $g \in \GL(n, \EE)$ be generic and suppose for $\tau \in \binom{[n]}{k}$ there exists    $\gamma \in \EE$ such that,
+    \[
+      g^{\wedge K_k}_{\tau} = \sum_{\sigma \in K_k}\gamma_{\sigma} g^{\wedge K_k}_{\sigma}.
+    \]
+    If $\pi \in \SymmetricGroup{n}$, then there exists $\gamma' \in \EE$ such that
+    \[
+      g^{\wedge K_k}_{\tau \cdot \pi} = \sum_{\sigma \in K_k}\gamma'_{\sigma \cdot \pi} g^{\wedge K_k}_{\sigma \cdot \pi}
+    \]
+  \end{lemma}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Shifting to near cones}
+  \begin{lemma}[DV-Joswig-Lenzen '24+]
+    Let $K$ be a simplicial complex on $n$ vertices, $g\in\GL(n,\EE)$  a matrix with first column algebraically independent over $\FF$ and the other entries of $g$.
+    Then $\Delta_g(K)$ is a near cone.
+  \end{lemma}
+
+  \vspace{8mm}
+  \textbf{Proof sketch} \\
+  Let $\pi = (1 \enspace i)$ and suppose $\tau \notin K$,
+    \[
+      g^{\wedge K_k}_{\tau} = \sum_{\sigma < \tau}\gamma_{\sigma} g^{\wedge K_k}_{\sigma}.
+    \]
+
+    Then there exists $\gamma' \in \EE$ such that,
+    \[
+      g^{\wedge K_k}_{\tau \cdot \pi} = \sum_{\sigma < \tau \cdot \pi}\gamma'_{\sigma } g^{\wedge K_k}_{\sigma}
+    \]
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+\begin{frame}[fragile]{Rothe Matrix of the n cycle}
+  Consider $c_n = (1 \enspace 2 \dots n)$,
+
+  \begin{itemize}
+  \item For $ 1 \leq i < j < n$, \hspace{4mm} $i \cdot c_n < j \cdot c_n$
+  \item $\inv c_n = \{ (i, n) : 1 \leq i < n \}$
+  \end{itemize}
+
+  \[
+    \frR(c_n) = \begin{psmallmatrix}
+      x_{1,n}   & 1 &        &   \\
+      \vdots    &   & \ddots &   \\
+      x_{n-1,n} &   &        & 1 \\
+      1         & 0 & \cdots & 0
+    \end{psmallmatrix}.
+  \]
+
+  For $w \geq c_n$
+  \begin{itemize}
+  \item $\inv c_n \subset \inv w$
+  \item $\frR(c_n)$ and $\frR(w)$ have the same first column.
+  \item $\Delta_{\frR(w)}(K)$ is a near cone for any $K$.
+  \end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+
+
+
+\begin{frame}[fragile]{Preserving Betti Numbers}
+
+  \begin{lemma}[Bj\"oner-Kalai '88]
+    \[\beta_k(K) \ = \ \abs{K^k} - \abs{\Set{\sigma \in \Delta(K^{k+1}); 1 \in \sigma}} - \abs{\Set{\sigma \in \Delta(K^{k}); 1 \in \sigma}} \enspace.\]
+  \end{lemma}
+
+  \textbf{Proof sketch} of shifting by $w \geq c_n$ preserves Betti numbers \\
+  It is enough to show,
+  \[
+    \abs{\Set{\sigma \in \Delta_{\frR(w_0)}(K^k); 1 \in \sigma}} = \abs{\Set{\sigma \in \Delta_{\frR(w)}(K^k); 1 \in \sigma}}.
+  \]
+  \pause
+  We know
+
+  \[
+    \frR(w_0)^{\wedge S} , \text{ } (\frR(w)\frR(w^{-1}w_0)^{w})^{\wedge S}
+  \]
+  have the same column matroid.
+
+  \vspace{8mm}
+  \pause
+
+  $w \geq c_n$ implies that $w^{-1}w_0$ is a permutation that fixes $1$.
+
+  \vspace{8mm}
+  \pause
+
+  Hence $(w_0w^{-1})^{\wedge k}$ fixes the set $J = \Set{\sigma \in \binom{[n]}{k} \mid 1 \in \sigma}$ \enspace .
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{frame}[fragile]{Open Questions}
+
+  \begin{itemize}
+  \item For what other $\mathcal{F}$ is $\Gamma_{\mathcal{F}}$ still acyclic?
+  \item When can we determine apriori that $\Delta_{\frR(w_0)}(K) = \Delta_{\frR(w)}(K)$?
+  \item  Can we find bounded sequences $(w_i)_{i =1}^m$ such that  $\Delta_{w_m}(\dots \Delta_{w_1}(K)) = \Delta(K)$
+  \end{itemize}
+
+  \pause
+  \vspace{8mm}
+  \begin{center}
+    Thank You!
+  \end{center}
+
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\end{document}

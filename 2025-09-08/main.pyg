@@ -1,0 +1,7 @@
+    julia> using Oscar
+
+    julia> S = uniform_hypergraph([[1, 2], [2, 3], [3, 4], [4, 1]])
+    UniformHypergraph(4, 2, [[1, 2], [1, 4], [2, 3], [3, 4]])
+
+    julia> exterior_shift(GF(2), S)
+    UniformHypergraph(4, 2, [[1, 2], [1, 3], [1, 4], [2, 3]])

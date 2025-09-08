@@ -1,0 +1,89 @@
+\ProvidesPackage{mytheorem-enum}
+\RequirePackage{enumitem}
+\newif\if@patchnewtheorem
+\DeclareOption{patch-newtheorem}{\@patchnewtheoremtrue}
+\ProcessOptions\relax
+% True if reference should happen without \thetheorem-prefix.
+\newif\if@inproofref
+
+% Print reference without prefix.
+\NewDocumentCommand{\proofref}{m}{\begingroup\@inproofreftrue\ref{#1}\endgroup}
+
+% Format the prefix
+\NewDocumentCommand{\@refprefix}{m}{\if@inproofref\else #1\fi}
+
+% Enumerate environment that pretends to be a #2 environment for the labels.
+\NewDocumentEnvironment{pretend-enumerate}{O{\textup{(\alph*)}}m}{
+	\begin{enumerate}[
+		% Format the label
+		label=\textup{(\alph*)},%
+		% Prefix the reference with \the#1, e.g., \thetheorem
+		ref=\@refprefix{\csuse{the#2}}#1,%
+		% Ensure that labels are theorem labels of type #1 (and not enumi). To do that, patch \label
+		before={%
+			\NewCommandCopy\orig@label\label%
+			\renewcommand\label[2][#2]{%
+				%						\orig@label[################1]{################2}
+				\orig@label[####1]{####2}%
+			}%
+		}%
+		]%
+	}{%
+	\end{enumerate}%
+}
+
+\def\ThEnumFormat{\textup{(\textit{\roman*})}}
+
+% Ensures that enumerates in theore are referenced as theorem 12(iv).
+\NewDocumentCommand{\InstallTheoremEnumerate}{m}{
+	% Path the theorem environment #1 to patch enumerate inside it.
+	\AtBeginEnvironment{#1}{%
+		\setlist[enumerate]{%
+			% Set the format for the labels
+			label=\ThEnumFormat,%
+			% Prefix the reference with \the#1, e.g., \thetheorem
+			ref=\@refprefix{\csname the#1\endcsname}\ThEnumFormat,%
+			% Ensure that labels are theorem labels of type #1 (and not enumi). To do that, patch \label
+			before={%
+				\NewCommandCopy\orig@label\label%
+				\renewcommand\label[2][#1]{%
+					\orig@label[################1]{################2}%
+				}%
+			}%
+		}%
+	}%
+}
+
+\AtBeginEnvironment{proof}{%
+	\setlist[enumerate]{label=\ThEnumFormat}%
+}
+
+% Patch \newtheorem
+\if@patchnewtheorem
+\NewCommandCopy{\orig@newtheorem}{\newtheorem}
+% Usage: \newtheorem[*]{env-name}[counter-like]{label}[counter-within]
+\RenewDocumentCommand{\newtheorem}{smomo}{%
+	\IfBooleanTF{#1}{
+		% Version with star: [counter-like] and [counter-within] make no sense.
+		\IfNoValueTF{#3}{}{\PackageError{mytheorem-enum}{Wrong usage for newtheorem: counter-like makes no sense for \\newtheorem*}{}}
+		\IfNoValueTF{#5}{}{\PackageError{mytheorem-enum}{Wrong usage for newtheorem: counter-within makes no sense for \\newtheorem*}{}}
+		\orig@newtheorem*{#2}{#4}%
+	}{
+		% Version without star
+		\IfNoValueTF{#3}{
+			\IfNoValueTF{#5}{
+				\orig@newtheorem{#2}{#4}%
+			}{
+				\orig@newtheorem{#2}{#4}[#5]%
+			}
+		}{
+			\IfNoValueTF{#5}{
+				\orig@newtheorem{#2}[#3]{#4}%
+			}{
+				\PackageError{mytheorem-enum}{Wrong usage for newtheorem: \\newtheorem accepts eigher counter-like or counter-within}{}
+			}
+		}
+	}
+	\InstallTheoremEnumerate{#2}%
+}
+\fi

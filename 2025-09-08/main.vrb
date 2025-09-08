@@ -1,0 +1,20 @@
+\frametitle{Simplicial Homology}
+\begin{definition}
+    Given a field $\FF$, and a simplicial complex $\Sigma$ we define the
+    $k$th simplicial homology to be the vector space
+    \[
+      H_k^{\FF}(\Sigma) \coloneq {k \text{-cycles}}\Big/{ k + 1 \text{-boundaries} }.
+    \]
+    The $k$th \emph{Betti number} of $\Sigma$ is the dimension of $H_k^{\FF}(\Sigma)$.
+  \end{definition}
+  \pause
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      The Betti numbers are $(1, 1, 0)$
+    \end{column}
+
+    \begin{column}{0.5\textwidth}
+      \centering
+      \input{complex.tikz}
+    \end{column}
+  \end{columns}

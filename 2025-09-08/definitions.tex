@@ -1,0 +1,346 @@
+\makeatletter
+\usepackage{mathtools,bm,microtype,calc,array,pdfpages,nicematrix,blkarray,tikz,tikz-cd,booktabs,hyphenat,csquotes,hyperref,cleveref, siunitx, xcolor, pifont, bbding}
+\RequirePackage{biblatex}
+\usepackage[flushmargin]{footmisc} % Remove footnote indentation
+\graphicspath{{visualizations/}}
+\renewbibmacro{in:}{, }
+\DeclareFieldFormat[misc]{title}{\mkbibquote{#1}}
+%\DeclareFieldFormat[article]{volume}{\mkbibbold{#1}}
+%\DeclareFieldFormat{url}{\textsc{url}: \href{#1}{#1}}
+%\DeclareFieldFormat{doi}{\textsc{doi}: \href{http://dx.doi.org/#1}{#1}}
+%\DeclareFieldFormat{eprint:arxiv}{arXiv:\href{https://arxiv.org/abs/#1}{#1}}
+\addbibresource{biblio.bib}
+
+%\usepackage{hyperref,cleveref}
+
+% This patch accounts for a bug recently introduced in latex, see https://tex.stackexchange.com/q/730148/27717
+\newcommand\patchtheorem[2]{\AddToHook{env/#1/begin}{\crefalias{#2}{#1}}}
+\patchtheorem{lemma}{theorem}
+\patchtheorem{proposition}{theorem}
+\patchtheorem{corollary}{theorem}
+\patchtheorem{conjecture}{theorem}
+\patchtheorem{assumption}{theorem}
+\patchtheorem{observation}{theorem}
+\patchtheorem{example}{theorem}
+\patchtheorem{definition}{theorem}
+\patchtheorem{remark}{theorem}
+\patchtheorem{question}{theorem}
+\patchtheorem{problem}{theorem}
+
+% Enable sub-theorems and references to them
+\usepackage[patch-newtheorem]{mytheorem-enum}
+
+\crefname{equation}{}{}
+\Crefname{page}{page}{Pages}
+
+\theoremstyle{plain}
+
+\theoremstyle{remark}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{observation}[theorem]{Observation}
+
+\newtheorem{claim}{Claim}[theorem]
+\renewcommand{\theclaim}{\arabic{claim}}
+\newtheorem*{claim*}{Claim}
+
+\newenvironment{claimproof}[1][\proofname\ of Claim]{%
+	\par\normalfont\topsep6\p@\@plus6\p@\relax
+	\trivlist
+	\item[\hskip\labelsep\itshape#1\@addpunct{.}]\ignorespaces
+}{\endtrivlist\@endpefalse}
+
+
+\Crefname{example}{Example}{Examples}
+\Crefname{theorem}{Theorem}{Theorems}
+\Crefname{lemma}{Lemma}{Lemmas}
+\Crefname{proposition}{Proposition}{Propositions}
+\Crefname{figure}{Figure}{Figures}
+\Crefname{remark}{Remark}{Remarks}
+\Crefname{corollary}{Corollary}{Corollaries}
+\Crefname{conjecture}{Conjecture}{Conjectures}
+
+\usepackage{xspace}
+\newcommand\OSCAR{\texttt{OSCAR}\xspace}
+\newcommand\polymake{\texttt{polymake}\xspace}
+\newcommand\Macaulay{\texttt{Macaulay2}\xspace}
+
+\newcommand\CC{{\mathbb C}}
+\newcommand\EE{{\mathbb E}}
+\newcommand\LL{{\mathbb L}}
+\newcommand\NN{{\mathbb N}}
+\newcommand\KK{{\mathbb K}}
+\newcommand\PP{{\mathbb P}}
+\newcommand\QQ{{\mathbb Q}}
+\newcommand\RR{{\mathbb R}}
+\newcommand\Sph{{\mathbb S}}
+\newcommand\TT{{\mathbb T}}
+\newcommand\ZZ{{\mathbb Z}}
+\newcommand\FF{{\mathbb F}}
+
+\newcommand\cD{{\mathcal D}}
+\DeclareMathOperator{\Gin}{gin}
+\DeclareMathOperator{\In}{in}
+\newcommand\frM{{\mathfrak m}}
+\newcommand\frR{{\mathfrak r}}
+\newcommand\frU{{\mathfrak u}}
+\newcommand\frV{{\mathfrak v}} % was previously defined in the middle of the main tex
+\newcommand\frX{{\mathfrak x}}
+\newcommand\frY{\mathfrak{y}}
+\let\xto\xrightarrow
+\let\symdiff\bigtriangleup
+\newcommand{\Matr}{\mathcal{M}}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\rk}{rk}
+\newcommand\GF[1]{\operatorname{GF}(#1)}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\PSL}{\mathrm{PSL}}
+\DeclareMathOperator{\Gr}{Gr}
+\DeclarePairedDelimiterXPP{\SymmetricGroup}[1]{\operatorname{Sym}}{(}{)}{}{#1}
+\newcommand{\PG}{\mathrm{PG}}
+\DeclareMathOperator{\inv}{Inv}
+\DeclareMathOperator{\card}{card}
+\newcommand{\RepVert}[3]{#1|_{#2}^{#3}}
+\newcommand{\NinLSpan}[2]{\mathrm{LLI}(#1, #2)}
+\newcommand{\lex}[1]{#1_{\text{lex}}}
+\newcommand{\InitialSegment}{\mathrm{In}}
+\newcommand{\ShiftGraph}{\mathrm{PSG}}
+\newcommand{\ContractedGraph}{\overline{\ShiftGraph}}
+\newcommand{\CShift}{\Gamma}
+\DeclareMathOperator{\Char}{char}
+
+\newcommand{\actson}{\mathbin{\rotatebox[origin=c]{-90}{$\circlearrowleft$}}}
+\newcommand{\actsfrom}{\mathbin{\rotatebox[origin=c]{90}{$\circlearrowright$}}}
+
+% Set builder notation. Call by \Set{v; P(v)}, \Set*{v; P(v)} for auto-sized delimiters, or \Set[\big]{v; P(v)} for fixed size.
+\DeclarePairedDelimiterX{\Set}[1]{\{}{\}}{\setargs{#1}}
+
+% Linear span. Like \Set. Optionally takes the field as subscript; e.g., \Span_{k}*{v} or \Span_{k}[\big]{v}$.
+\NewDocumentCommand{\Span}{E{_}{{}}}{\operatorname{span}_{#1}\SpanX}
+
+% Use as \abs{}, \abs*{} or \abs[\big]{}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% Internals for the above
+\DeclarePairedDelimiterX{\SpanX}[1]{(}{)}{\setargs{#1}}
+\NewDocumentCommand{\setargs}{>{\SplitArgument{1}{;}}m}{\setargsaux#1}
+%\NewDocumentCommand{\setargsaux}{mm}{\IfNoValueTF{#2}{#1}{#1\nonscript\:\delimsize\vert\allowbreak\nonscript\:\mathopen{}#2}}%
+\NewDocumentCommand{\setargsaux}{mm}{\IfNoValueTF{#2}{#1}{#1:\allowbreak #2}}%
+
+% Small-script case distinction environment.
+\newenvironment{smallcases}{\left\{\begin{smallmatrix*}[l]}{\end{smallmatrix*}\right.}
+
+% Cases with brace on both sides (https://tex.stackexchange.com/a/308762/27717)
+\newcases{lrcases}{\quad}
+{$\m@th\textstyle{##}$\hfil}
+{$\m@th\textstyle{##}$\hfil}
+{\lbrace}
+{\rbrace}
+\newcases{lrdcases*}
+{\quad}
+{$\m@th\textstyle{##}$\hfil}
+{{##}\hfil}
+{\lbrace}
+{\rbrace}
+
+% Align in substack (https://tex.stackexchange.com/a/198806/27717)
+\newcommand{\subalign}[1]{%
+	\vcenter{%
+		\Let@ \restore@math@cr \default@tag
+		\baselineskip\fontdimen10 \scriptfont\tw@
+		\advance\baselineskip\fontdimen12 \scriptfont\tw@
+		\lineskip\thr@@\fontdimen8 \scriptfont\thr@@
+		\lineskiplimit\lineskip
+		\ialign{\hfil$\m@th\scriptstyle##$&$\m@th\scriptstyle{}##$\hfil\crcr
+			#1\crcr
+		}%
+	}%
+}
+
+% Produce command \MakeCommaBreakable that makes comma breakable in inline math (https://tex.stackexchange.com/a/716369/27717.
+{
+	\gdef\OldComma{,}
+	\catcode`\,=13
+	\gdef\MakeCommaBreakable{%
+		\catcode`\,=13
+		\def,{%
+			\ifmmode
+			\OldComma\>\allowbreak
+			\else
+			\OldComma
+			\fi
+		}%
+	}
+}
+
+% Small version of array (https://tex.stackexchange.com/a/98692/27717)
+\newenvironment{smallarray}[1]{%
+	\null\,\vcenter\bgroup\scriptsize%
+	\renewcommand{\arraystretch}{0.7}%
+	\arraycolsep=.13885em%
+	\hbox\bgroup$\array{@{}#1@{}}%
+}{%
+	\endarray$\egroup\egroup\,\null%
+}
+
+% Scaling version of \vdots and \ddots (better than mathdots package, see https://tex.stackexchange.com/a/246695/27717)
+\usepackage{letltxmacro}
+\LetLtxMacro\orgvdots\vdots
+\LetLtxMacro\orgddots\ddots
+\DeclareRobustCommand\vdots{%
+	\mathpalette\@vdots{}%
+}
+\newcommand*{\@vdots}[2]{%
+	% #1: math style
+	% #2: unused
+	\sbox0{$#1\cdotp\cdotp\cdotp\m@th$}%
+	\sbox2{$#1.\m@th$}%
+	\vbox{%
+		\dimen@=\wd0 %
+		\advance\dimen@ -3\ht2 %
+		\kern.5\dimen@
+		% remove side bearings
+		\dimen@=\wd2 %
+		\advance\dimen@ -\ht2 %
+		\dimen2=\wd0 %
+		\advance\dimen2 -\dimen@
+		\vbox to \dimen2{%
+			\offinterlineskip
+			\copy2 \vfill\copy2 \vfill\copy2 %
+		}%
+	}%
+}
+\DeclareRobustCommand\ddots{%
+	\mathinner{%
+		\mathpalette\@ddots{}%
+		\mkern\thinmuskip
+	}%
+}
+\newcommand*{\@ddots}[2]{%
+	% #1: math style
+	% #2: unused
+	\sbox0{$#1\cdotp\cdotp\cdotp\m@th$}%
+	\sbox2{$#1.\m@th$}%
+	\vbox{%
+		\dimen@=\wd0 %
+		\advance\dimen@ -3\ht2 %
+		\kern.5\dimen@
+		% remove side bearings
+		\dimen@=\wd2 %
+		\advance\dimen@ -\ht2 %
+		\dimen2=\wd0 %
+		\advance\dimen2 -\dimen@
+		\vbox to \dimen2{%
+			\offinterlineskip
+			\hbox{$#1\mathpunct{.}\m@th$}%
+			\vfill
+			\hbox{$#1\mathpunct{\kern\wd2}\mathpunct{.}\m@th$}%
+			\vfill
+			\hbox{$#1\mathpunct{\kern\wd2}\mathpunct{\kern\wd2}\mathpunct{.}\m@th$}%
+		}%
+	}%
+}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% % % preliminary version only
+%\usepackage[colorinlistoftodos,bordercolor=orange,backgroundcolor=orange!20,linecolor=orange,textsize=tiny]{todonotes}
+%\usepackage{prelim2e}
+%\renewcommand{\PrelimText}{\raisebox{-\height}[0pt][0pt]{\sf\scriptsize --- INCOMPLETE DRAFT of \today ---}}
+%\setlength{\marginparwidth}{1.2in}
+
+%% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Make \text{\todo{...}} work in math; see https://tex.stackexchange.com/a/132451/27717
+% Michael: I do not like it, because this code does not correctly separate overlapping boxes
+%\usepackage{marginnote}
+%\makeatletter
+% \renewcommand{\@todonotes@drawMarginNoteWithLine}{%
+	% 	\begin{tikzpicture}[remember picture, overlay, baseline=-0.75ex]%
+		% 		\node [coordinate] (inText) {};%
+		% 	\end{tikzpicture}%
+	% 	\marginnote[{% Draw note in left margin
+		% 		\@todonotes@drawMarginNote%
+		% 		\@todonotes@drawLineToLeftMargin%
+		% 	}]{% Draw note in right margin
+		% 		\@todonotes@drawMarginNote%
+		% 		\@todonotes@drawLineToRightMargin%
+		% 	}%
+	% }
+
+\newlength\ExtraCaptionMargin
+
+% Footnote without number
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+\newcommand{\Email}[1]{\href{mailto:#1}{#1}}
+
+\let\origDdots\ddots
+\renewcommand{\ddots}[1][0]{\mathpalette\ddotsI{#1}}
+\newcommand{\ddotsI}[2]{\rotatebox[origin=c]{#2}{$#1\origDdots$}}
+
+\newcommand\SwapBelowDisplaySkip{\vskip-\belowdisplayskip\vskip\belowdisplayshortskip\noindent}
+
+% Separates multiple citations by semicolon, rather than comma
+\renewcommand\multicitedelim{\addsemicolon\space}
+
+% From https://tex.stackexchange.com/a/19100
+\mathchardef\breakingcomma\mathcode`\,
+{\catcode`,=\active
+	\gdef,{\breakingcomma\discretionary{}{}{}}
+}
+\newcommand{\mathlist}[1]{$\mathcode`\,=\string"8000 #1$}
+
+\newcommand\Rot[1]{\rotatebox{90}{#1}}%
+\newcommand\CS[1]{\csname #1\endcsname}%
+\newcommand\Tick[1]{\resizebox{!}{\heightof{t}}{\ifthenelse{#1=1}{\Checkmark}{\XSolidBrush}}}%
+\newcommand\EarlyReturn[1]{\ifthenelse{\equal{\CS{#1LvmaxLenBefore}}{n/a}}{*}{}}%
+\newcommand\TimeOrDash[2][]{%
+	\IfSubStr{\CS{#2Trials}}{>}%
+	{{--}}%
+	{\tablenum[table-auto-round,table-format=#1]{\CS{#2Time}}}%
+}
+\newcommand\FailedShift[1]{\IfSubStr{\CS{#1LvTrials}}{>}{${}^\dagger$}{}}%
+\DeclareSIUnit{\noop}{\kern 0pt}%
+\newcommand{\Mem}[1]{%
+	\IfInteger{#1}{%
+		\makebox[\widthof{\SI{10}{\giga\byte}}][r]{\SI[exponent-mode=engineering, exponent-to-prefix = true, round-mode=places, round-precision=0]{#1}{\noop}}
+	}{#1}%
+}%
+
+% Create a new columntype A[fmt] := S[table-format=fmt]
+\makeatletter
+\newtoks\mytoks
+\mytoks\expandafter{\the\NC@list}
+\newcolumntype{A}{}
+\NC@list\expandafter{\the\mytoks \NC@do A}
+\renewcommand*{\NC@rewrite@A}[1][]{%
+	\@temptokena\expandafter{%
+		\the\@temptokena
+		S[table-format=#1]
+	}%
+	\NC@find
+}
+\makeatother
+
+% Create a new columntype M[fmt] := S[table-format=fmt]
+\makeatletter
+\newtoks\mytoks
+\mytoks\expandafter{\the\NC@list}
+\newcolumntype{M}{}
+\NC@list\expandafter{\the\mytoks \NC@do M}
+\renewcommand*{\NC@rewrite@M}[1][]{%
+	\@temptokena\expandafter{%
+		\the\@temptokena
+		S[round-mode=places, round-precision=0, fixed-exponent=9, scientific-notation=fixed, drop-exponent, table-format=#1]
+	}%
+	\NC@find
+}
+
+
+\makeatother
+
