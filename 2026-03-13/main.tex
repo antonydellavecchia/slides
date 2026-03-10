@@ -1,6 +1,6 @@
 \documentclass[9pt]{beamer}
 \beamertemplatenavigationsymbolsempty
-\usetheme{Berlin}
+%\usetheme{Berlin}
 
 \usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
 \usepackage{ulem}
@@ -173,37 +173,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Storing Computer Algebra Data}
-  \begin{itemize}
-  \item It's common to have multiple perspectives on an object in mathematics. 
-  \item While storing mathematical data a choice of perspective must me made.
-  \item Such a choice might not be describable in an email.
-  \end{itemize}
-    
-  Say we want to store:
-  \begin{align*}
-    p = 2y^3z^4 + (\bold{a} + 3)z^2 + 5\bold{a}y + 1
-  \end{align*} \pause
-
-  \begin{itemize}
-  \item Some technicalities with the coefficients.
-  \item Is y considered a coefficient of z?
-  \item What is $\bold{a}$?
-  \item How can we guarantee the objects behave as expected on load?
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
 \begin{frame}[fragile]{The \texttt{mrdi} File Format}
   \begin{tcolorbox}[]
     \begin{itemize}
     \item JSON file format.
     \item Similar to \texttt{polymake} format but generalizes to include algebraic data.
     \item Namespaces for semantic seperation.
-    \item References stored with UUIDs.
+    \item References stored with UUIDs handle the isomorphism problem.
     \end{itemize}
   \end{tcolorbox}
 \end{frame}
@@ -249,17 +225,20 @@
   \includegraphics[height=0.9\textheight]{images/polynomial-example}
 \end{frame}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{Namespaces}
+\begin{frame}{Implementation Details}
   \begin{itemize}
-  \item We make no attempt to formalise the language of Mathematical Research Data.
-  \item We rely on namespaces to pin the semantics to a specific software.
-  \item Open source software provides example implementations for saving and loading.
-  \item Freedom to upgrade encoding.
-  \item Similar with PDF.
+  \item Two main tree branches \texttt{\_type} and \texttt{data}.
+  \item Type registration, used for security, type stringification and declaring which types need ids (refs).
+  \item \texttt{type\_params} function does a shallow pass, gathering type and parameter information.
+  \item \texttt{save\_typed\_object} / \texttt{load\_typed\_object}, high level functions.
+  \item \texttt{save\_type\_params} / \texttt{load\_type\_params}, used for serializaing the type branch. (overloaded for container types)
+  \item \texttt{save\_object} / \texttt{load\_object}, low level, each type has their own method.
+  \item Global Serializer state for persitences across many files.
   \end{itemize}
 \end{frame}
 
@@ -267,36 +246,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]{ Serialized Toric Divisor}
-  \includegraphics[width=\textwidth]{images/toric-divisor}
-\end{frame}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{Data Collections}
-  \begin{itemize}
-  \item Johnson Solids.
-  \item Non-general type surfaces in $\PP^4$.
-  \item F-Theory models.
-  \item Small Phylogenetic Trees. (Luis David Garcia-Puente, Jacob Porter)
-  \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}[fragile]{}
-  \begin{center}
-    Thank You!
-  \end{center}
+\begin{frame}[fragile]{Finite Field Serialization Implementation}
+  \includegraphics[height=0.9\textheight]{images/snippet}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Rosetta Stone Prototype}
+  \url{https://oscar-system.github.io/rosetta-stone-db_prototype/}
+\end{frame}
 
 \end{document}
