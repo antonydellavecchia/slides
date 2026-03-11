@@ -173,17 +173,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{The \texttt{mrdi} File Format}
-  \begin{tcolorbox}[]
-    \begin{itemize}
-    \item JSON file format.
-    \item Similar to \texttt{polymake} format but generalizes to include algebraic data.
-    \item Namespaces for semantic seperation.
-    \item References stored with UUIDs handle the isomorphism problem.
-    \end{itemize}
-  \end{tcolorbox}
-\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
+\begin{frame}[fragile]{Example File Serialized with \OSCAR}
+  \includegraphics[height=0.9\textheight]{images/polynomial-example}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -217,12 +213,33 @@
   \end{tabular}
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
-\begin{frame}[fragile]{Example File Serialized with \OSCAR}
-  \includegraphics[height=0.9\textheight]{images/polynomial-example}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[fragile]{The \texttt{mrdi} File Format}
+  \begin{tcolorbox}[]
+    \begin{itemize}
+      \setlength{\itemsep}{2ex}
+    \item JSON file format (imposes tree structure) \begin{itemize}
+      \item versioned
+      \item upgrade scripts
+      \end{itemize}
+    \item Namespaces for implicit semantic separation \begin{itemize}
+      \item bottom-up design
+      \item avoids need to formally define (tedious) semantics
+        
+      \end{itemize}
+    \item Similar to \texttt{polymake} format but considerably more general \begin{itemize}
+      \item more complex nested types (necessary for advanced algebra)
+      \item different contexts referenced with UUIDs
+      \end{itemize}
+    \item Have: polytopes, simplicial complexes, polynomial rings, groups, ...\begin{itemize}
+      \item OscarDB
+      \end{itemize}
+    \end{itemize}
+  \end{tcolorbox}
 \end{frame}
 
 
@@ -232,13 +249,14 @@
 
 \begin{frame}{Implementation Details}
   \begin{itemize}
-  \item Two main tree branches \texttt{\_type} and \texttt{data}.
-  \item Type registration, used for security, type stringification and declaring which types need ids (refs).
-  \item \texttt{type\_params} function does a shallow pass, gathering type and parameter information.
-  \item \texttt{save\_typed\_object} / \texttt{load\_typed\_object}, high level functions.
-  \item \texttt{save\_type\_params} / \texttt{load\_type\_params}, used for serializaing the type branch. (overloaded for container types)
-  \item \texttt{save\_object} / \texttt{load\_object}, low level, each type has their own method.
-  \item Global Serializer state for persitences across many files.
+    \setlength{\itemsep}{2ex}
+  \item Two main tree branches \texttt{\_type} and \texttt{data}
+  \item Type registration, used for security, type stringification and declaring which types need UUIDs
+  \item \texttt{type\_params} function does a shallow pass, gathering type and parameter information
+  \item \texttt{save\_typed\_object} / \texttt{load\_typed\_object}, high level functions
+  \item \texttt{save\_type\_params} / \texttt{load\_type\_params}, used for serializaing the type branch (overloaded for container types)
+  \item \texttt{save\_object} / \texttt{load\_object}, low level, each type has their own method
+  \item Global Serializer state for persistence across many files
   \end{itemize}
 \end{frame}
 
