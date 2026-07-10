@@ -1,0 +1,366 @@
+\documentclass[9pt]{beamer}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage{subfig}
+%\usetheme{Berlin}
+
+\definecolor{TriangleColor}{RGB}{255,170,128} % Soft Coral
+\definecolor{LineColor}{RGB}{0,128,128} % Darker Blue
+\definecolor{VertexColor}{RGB}{255,255,128} % Light Yellow
+
+
+\usepackage{etex, tikz, array, graphics, xspace, relsize, multirow}
+\usepackage[export]{adjustbox}
+\usepackage{ulem}
+\usepackage{faktor} 
+
+\usetikzlibrary{arrows}
+\usetikzlibrary{tikzmark}
+\input binhex
+
+\makeatletter
+\PassOptionsToPackage{sortcites,isbn=false}{biblatex}
+
+
+% Set frame title color
+\setbeamercolor{frametitle}{fg=LineColor}
+
+% Set section title color  
+\setbeamercolor{title}{fg=LineColor}
+
+
+
+\renewenvironment{theorem}[1][]
+{\textcolor{LineColor}{\textbf{Theorem #1}} }
+{}
+
+\renewenvironment{definition}[1][]
+{\textcolor{LineColor}{\textbf{Definition #1}} }
+{}
+
+\renewenvironment{problem}[1][]
+{\textcolor{LineColor}{\textbf{Problem #1}} }
+{}
+
+\renewenvironment{lemma}[1][]
+{\textcolor{LineColor}{\textbf{Lemma #1 }} }
+{}
+
+% Set subtitle color
+\setbeamercolor{subtitle}{fg=LineColor}
+
+% Set author color
+%\setbeamercolor{author}{fg=purple}
+
+% Set institute color
+%\setbeamercolor{institute}{fg=orange}
+
+% Set date color
+%\setbeamercolor{date}{fg=brown}
+
+\usepackage{enumitem}
+\setlist[itemize]{label=\textcolor{LineColor}{\textbullet}}
+%\PassOptionsToPackage{inline}{enumitem}
+\PassOptionsToPackage{hyperfootnotes=false}{hyperref}
+\PassOptionsToPackage{capitalise}{cleveref}
+\usepackage{bbding}
+\usepackage{pdflscape}
+\usepackage{rotating}\setlength{\rotFPtop}{0pt plus 1fil}
+\usepackage{layout}
+\overfullrule=1ex
+
+
+\usepackage[textsize=tiny]{todonotes}
+\setlength{\marginparwidth}{1.75cm}
+\setlength{\marginparsep}{1mm}
+
+
+% Data tables
+\usepackage{siunitx}
+\sisetup{reset-math-version = false}
+\sisetup{table-auto-round}
+\usepackage{xstring}
+
+\usepackage[legacy]{csvsimple}
+
+\sisetup{reset-math-version = false}
+\sisetup{table-auto-round}
+
+% For code inclusion
+\usepackage{listings}
+\lstset{ breaklines=true}
+\lstset{escapeinside={<@}{@>}}
+\usepackage{algorithm,algorithmic}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+
+
+\usepackage{svg}
+\usepackage{nicematrix}
+
+\usepackage[legacy]{csvsimple}
+
+% For drawing
+%% Tikz drawing
+\usepackage{tikz} \usetikzlibrary{arrows} \usetikzlibrary{arrows.meta}
+\usepackage{pgfplots} \usepackage{tikz-3dplot} \usepackage{tcolorbox}
+\usetikzlibrary{matrix,fit,positioning,shapes.geometric,patterns,backgrounds}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{decorations.markings} \usetikzlibrary{arrows,calc}
+\tikzstyle{bigbox} = [draw=blue!50, thick, rounded corners, rectangle]
+\tikzset{ >=stealth' } \tikzset{->-/.style={decoration={ markings,
+      mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage[draft=false]{minted}
+\usemintedstyle{default}
+\setminted{fontsize=\footnotesize, frame=single, framesep=2mm}
+
+\newcommand\Julia{\texttt{Julia}\xspace}
+\newcommand\OSCAR{\texttt{OSCAR}\xspace}
+\newcommand\ZZ{{\mathbb Z}}
+\newcommand\QQ{{\mathbb Q}}
+\newcommand\PP{{\mathbb P}}
+
+\usepackage{xcolor}
+\definecolor{green}{rgb}{0.1,0.59,0.1}
+\definecolor{yellow}{rgb}{0.8,0.67,0}
+\definecolor{red}{rgb}{0.89,0.1,0.1}
+\definecolor{blue}{rgb}{0.1,0.1,0.89}
+
+\usenavigationsymbolstemplate{}
+
+\usepackage{booktabs}
+% For software citations
+\newcommand{\singular}{\texttt{Sin\-gu\-lar}\xspace}
+\newcommand\CPP{C\nolinebreak\hspace{-.05em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\nolinebreak\hspace{-.10em}\raisebox{.4ex}{\relsize{-3}{\textbf{+}}}\xspace}
+
+\usepackage{amsmath}
+% Newcommands specifically for this article
+\newcommand{\eval}{v}               % evaluation function giving switch table
+\newcommand{\graph}{\Gamma}         % reverse search graph
+\newcommand{\group}{G}              % group acting on point config
+\newcommand{\groupElem}{g}          % element of group
+\newcommand{\jbound}{\psi}          % bound on the number of elements of set J
+\newcommand{\switchTableSize}{\mu}  % index of last non-trivial row in switch table
+\newcommand{\mrdi}{\texttt{mrdi}\xspace}
+
+
+\newcommand{\pmsmall}{\includegraphics[scale=0.03]{pmlogo.png}}
+\newcommand{\pmlogo}{\includegraphics[scale=0.09]{pmlogo.png}}
+\newcommand{\pmbluesmall}{\includegraphics[scale=0.03]{pmbluelogo.png}}
+\newcommand{\Disjoint}{\mathop{\coprod}}
+\newcommand{\Discriminant}{\mathcal{D}}
+
+\author[Antony Della Vecchia]{Antony Della Vecchia} 
+\title{Interprocess Communication of Algebraic Data}
+
+
+\institute[]{
+  TU Berlin
+}
+\date{
+  ISSAC 2026-07-15
+}
+
+\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\oursetting}[1]{\textcolor{blue}{#1}}
+
+% Itemize that spreads its items to fill the frame vertically
+\newenvironment{fillitemize}
+  {\vspace{\fill}\begin{itemize}\setlength{\itemsep}{\fill}}
+  {\end{itemize}\vspace{\fill}}
+
+% Worker-pool star graph, reused on the title page and Slide 4
+\newcommand{\workerpoolgraph}[1][0.55]{%
+  \begin{tikzpicture}[scale=#1, every node/.append style={transform shape},
+    main/.style={circle, draw=LineColor, thick, fill=TriangleColor, minimum size=2.0cm, align=center, font=\small\bfseries},
+    worker/.style={circle, draw=LineColor, thick, fill=VertexColor, minimum size=1.0cm, align=center, font=\small},
+  ]
+    \node[main] (center) {Main};
+    \node[worker, above=1.3cm of center]       (p1) {P1};
+    \node[worker, above right=1.0cm and 1.3cm of center] (p2) {P2};
+    \node[worker, right=1.7cm of center]         (p3) {P3};
+    \node[worker, below right=1.0cm and 1.3cm of center] (p4) {P4};
+    \node[worker, below=1.3cm of center]       (p5) {P5};
+    \node[worker, below left=1.0cm and 1.3cm of center]  (p6) {P6};
+    \node[worker, left=1.7cm of center]          (p7) {P7};
+    \node[worker, above left=1.0cm and 1.3cm of center]  (p8) {P8};
+    \foreach \p in {p1,p2,p3,p4,p5,p6,p7,p8} \draw[<->, LineColor, thick] (center) -- (\p);
+  \end{tikzpicture}%
+}
+
+\begin{document}
+
+% Left-aligned title page with the worker-pool graph
+\begin{frame}[plain]
+  \vfill
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \raggedright
+      {\usebeamercolor[fg]{title}\usebeamerfont{title}\inserttitle\par}
+      \bigskip
+
+      {\usebeamerfont{author}\insertauthor\par}
+      \medskip
+
+      {\usebeamercolor[fg]{institute}\usebeamerfont{institute}\insertinstitute\par}
+      \smallskip
+
+      {\usebeamerfont{date}\insertdate\par}
+
+
+
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \workerpoolgraph[0.65]
+    \end{column}
+  \end{columns}
+  \vfill
+  \begin{figure}[b]
+    \includegraphics[width=2.2cm, left]{images/mardi-logo.png}
+  \end{figure}
+
+\end{frame}
+
+%% Slide 1 --- Motivation
+\begin{frame}{The Problem: Serializing Algebraic Data}
+  \textbf{Serialization:} translate in-memory data to a form that can be
+  \emph{stored} or \emph{transmitted}, then reconstructed on another process
+  or machine.
+  \bigskip
+  \bigskip
+
+  \textbf{The obstacle --- algebraic context.} Say we want to store:
+  \begin{align*}
+    p = 2y^3z^4 + (\mathbf{a} + 3)z^2 + 5\mathbf{a}y + 1
+  \end{align*}
+  \pause
+  \begin{itemize}
+  \item Is $y$ considered a coefficient of $z$?
+  \item What is $\mathbf{a}$? \pause
+  \item How can we guarantee the objects behave as expected on load?
+  \end{itemize}
+  \pause
+  \bigskip
+\end{frame}
+
+%% Slide 2 --- mrdi file format
+\begin{frame}[fragile]{The \mrdi File Format}
+  \vspace*{-0.5cm}
+  \begin{tabular}{cl}
+    \begin{tabular}{c}
+      \includegraphics[width=0.43\textwidth, height=0.8\textheight]{images/tree-coloured}
+    \end{tabular}
+    & \begin{tabular}{l}
+      \parbox{0.25\linewidth}{%
+      \begin{align*}
+        \\ \\ \\
+        & 2y^3z^4 \\
+        \\ \\
+        &  (a + 3)z^2 \\
+        \\ \\
+        & 5ay \\
+        \\ \\
+        & 1
+      \end{align*}
+      }
+    \end{tabular}  \\
+  \end{tabular}
+\end{frame}
+
+%% Slide 3 --- mrdi file format, dense coefficients
+\begin{frame}[fragile]{The \mrdi File Format --- Dense Coefficients}
+  \vspace*{-0.5cm}
+  \begin{tabular}{cl}
+    \begin{tabular}{c}
+      \includegraphics[width=0.43\textwidth, height=0.8\textheight]{images/tree-dense}
+    \end{tabular}
+    & \begin{tabular}{l}
+      \parbox{0.25\linewidth}{%
+      \begin{align*}
+        \\ \\ \\
+        & 2y^3z^4 \\
+        \\ \\
+        &  (a + 3)z^2 \\
+        \\ \\
+        & 5ay \\
+        \\ \\
+        & 1
+      \end{align*}
+      }
+    \end{tabular}  \\
+  \end{tabular}
+\end{frame}
+
+%% Slide 4 --- framework: storage vs IPC
+\begin{frame}[fragile]{Framework: Long-Term Storage vs.\ IPC}
+  \textbf{Storage} is verbose --- writes full \texttt{\_ns} and \texttt{\_refs}.
+  \pause
+  \medskip
+
+  \textbf{\texttt{IPCSerializer}} trims for interprocess communication:
+  \begin{itemize}
+  \item drop \texttt{\_ns} --- every process runs the same \OSCAR version
+  \item drop \texttt{\_refs} --- contexts are preloaded on each worker
+  \end{itemize}
+  \pause
+  \medskip
+
+  Parametric \texttt{SerializerState\{S\}} + multiple dispatch select the
+  encoding per context:
+  \inputminted{jl}{oscar-snippet}
+  \footnotesize
+  Storage: sparse, order-free. \quad IPC: dense coefficient vector.
+\end{frame}
+
+%% Slide 4 --- Distributed.jl integration
+\begin{frame}{\texttt{Distributed.jl} Integration}
+  \begin{columns}[T]
+    \begin{column}{0.42\textwidth}
+      \begin{center}
+        \workerpoolgraph[0.55]
+      \end{center}
+    \end{column}
+    \begin{column}{0.58\textwidth}
+      \textbf{\texttt{OscarWorkerPool}} --- subtype of \Julia's
+      \texttt{AbstractWorkerPool}.
+      \begin{itemize}
+      \item Distributes context by \textbf{post-order traversal} of
+        \texttt{\_type}: each context sent before the types that depend on it.
+      \item Users call \texttt{remotecall} and \texttt{pmap} directly with
+        \OSCAR types.
+      \item Works with cluster managers
+        (\texttt{SlurmClusterManager.jl}) --- 1000+ cpus.
+      \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+%% Slide 5 --- use cases & speedups
+\begin{frame}{Use Cases \& Speedups}
+  \textbf{Vanishing ideal of the Segre variety} $\PP^3 \times \PP^3 \times \PP^3$:
+  \begin{itemize}
+    \item Kernel components up to total degree 5
+    \item 8{,}303{,}632 monomials over 175{,}616 multidegrees
+    \item Row reductions run in parallel, one per multidegree
+    \item \textbf{32 processes, \SI{150}{\giga\byte}: $<3$ hours vs.\ $>24$ hours (1 process)}
+  \end{itemize}
+  \pause
+  \bigskip
+  \textbf{Modular determinant, real plane algebraic curves:}
+  \begin{itemize}
+    \item $48 \times 48$ matrix over $\ZZ[x]$
+    \item CRT: reduce modulo enough primes, reconstruct over $\ZZ[x]$
+    \item \textbf{6 processes: 357 s vs.\ 1326 s (1 process)}
+  \end{itemize}
+  \bigskip
+  \footnotesize Examples: \url{https://github.com/dmg-lab/OscarParallelExamples}
+\end{frame}
+
+\end{document}
