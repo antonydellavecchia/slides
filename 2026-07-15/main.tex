@@ -222,21 +222,22 @@
     \end{column}
   \end{columns}
   \vfill
-  \begin{figure}[b]
-    \includegraphics[width=2.2cm, left]{images/mardi-logo.png}
-  \end{figure}
+  \noindent
+  \includegraphics[width=2.2cm]{images/mardi-logo.png}%
+  \hfill
+  \includegraphics[width=2.2cm]{images/oscar.pdf}
 
 \end{frame}
 
 %% Slide 1 --- Motivation
-\begin{frame}{The Problem: Serializing Algebraic Data}
+\begin{frame}{Serializing Algebraic Data}
   \textbf{Serialization:} translate in-memory data to a form that can be
   \emph{stored} or \emph{transmitted}, then reconstructed on another process
   or machine.
   \bigskip
   \bigskip
 
-  \textbf{The obstacle --- algebraic context.} Say we want to store:
+  Say we want to store:
   \begin{align*}
     p = 2y^3z^4 + (\mathbf{a} + 3)z^2 + 5\mathbf{a}y + 1
   \end{align*}
@@ -244,14 +245,13 @@
   \begin{itemize}
   \item Is $y$ considered a coefficient of $z$?
   \item What is $\mathbf{a}$? \pause
-  \item How can we guarantee the objects behave as expected on load?
+  \item How can we guarantee the objects behave as expected on load? \pause
+  \item Elements sharing a parent ring should have the same parent ring on load.
   \end{itemize}
-  \pause
-  \bigskip
 \end{frame}
 
 %% Slide 2 --- mrdi file format
-\begin{frame}[fragile]{The \mrdi File Format}
+\begin{frame}[fragile]{The \mrdi File Format [24 DV - Joswig - Lorenz]}
   \vspace*{-0.5cm}
   \begin{tabular}{cl}
     \begin{tabular}{c}
@@ -274,17 +274,42 @@
   \end{tabular}
 \end{frame}
 
+
+%% Slide 4 --- framework: storage vs IPC
+\begin{frame}[fragile]{Serializers}
+%  \textbf{Storage} is verbose --- writes full \texttt{\_ns} and \texttt{\_refs}.
+%  \pause
+%  \medskip
+%
+%  \textbf{\texttt{IPCSerializer}} trims for interprocess communication:
+%  \begin{itemize}
+%  \item drop \texttt{\_ns} --- every process runs the same \OSCAR version
+%  \item drop \texttt{\_refs} --- contexts are preloaded on each worker
+%  \end{itemize}
+%  \pause
+%  \medskip
+%
+  \begin{itemize}\itemsep=\bigskipamount
+  \item Selection of different serializers allow users to alter subtrees.
+  \item Parametrized \texttt{SerializerState\{S\}}.
+  \item Multiple dispatch can select the encoding per context.
+  \end{itemize}
+  \bigskip
+  \inputminted{jl}{oscar-snippet}
+  \footnotesize
+\end{frame}
+
 %% Slide 3 --- mrdi file format, dense coefficients
-\begin{frame}[fragile]{The \mrdi File Format --- Dense Coefficients}
+\begin{frame}[fragile]{Encoding for $p$ during IPC}
   \vspace*{-0.5cm}
   \begin{tabular}{cl}
     \begin{tabular}{c}
-      \includegraphics[width=0.43\textwidth, height=0.8\textheight]{images/tree-dense}
+      \includegraphics[width=0.55\textwidth, height=0.6\textheight]{images/tree-dense}
     \end{tabular}
     & \begin{tabular}{l}
       \parbox{0.25\linewidth}{%
       \begin{align*}
-        \\ \\ \\
+        \\
         & 2y^3z^4 \\
         \\ \\
         &  (a + 3)z^2 \\
@@ -292,32 +317,13 @@
         & 5ay \\
         \\ \\
         & 1
+        \\ \\ 
       \end{align*}
       }
     \end{tabular}  \\
   \end{tabular}
 \end{frame}
 
-%% Slide 4 --- framework: storage vs IPC
-\begin{frame}[fragile]{Framework: Long-Term Storage vs.\ IPC}
-  \textbf{Storage} is verbose --- writes full \texttt{\_ns} and \texttt{\_refs}.
-  \pause
-  \medskip
-
-  \textbf{\texttt{IPCSerializer}} trims for interprocess communication:
-  \begin{itemize}
-  \item drop \texttt{\_ns} --- every process runs the same \OSCAR version
-  \item drop \texttt{\_refs} --- contexts are preloaded on each worker
-  \end{itemize}
-  \pause
-  \medskip
-
-  Parametric \texttt{SerializerState\{S\}} + multiple dispatch select the
-  encoding per context:
-  \inputminted{jl}{oscar-snippet}
-  \footnotesize
-  Storage: sparse, order-free. \quad IPC: dense coefficient vector.
-\end{frame}
 
 %% Slide 4 --- Distributed.jl integration
 \begin{frame}{\texttt{Distributed.jl} Integration}
@@ -331,10 +337,8 @@
       \textbf{\texttt{OscarWorkerPool}} --- subtype of \Julia's
       \texttt{AbstractWorkerPool}.
       \begin{itemize}
-      \item Distributes context by \textbf{post-order traversal} of
-        \texttt{\_type}: each context sent before the types that depend on it.
-      \item Users call \texttt{remotecall} and \texttt{pmap} directly with
-        \OSCAR types.
+      \item Handles sending context to workers.
+      \item \Julia's \texttt{remotecall} and \texttt{pmap} works directly with \OSCAR types.
       \item Works with cluster managers
         (\texttt{SlurmClusterManager.jl}) --- 1000+ cpus.
       \end{itemize}
@@ -343,10 +347,11 @@
 \end{frame}
 
 %% Slide 5 --- use cases & speedups
-\begin{frame}{Use Cases \& Speedups}
-  \textbf{Vanishing ideal of the Segre variety} $\PP^3 \times \PP^3 \times \PP^3$:
+\begin{frame}{Motivating Examples}
+  \textbf{Finding generators for Vanishing ideals}
+  Example: Degree five components of the vanishing ideal for $\sigma_4(\PP^3 \times \PP^3 \times \PP^3)$
   \begin{itemize}
-    \item Kernel components up to total degree 5
+    \item Multigraded Implicitization [26 Cummings-Hollering]
     \item 8{,}303{,}632 monomials over 175{,}616 multidegrees
     \item Row reductions run in parallel, one per multidegree
     \item \textbf{32 processes, \SI{150}{\giga\byte}: $<3$ hours vs.\ $>24$ hours (1 process)}
@@ -361,6 +366,20 @@
   \end{itemize}
   \bigskip
   \footnotesize Examples: \url{https://github.com/dmg-lab/OscarParallelExamples}
+\end{frame}
+
+%% Slide 5 --- use cases & speedups
+\begin{frame}{Future Work}
+  \begin{itemize}\itemsep=2\bigskipamount
+  \item Writing to binary formats to reduce communication overhead.
+  \item Make framework available as a standalone \Julia package.
+  \end{itemize}
+  \vfill
+  \pause
+  \begin{center}
+    \Large Thank You!
+  \end{center}
+  \vfill
 \end{frame}
 
 \end{document}
