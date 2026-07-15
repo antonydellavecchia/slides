@@ -1,0 +1,11 @@
+function save_object(s::SerializerState, p::PolyRingElem)
+  save_object(s, [
+    (i - 1, c) for (i, c) in enumerate(coefficients(p))
+      if !is_zero(c)
+    ]
+  )
+end
+
+function save_object(s::SerializerState{IPCSerializer}, p::PolyRingElem)
+  save_object(s, collect(coefficients(p)))
+end

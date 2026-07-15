@@ -1,0 +1,8 @@
+{ "_ns": {"Oscar": [ "https://github.com/oscar-system/Oscar.jl", "1.8.0" ] },
+  "_type": { "name": "MPolyRingElem",
+	     "params": "c33bb5fb-96d7-42ed-8cd9-89b83eb7a298"},
+  "data": [ [ [ 3, 0 ], "1" ], [ [ 1, 1 ], "-1" ], [ [ 0, 0 ], "1" ] ],
+  "_refs": {
+    "c33bb5fb-96d7-42ed-8cd9-89b83eb7a298": {
+      "_type": { "name": "MPolyRing", "params": {"_type": "QQField" } },
+      "data": {"symbols": [ "x", "y" ] } } } }

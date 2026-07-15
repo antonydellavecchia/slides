@@ -1,0 +1,29 @@
+% use lualatex
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {graphs,graphdrawing}
+\usetikzlibrary {shapes.multipart}
+\usegdlibrary {trees,layered,force}
+
+\tikzset{
+  coeffarray/.style={rectangle split, rectangle split horizontal, draw, fill=red!20},
+}
+
+\begin{document}
+
+%\tikz \graph [tree layout, nodes={}, sibling sep=1ex]
+\tikz \graph [grow'=right, layered layout, nodes={}, sibling sep=1ex]
+{ " "[circle,draw] -- {
+    "\texttt{\_type}" -- {name : MPolyRingElem[draw] , params : a7029443[draw] },
+    data -- {
+      3402[as=,draw,fill=blue] -- { r43[as=,draw,fill=green] -- {3[draw],4[draw]}, c2[coeffarray, rectangle split parts=1, as={\nodepart{one}2}] },
+      0203[as=,draw,fill=blue] -- { r20[as=,draw,fill=green] -- {0x[as=0,draw],2x[as=2,draw]}, c31[coeffarray, rectangle split parts=2, as={\nodepart{one}3\nodepart{two}1}] },
+      1015[as=,draw,fill=blue] -- { r10[as=,draw,fill=green] -- {1y[as=1,draw],0z[as=0,draw]}, c05[coeffarray, rectangle split parts=2, as={\nodepart{one}0\nodepart{two}5}] },
+      0001[as=,draw,fill=blue] -- { r00[as=,draw,fill=green] -- {0u[as=0,draw],0v[as=0,draw]}, c1[coeffarray, rectangle split parts=1, as={\nodepart{one}1}] },
+    },
+  }
+};
+
+
+\end{document}

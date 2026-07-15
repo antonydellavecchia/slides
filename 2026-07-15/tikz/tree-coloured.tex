@@ -1,0 +1,26 @@
+% use lualatex
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary {graphs,graphdrawing}
+\usegdlibrary {trees,layered,force}
+
+\begin{document}
+
+%\tikz \graph [tree layout, nodes={}, sibling sep=1ex]
+\tikz \graph [grow'=right, layered layout, nodes={}, sibling sep=1ex]
+{ " "[circle,draw] -- {
+    "\texttt{\_ns}" -- {"OSCAR v1.0.0"[draw]},
+    "\texttt{\_type}" -- {name : MPolyRingElem[draw] , params : a7029443[draw] },
+    "\texttt{\_refs}" -- {a7029443[rounded corners,draw], f2b7cb6b[rounded corners,draw], 23f25330[rounded corners,draw]},
+    data -- {
+      3402[as=,draw,fill=blue] -- { r43[as=,draw,fill=green] -- {3[draw],4[draw]}, r02[as=,draw,fill=red] -- {02[as=,draw,fill=blue] -- {0[draw,fill=green],2[draw,fill=red]}} },
+      0203[as=,draw,fill=blue] -- { r20[as=,draw,fill=green] -- {0x[as=0,draw],2x[as=2,draw]}, r0311[as=,draw,fill=red] -- {03[as=,draw,fill=blue] -- {0y[as=0,draw,fill=green],3x[as=3,draw,fill=red]}, 11[as=,draw,fill=blue] -- {1[draw,fill=green],1x[as=1,draw,fill=red]}} },
+      1015[as=,draw,fill=blue] -- { r10[as=,draw,fill=green] -- {1y[as=1,draw],0z[as=0,draw]}, r15[as=,draw,fill=red] -- {15[as=,draw,fill=blue] -- {1z[as=1,draw,fill=green],5[draw,fill=red]}} },
+      0001[as=,draw,fill=blue] -- { r00[as=,draw,fill=green] -- {0u[as=0,draw],0v[as=0,draw]}, r01x[as=,draw,fill=red] -- {01x[as=,draw,fill=blue] -- {0w[as=0,draw,fill=green],1u[as=1,draw,fill=red]}} },
+    },
+  }
+};
+
+
+\end{document}
