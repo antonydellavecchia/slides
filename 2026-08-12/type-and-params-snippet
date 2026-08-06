@@ -1,0 +1,14 @@
+type_and_params(R::T) where T <: PolyRingUnionType =
+  TypeAndParams(T, coefficient_ring(R))
+
+function load_object(s::DeserializerState,
+    tp::TypeAndParams{<:MPolyRingElem, <:Ring})
+  R = params(tp)  # coefficient ring, already reconstructed
+  exps_coeffs = load_object(s, TypeAndParams(
+    Vector{Tuple{Vector{Int}, elem_type(R)}}, (nothing, R)))
+  poly = MPolyBuildCtx(R)
+  for (e, c) in exps_coeffs
+    push_term!(poly, c, e)
+  end
+  return finish(poly)
+end
