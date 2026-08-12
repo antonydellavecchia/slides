@@ -113,6 +113,9 @@
 
 \newcommand\Julia{\texttt{Julia}\xspace}
 \newcommand\OSCAR{\texttt{OSCAR}\xspace}
+\newcommand\Macaulay{\texttt{Macaulay2}\xspace}
+\newcommand\Magma{\texttt{Magma}\xspace}
+\newcommand\Sage{\texttt{SageMath}\xspace}
 \newcommand\ZZ{{\mathbb Z}}
 \newcommand\QQ{{\mathbb Q}}
 \newcommand\PP{{\mathbb P}}
@@ -140,7 +143,7 @@
 \newcommand{\Discriminant}{\mathcal{D}}
 
 \author[Antony Della Vecchia]{Antony Della Vecchia}
-\title{Serializing Algebraic Data in \Julia}
+\title{Serializing Algebraic Data}
 
 \institute[]{
   TU Berlin
@@ -230,7 +233,6 @@
   \end{itemize}
 \end{frame}
 
-%% Slide 2 --- mrdi file format: tree structure + implementation choices
 \begin{frame}[fragile]{The \mrdi File Format}
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
@@ -238,59 +240,83 @@
       \includegraphics[width=\textwidth]{images/tree-coloured}
     \end{column}
     \begin{column}{0.58\textwidth}
+      \vspace{4mm}
+      \pause
       \begin{itemize}
-      \item Based on JSON --- a tree, not flat key-value pairs.
-      \item \texttt{\_type} carries a \texttt{name} and \texttt{params}.
-      \item \texttt{\_ns} pins semantics to a software name + version.
-      \item Shared parents (e.g.\ the ring) stored once in \texttt{\_refs},
+      \item ICMS 2024 [DV - Joswig - Lorenz].
+        \vspace{2mm}
+      \item Initial focus on long term storage.
+        \vspace{2mm}
+      \item JSON based.
+        \vspace{2mm}
+      \item \texttt{\_ns} pins semantics.
+        \vspace{2mm}
+      \item \texttt{\_type} subtree describes the data and it's algebraic context.
+        \vspace{2mm}
+      \item Shared parents (e.g. the ring) stored once in \texttt{\_refs},
         addressed by UUID.
-      \item Every \OSCAR type implements \texttt{save\_object} /
-        \texttt{load\_object} via multiple dispatch.
+        \vspace{2mm}
+      \item Implementations for \Macaulay (Doug Torrance), \Magma(Jeroen Hanselman) and \Sage
       \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
 
-%% Slide 3 --- mrdi file format, dense coefficients: choosing a different serializer alters the tree
-\begin{frame}[fragile]{Encoding for $p$ during IPC}
-  \vspace*{-0.5cm}
-  \begin{tabular}{cl}
-    \begin{tabular}{c}
-      \includegraphics[width=0.55\textwidth, height=0.6\textheight]{images/tree-dense}
-    \end{tabular}
-    & \begin{tabular}{l}
-      \parbox{0.25\linewidth}{%
-      \begin{align*}
-        \\
-        & 2y^3z^4 \\
-        \\ \\
-        &  (a + 3)z^2 \\
-        \\ \\
-        & 5ay \\
-        \\ \\
-        & 1
-        \\ \\
-      \end{align*}
-      }
-    \end{tabular}  \\
-  \end{tabular}
+%% Slide 3 --- Adding serialization support for a new type
+\begin{frame}[fragile]{Serialization Framework}
+  Adding support for a new type means implementing three functions.
+  \vspace{3mm}
+  \begin{tcolorbox}[colframe=LineColor, colback=white, boxrule=0.5pt]
+    \begin{itemize}\itemsep=\smallskipamount
+    \item \texttt{type\_and\_params} --- returns the context needed to
+      rebuild the object (e.g.\ its parent ring).
+      \vspace{3mm}
+    \item \texttt{save\_object} --- writes the \texttt{data} subtree.
+      \vspace{3mm}
+    \item \texttt{load\_object} --- reads the \texttt{data} subtree expects context to be provided.
+    \end{itemize}
+  \end{tcolorbox}
+  \pause
+  \vspace{3mm}
+  \begin{tcolorbox}[colframe=LineColor, colback=white, boxrule=0.5pt]
+    \begin{itemize}\itemsep=\smallskipamount
+    \item General framework handles container types.
+      \vspace{3mm}
+    \item Entire sessions can be stored across multiple files.
+      \vspace{3mm}
+    \item Coercion --- loading files into a given algebraic context.
+    \end{itemize}
+  \end{tcolorbox}
 \end{frame}
 
-%% Slide 4 --- Serializers: multiple dispatch on encoding
+
+%% Slide 5 --- Serializers: multiple dispatch on encoding
 \begin{frame}[fragile]{Serializers}
-  \begin{itemize}\itemsep=\smallskipamount
-  \item Selection of different serializers lets users alter subtrees.
-  \item Parametrized \texttt{SerializerState\{S\}} --- \texttt{S} names the
-    serializer in use.
-  \item Multiple dispatch on \texttt{S} selects the encoding per context ---
-    same object, different bytes on disk vs.\ over a socket.
-  \end{itemize}
-  \bigskip
   \inputminted{jl}{oscar-snippet}
   \footnotesize
+  \bigskip
+  \pause
+  \begin{columns}[T]
+    \begin{column}{0.42\textwidth}
+      \centering
+      \includegraphics[width=0.9\textwidth]{images/tree-dense}
+    \end{column}
+    \begin{column}{0.58\textwidth}
+      \begin{itemize}\itemsep=\smallskipamount
+      \item Selection of different serializers lets users alter subtrees.
+        \vspace{2mm}
+      \item Parametrized \texttt{SerializerState\{S\}}
+        \vspace{2mm}
+      \item Multiple dispatch on \texttt{S} selects the encoding per context 
+        \vspace{2mm}
+      \item Currently available: \texttt{JSONSerializer}, \texttt{IPCSerializer},
+        \texttt{LPSerializer}, \texttt{MultiFileRef}.
+      \end{itemize}
+    \end{column}
+  \end{columns}
 \end{frame}
 
-%% Slide 5 --- Multiprocessing (single slide)
+%% Slide 4 --- Multiprocessing (single slide)
 \begin{frame}{Multiprocessing}
   \begin{columns}[T]
     \begin{column}{0.42\textwidth}
@@ -300,37 +326,27 @@
     \end{column}
     \begin{column}{0.58\textwidth}
       \textbf{\texttt{OscarWorkerPool}} --- subtype of \Julia's
-      \texttt{AbstractWorkerPool}, built on the serializers above.
+      \texttt{AbstractWorkerPool}, Uses the \texttt{IPCserializer}.
       \begin{itemize}
       \item Sends context to workers once, then reuses an
         \texttt{IPCSerializer} for every message.
       \item \Julia's \texttt{remotecall} and \texttt{pmap} work directly with
         \OSCAR types.
-      \item Works with cluster managers
-        (\texttt{SlurmClusterManager.jl}) --- 1000+ cpus.
+      \item Works with cluster managers (\texttt{SlurmClusterManager.jl})
       \item \textbf{32 processes, \SI{150}{\giga\byte}: $<3$ hours vs.\
-        $>24$ hours (1 process)} on a degree-5 vanishing-ideal computation.
+        $>24$ hours (1 process)} found degree-5 components of vanishing-ideal for $\sigma_4(\PP^3 \times \PP^3 \times \PP^3).
       \end{itemize}
     \end{column}
   \end{columns}
 \end{frame}
 
-%% Slide 6 --- Implementation details: type_and_params / load_object
-\begin{frame}[fragile]{Under the Hood: \texttt{type\_and\_params}}
-  \texttt{type\_and\_params(obj)} returns the context needed to rebuild
-  \texttt{obj} --- e.g.\ its parent ring --- kept out of \texttt{data} and
-  stored once as a shared \texttt{\_refs} entry.
-  \bigskip
-
-  \inputminted{jl}{type-and-params-snippet}
-  \footnotesize
-  \begin{itemize}
-  \item \texttt{load\_object} dispatches on
-    \texttt{TypeAndParams\{Type, ParamType\}} --- the whole type tree is
-    resolved \emph{before} any \texttt{data} is touched.
-  \item Rule: never call \texttt{save\_typed\_object} inside
-    \texttt{save\_object} --- keeps type and data subtrees separate, so
-    files stay easy to validate and upgrade.
+%% Slide 6 --- Future work
+\begin{frame}[fragile]{Future Work}
+  \begin{itemize}\itemsep=\smallskipamount
+  \item Spin off the serialization code into a standalone \Julia package.
+    \vspace{3mm}
+  \item Add support for binary formats.
+    \vspace{3mm}
   \end{itemize}
   \vfill
   \pause
